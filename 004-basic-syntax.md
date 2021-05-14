@@ -25,16 +25,16 @@ Let's go ahead and cover the basic operations next.
 
 To add data to your database you would use the `INSERT` statemnt.
 
-Let's insert 1 user into our `users` table:
+Let's use the table that we created in the last chapter and insert 1 user into our `users` table:
 
 ```
-INSERT INTO users ('username', 'name', status) VALUES('bobby', 'Bobby Iliev', 1);
+INSERT INTO users(username, email, active) VALUES('bobby', 'bobby@bobbyiliev.com', true);
 ```
 
 Rundown of the insert statement:
 
 * `INSERT INTO users`: first we specify the `INSERT INTO` keywordo which tells MySQL that we want to insert data into the `users` table.
-* `users ('username', 'name', status)`: then we specify the table name `users` and the columns that we want to insert data into.
+* `users (username, email, active)`: then we specify the table name `users` and the columns that we want to insert data into.
 * `VALUES`: then we specify the values that we want to insert in.
 
 ## SELECT
@@ -47,18 +47,32 @@ To retrieve informaiton from your database, you could use the `SELECT` statement
 SELECT * FROM users;
 ```
 
+Output:
+
+```
++----+----------+-------+----------+--------+---------------+
+| id | username | about | birthday | active | email         |
++----+----------+-------+----------+--------+---------------+
+|  1 | bobby    | NULL  | NULL     |      1 | bobby@b...com |
++----+----------+-------+----------+--------+---------------+
+```
+
 As we specify `*` right after the `SELECT` keyword, this means that we want to get all of the columns from the `users` table.
 
-If we wanted to the only the `username` and the `name` columns instead we would change the statement to:
+If we wanted to the only the `username` and the `email` columns instead we would change the statement to:
 
 ```
-SELECT username,name FROM users;
+SELECT username,email FROM users;
 ```
 
-Result:
+This will return all of the users, but as of the time being we have only 1:
 
 ```
-TODO
++----------+----------------------+
+| username | email                |
++----------+----------------------+
+| bobby    | bobby@bobbyiliev.com |
++----------+----------------------+
 ```
 
 ## UPDATE
