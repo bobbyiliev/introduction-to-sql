@@ -203,3 +203,7 @@ Output:
 ```
 
 As you can see the duplicate entries have been removed from the output.
+
+## Conclusion
+
+The `SELECT` statement is essential whenever working with SQL. In the next chapter we are going to learn how to use the `WHERE` clause and take the `SELECT` statements to the next level.
