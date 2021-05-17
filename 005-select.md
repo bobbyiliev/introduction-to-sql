@@ -80,6 +80,38 @@ This will return all of the entries in the `users` table along with all of the c
 
 As you can see we get a list of the 3 users that we've just created including all of the columns in that table. In some cases the table might have a lot of columns and you might not want to see all of them, for example we have the `about` and `birthday` columns that are all `NULL` at the moment. Let's see how we could limit that and get only a list of specific columns.
 
+## Formatting
+
+As we mentioned in the previous chapters, each SQL statement needs to end with a semicolumn: `;`. Alternetively, rather than using a semicolumn, you could use the `\G` characters which would format the output in a list rather than a table.
+
+The syntax is absolutely the same but you just change the `;` with `\G`:
+
+```
+SELECT * FROM users \G
+```
+
+The output will be formatted like this:
+
+```
+*************************** 1. row ***************************
+      id: 1
+username: bobby
+   about: NULL
+birthday: NULL
+  active: 1
+   email: b@devdojo.com
+*************************** 2. row ***************************
+      id: 2
+username: devdojo
+   about: NULL
+birthday: NULL
+  active: 0
+   email: d@devdojo.com
+...
+```
+
+This is very handy whenever your table consists of a large number of columns and they can't fit on the screen which makes it very hard to read the result set.
+
 ## SELECT specific columns only
 
 You could limit this to a specific set of columns, let's say that you only needed the `username` and the `active` columns. In this case you would change the `*` symbol with the columns that you wantto select devided by a comman:
@@ -142,6 +174,38 @@ Output:
 +----------+
 |        3 |
 +----------+
+```
+
+## MIN, MAX, AVG and SUM
+
+Another useful set of functions similar to `COUNT` that would make your life easier are:
+
+* `MIN`: this would give you the smallest value of a specific column, for example, if you had an online shop and you wanted to get the lowest price, you would use the `MIN` function. In our case if we wanted to get the lowest user ID, we would run the following:
+
+```
+SELECT MIN(id) FROM users;
+```
+
+This would return `1` as the lowest user ID that we have is 1.
+
+* `MAX`: just like `MIN` but it would return the highest value:
+
+```
+SELECT MAX(id) FROM users;
+```
+
+In our case this would be `3` as we have only 3 users and the highest value of the `id` column is 3.
+
+* `AVG`: as the name suggest it would sum up all of the values of a specific column and return the avarage value. As we have 3 users with ids 1, 2 and 3 which is 6 devided by 3 users is 2. 
+
+```
+SELECT AVG(id) FROM users;
+```
+
+* `SUM`: this function takes all of the values from the specified column and sums them up:
+
+```
+SELECT SUM(id) FROM users;
 ```
 
 ## DISTINCT
