@@ -8,7 +8,9 @@ If you have any suggestions for improvements, make sure to contribute pull reque
 
 In this introduction to SQL eBook, we just covered the basics, but you still have enough under your belt to start working with any relation database out there!
 
-As a next step, try to create a database server, import some demo data and play around with all of the statements that you've learned so far.
+As a next step, try to create a database server, import some demo data and play around with all of the statements that you've learned so far. You can also take a look at this website here to help you build your tables and relations and visualize them:
+
+[https://dbdiagram.io/](https://dbdiagram.io/)
 
 In case that this eBook inspired you to contribute to some amazing open-source project, make sure to tweet about it and tag [@bobbyiliev_](https://twitter.com) so that we could check it out!
 
