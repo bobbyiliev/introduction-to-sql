@@ -10,7 +10,7 @@ In other words, a database is a collection of data stored and structured in diff
 
 ## Tables and columns
 
-You've mostlikely worked with spreadsheet systems like Excel or Google Sheets. At the very basic, database tables are quite similar to spreadsheets.
+You've most likely worked with spreadsheet systems like Excel or Google Sheets. At the very basic, database tables are quite similar to spreadsheets.
 
 Each table has different **columns** which could contain different types of data.
 
