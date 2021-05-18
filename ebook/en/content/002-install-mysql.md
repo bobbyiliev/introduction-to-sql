@@ -35,7 +35,7 @@ sudo mysql_secure_installation
 
 Then follow the prompt and finally choose a secure password and save it in a secure place like a password manager.
 
-With that, you would have MySQL installed on your Ubuntu server. The above should also work just fine on Debina.
+With that, you would have MySQL installed on your Ubuntu server. The above should also work just fine on Debian.
 
 ### Install MySQL on Mac
 
