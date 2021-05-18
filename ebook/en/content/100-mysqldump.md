@@ -14,7 +14,7 @@ In order to export/backup a database, all you need to do is run the following co
 mysqldump -u your_username -p your_database_name > your_database_name-$(date +%F).sql
 ```
 
-Note that you need to change the your_database_name with the actual name of your database and the your_username with your actual MySQL username.
+Note that you need to change the your_database_name with the actual name of your database and the `your_username` part with your actual MySQL username.
 
 Rundown of the arguments:
 
@@ -26,7 +26,7 @@ By running the above command, you would create an export of your database, which
 
 ## Exporting all databases
 
-If you have root access to the server, you could use the --all-databases flag in order to export all of the databases hosted on the particular MySQL server. The downside of this approach is that this would create one single .sql export which would contain all of the databases.
+If you have root access to the server, you could use the `--all-databases` flag in order to export all of the databases hosted on the particular MySQL server. The downside of this approach is that this would create one single `.sql` export, which would contain all of the databases.
 
 Let's say that you would like to export each database into a separate .sql file. You could do that with the following script:
 
@@ -68,7 +68,7 @@ For more information on Bash scripting check out this [opensource eBook here](ht
 
 You can even set a cronjob to automate the backups above, that way you would have regular backups of your databases.
 
-In order to do that you need to make sure that you have the following content in your .my.cnf file. The file should be stored at:
+In order to do that, you need to make sure that you have the following content in your `.my.cnf` file. The file should be stored at:
 
 ```
 /home/your_user/.my.cnf
@@ -94,7 +94,7 @@ Once you have your `.my.cnf` file configured, you set up a cronjob to trigger th
 0 10,22 * * * /usr/bin/mysqldump -u your_username -p your_database_name > your_database_name-$(date +%F).sql
 ```
 
-The above would run at 10AM and 10PM every day, so you will have 2 daily backups of your database.
+The above would run at 10 AM and 10 PM every day, so you will have 2 daily backups of your database.
 
 You can even expand the logic and add a compression step so that the .sql dumps do not consume too much webspace.
 

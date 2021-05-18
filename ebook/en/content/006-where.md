@@ -29,7 +29,7 @@ Output:
 +----------+---------------+--------+
 ```
 
-As you can see we are only getting `tony` and `bobby` back as their `active` column is `true` or `1`. If we wanted' to get the inactive users, we would have to change the `WHERE` clause and set the `active` to `false`:
+As you can see, we are only getting `tony` and `bobby` back as their `active` column is `true` or `1`. If we wanted to get the inactive users, we would have to change the `WHERE` clause and set the `active` to `false`:
 
 ```
 +----------+---------------+--------+
@@ -39,10 +39,15 @@ As you can see we are only getting `tony` and `bobby` back as their `active` col
 +----------+---------------+--------+
 ```
 
-As another example, let's say that we wanted to select all users with the username `bobby`, the query in this case would be:
+As another example, let's say that we wanted to select all users with the username `bobby`. The query, in this case, would be:
 
 ```
 SELECT username,email,active FROM users WHERE username='bobby';
+```
+
+The output would look like this:
+
+```
 +----------+---------------+--------+
 | username | email         | active |
 +----------+---------------+--------+
@@ -51,11 +56,11 @@ SELECT username,email,active FROM users WHERE username='bobby';
 +----------+---------------+--------+
 ```
 
-We are getting 2 entires back as we have 2 users in our database with the username `bobby`.
+We are getting 2 entries back as we have 2 users in our database with the username `bobby`.
 
 ## Operators
 
-In the example we used the `=` operator which checks if the result set matches the value that we are looking for.
+In the example, we used the `=` operator, which checks if the result set matches the value that we are looking for.
 
 A list of popular operators are:
 
@@ -69,7 +74,7 @@ For more information about other available operators, make sure to check the off
 
 ## AND keyword
 
-In some cases you might want to specify multiple criterias, for example, you might want to get all users that are active and the username matches a specific value. This could be achieved with the `AND` keyword.
+In some cases, you might want to specify multiple criteria. For example, you might want to get all users that are active, and the username matches a specific value. This could be achieved with the `AND` keyword.
 
 Syntax:
 
@@ -77,7 +82,7 @@ Syntax:
 SELECT * FROM users WHERE username='bobby' AND active=true;
 ```
 
-The result set would contain the data that matches both conditions. In our case the output would be:
+The result set would contain the data that matches both conditions. In our case, the output would be:
 
 ```
 +----+----------+-------+----------+--------+---------------+
@@ -99,11 +104,11 @@ Empty set (0.01 sec)
 
 ## OR keyword
 
-In some cases you might want to specify multiple criterias, for example, you might want to get all users that are active or their username matches a specific value. This could be achieved with the `OR` keyword.
+In some cases, you might want to specify multiple criteria. For example, you might want to get all users that are active, or their username matches a specific value. This could be achieved with the `OR` keyword.
 
-As with any other programming language, the main difference between `AND` and `OR` is that with `AND` the result would only return the values that match the two conditions, and with `OR` you would get a result that matches either of the conditions.
+As with any other programming language, the main difference between `AND` and `OR` is that with `AND`, the result would only return the values that match the two conditions, and with `OR`, you would get a result that matches either of the conditions.
 
-For example if we were to run the same query as above but change the `AND` to `OR` we would get all users that have the username `bobby` and also all users that are not active:
+For example, if we were to run the same query as above but change the `AND` to `OR`, we would get all users that have the username `bobby` and also all users that are not active:
 
 ```
 SELECT * FROM users WHERE username='bobby' OR active=false;
@@ -126,7 +131,7 @@ Output:
 
 Unlike the `=` operator, the `LIKE` operator allows you to do wildcard matching similar to the `*` symbol in Linux.
 
-For example, if you wanted to get all users that have the `y` letter in them you would run the following:
+For example, if you wanted to get all users that have the `y` letter in them, you would run the following:
 
 ```
 SELECT * FROM users WHERE username LIKE '%y%';
@@ -143,7 +148,7 @@ Output
 +----+----------+-------+----------+--------+---------------+
 ```
 
-As you can see we are getting only `tony` and `bobby` but not `devdojo` as there is no `y` in `devdojo`.
+As you can see, we are getting only `tony` and `bobby` but not `devdojo` as there is no `y` in `devdojo`.
 
 This is quite handy when you are building some search functionality for your application.
 
@@ -170,13 +175,13 @@ Output:
 +----+----------+-------+----------+--------+---------------+
 ```
 
-This allows you to simlify your `WHERE` expression so that you don't have to add numerous `OR` statemetns.
+This allows you to simplify your `WHERE` expression so that you don't have to add numerous `OR` statements.
 
 ## IS operator
 
-If you were to run `SELECT * FROM users WHERE about=NULL;` you would get an empty result set as the `=` operator can't be used to check for NULL values. Instead you would need to use the `IS` operator instead.
+If you were to run `SELECT * FROM users WHERE about=NULL;` you would get an empty result set as the `=` operator can't be used to check for NULL values. Instead, you would need to use the `IS` operator instead.
 
-The `IS` operator is only used to check `NULL` values and the syntax is the following:
+The `IS` operator is only used to check `NULL` values, and the syntax is the following:
 
 ```
 SELECT * FROM users WHERE about IS NULL;
@@ -191,6 +196,6 @@ SELECT * FROM users WHERE about IS NOT NULL;
 
 ## Conclusion
 
-In this chapter you've learned how to use the `WHERE` clause with different operators to get different type of results based on the paramters that you provide.
+In this chapter, you've learned how to use the `WHERE` clause with different operators to get different type of results based on the parameters that you provide.
 
-In the next chapter we will learn how to order the result set.
+In the next chapter, we will learn how to order the result set.

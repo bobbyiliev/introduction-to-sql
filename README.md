@@ -12,7 +12,7 @@
 
 ## 💡 Introduction to SQL
 
-This is an open-source introduction to SQL guide that will help you learn the basics of SQL and start using relational databases for your SysOps, DevOps, and Dev projects. No matter if you are a DevOps/SysOps engineer, developer, or just a Linux enthusiast, you will most likely have to use SQL at some point of your carrer.
+This is an open-source introduction to SQL guide that will help you learn the basics of SQL and start using relational databases for your SysOps, DevOps, and Dev projects. No matter if you are a DevOps/SysOps engineer, developer, or just a Linux enthusiast, you will most likely have to use SQL at some point in your career.
 
 The guide is suitable for anyone working as a developer, system administrator, or a DevOps engineer and wants to learn the basics of SQL.
 
@@ -27,7 +27,19 @@ To download a copy of the ebook use one of the following links:
 ## 📘 Chapters
 
 * **About the book**
-
+* **Databases**
+* **MySQL**
+* **Tables**
+* **Basic Syntax**
+* **SELECT**
+* **WHERE**
+* **ORDER and GROUP BY**
+* **INSERT**
+* **UPDATE**
+* **DELETE**
+* **JOIN**
+* **The MySQL dump command**
+* **Conclusion**
 
 ## 🌟 Sponsors
 

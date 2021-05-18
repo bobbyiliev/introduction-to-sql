@@ -2,9 +2,9 @@
 
 As we briefly covered in the previous chapter, the `SELECT` statement allows us to retrieve data from a specific database.
 
-You can use `SELECT` to get all of your users or a list of users that match a certian criteria.
+You can use `SELECT` to get all of your users or a list of users that match a certain criteria.
 
-Before we dive into the `SELECT` statemnt let's quickly create a database:
+Before we dive into the `SELECT` statement let's quickly create a database:
 
 ```
 CREATE DATABASE sql_demo;
@@ -48,7 +48,7 @@ Query OK, 3 rows affected (0.00 sec)
 Records: 3  Duplicates: 0  Warnings: 0
 ```
 
-We are going to lear more about the `INSERT` statement in the next chapters
+We are going to learn more about the `INSERT` statement in the following chapters.
 
 ## SELECT all columns
 
@@ -60,9 +60,9 @@ SELECT * FROM users;
 
 Rundown of the statement:
 
-* `SELECT`: first we specify the action that we want to execute, in our case we want to select or get some data from the database.
+* `SELECT`: first, we specify the action that we want to execute, in our case, we want to select or get some data from the database.
 * `*`: the star here indicates that we want to get all of the columns associated with the table that we are selecting from.
-* `FROM`: the from statement tells MySQL which table we want to select the data from. You need to keep in mind that you can select from multiple tables but this is a bit more advanced and we are going to cover this in the next few chapters
+* `FROM`: the from statement tells MySQL which table we want to select the data from. You need to keep in mind that you can select from multiple tables, but this is a bit more advanced, and we are going to cover this in the next few chapters
 * `users`: this is the table name that we want to select the data from.
 
 This will return all of the entries in the `users` table along with all of the columns:
@@ -78,11 +78,11 @@ This will return all of the entries in the `users` table along with all of the c
 3 rows in set (0.00 sec)
 ```
 
-As you can see we get a list of the 3 users that we've just created including all of the columns in that table. In some cases the table might have a lot of columns and you might not want to see all of them, for example we have the `about` and `birthday` columns that are all `NULL` at the moment. Let's see how we could limit that and get only a list of specific columns.
+As you can see, we get a list of the 3 users that we've just created, including all of the columns in that table. In some cases, the table might have a lot of columns, and you might not want to see all of them. For example, we have the `about` and `birthday` columns that are all `NULL` at the moment. So let's see how we could limit that and get only a list of specific columns.
 
 ## Formatting
 
-As we mentioned in the previous chapters, each SQL statement needs to end with a semicolumn: `;`. Alternetively, rather than using a semicolumn, you could use the `\G` characters which would format the output in a list rather than a table.
+As we mentioned in the previous chapters, each SQL statement needs to end with a semi column: `;`. Alternatively, rather than using a semi column, you could use the `\G` characters which would format the output in a list rather than a table.
 
 The syntax is absolutely the same but you just change the `;` with `\G`:
 
@@ -110,11 +110,11 @@ birthday: NULL
 ...
 ```
 
-This is very handy whenever your table consists of a large number of columns and they can't fit on the screen which makes it very hard to read the result set.
+This is very handy whenever your table consists of a large number of columns and they can't fit on the screen, which makes it very hard to read the result set.
 
 ## SELECT specific columns only
 
-You could limit this to a specific set of columns, let's say that you only needed the `username` and the `active` columns. In this case you would change the `*` symbol with the columns that you wantto select devided by a comman:
+You could limit this to a specific set of columns. Let's say that you only needed the `username` and the `active` columns. In this case, you would change the `*` symbol with the columns that you want to select divided by a comma:
 
 ```
 SELECT username,active FROM users;
@@ -132,13 +132,13 @@ Output:
 +----------+--------+
 ```
 
-As you can see we are getting back only the 2 columns that we've specified in the `SELECT` statement.
+As you can see, we are getting back only the 2 columns that we've specified in the `SELECT` statement.
 
 ## LIMIT
 
-The `LIMIT` clause is very handy in case that you want to limit the number of results that you get back. For example at the moment we have 3 users in our database, but let's say that you only wanted to get 1 entry back when you run the `SELECT` statement.
+The `LIMIT` clause is very handy in case that you want to limit the number of results that you get back. For example, at the moment, we have 3 users in our database, but let's say that you only wanted to get 1 entry back when you run the `SELECT` statement.
 
-This can be achieved by adding the `LIMIT` clause at the end of your statement followed by the number of entries that you want to get. Let's say that we wanted to get only 1 entry back, we would run the following query:
+This can be achieved by adding the `LIMIT` clause at the end of your statement, followed by the number of entries that you want to get. For example, let's say that we wanted to get only 1 entry back. We would run the following query:
 
 ```
 SELECT * FROM users LIMIT 1;
@@ -154,11 +154,11 @@ Output:
 +----+----------+-------+----------+--------+---------------+
 ```
 
-If you wanted to get 2 entries you would change `LIMIT 2` and so on.
+If you wanted to get 2 entries, you would change `LIMIT 2` and so on.
 
 ## COUNT
 
-In case that you wanted to get only the number of entries in a specific column you could use the `COUNT` function. This is a function that I personally use very often.
+In case that you wanted to get only the number of entries in a specific column, you could use the `COUNT` function. This is a function that I personally use very often.
 
 The syntax is the following:
 
@@ -176,11 +176,11 @@ Output:
 +----------+
 ```
 
-## MIN, MAX, AVG and SUM
+## MIN, MAX, AVG, and SUM
 
 Another useful set of functions similar to `COUNT` that would make your life easier are:
 
-* `MIN`: this would give you the smallest value of a specific column, for example, if you had an online shop and you wanted to get the lowest price, you would use the `MIN` function. In our case if we wanted to get the lowest user ID, we would run the following:
+* `MIN`: this would give you the smallest value of a specific column. For example, if you had an online shop and you wanted to get the lowest price, you would use the `MIN` function. In our case, if we wanted to get the lowest user ID, we would run the following:
 
 ```
 SELECT MIN(id) FROM users;
@@ -188,15 +188,15 @@ SELECT MIN(id) FROM users;
 
 This would return `1` as the lowest user ID that we have is 1.
 
-* `MAX`: just like `MIN` but it would return the highest value:
+* `MAX`: just like `MIN`, but it would return the highest value:
 
 ```
 SELECT MAX(id) FROM users;
 ```
 
-In our case this would be `3` as we have only 3 users and the highest value of the `id` column is 3.
+In our case, this would be `3` as we have only 3 users, and the highest value of the `id` column is 3.
 
-* `AVG`: as the name suggest it would sum up all of the values of a specific column and return the avarage value. As we have 3 users with ids 1, 2 and 3 which is 6 devided by 3 users is 2. 
+* `AVG`: as the name suggest, it would sum up all of the values of a specific column and return the average value. As we have 3 users with ids 1, 2, and 3, which is 6 divided by 3 users is 2. 
 
 ```
 SELECT AVG(id) FROM users;
@@ -210,7 +210,7 @@ SELECT SUM(id) FROM users;
 
 ## DISTINCT
 
-In some cases you might have duplicate entries in a table, and in order to get only the unique values you could use `DISTINCT`.
+In some cases, you might have duplicate entries in a table, and in order to get only the unique values, you could use `DISTINCT`.
 
 To better demonstrate this, let's run the insert statement one more time so that we could duplicate the existing users and have 6 users in the users table:
 
@@ -223,7 +223,7 @@ VALUES
   ('tony', 't@devdojo.com', true);
 ```
 
-Now if you run `SELECT COUNT(*) FROM users;` you would get `6` back.
+Now, if you run `SELECT COUNT(*) FROM users;` you would get `6` back.
 
 Let's also select all users and show only the `username` column:
 
@@ -246,9 +246,9 @@ Output:
 +----------+
 ```
 
-As you can see each name is present multiple times in the list. We have 2 times `bobby`, 2 times `devdjo` and 2 times `tony`.
+As you can see, each name is present multiple times in the list. We have 2 times `bobby`, 2 times `devdjo` and 2 times `tony`.
 
-If we wanted to only show the unique `usernames`, we could add the `DISTINCT` keyworkd to our select statement:
+If we wanted to only show the unique `usernames`, we could add the `DISTINCT` keyword to our select statement:
 
 ```
 SELECT DISTINCT username FROM users;
@@ -266,8 +266,8 @@ Output:
 +----------+
 ```
 
-As you can see the duplicate entries have been removed from the output.
+As you can see, the duplicate entries have been removed from the output.
 
 ## Conclusion
 
-The `SELECT` statement is essential whenever working with SQL. In the next chapter we are going to learn how to use the `WHERE` clause and take the `SELECT` statements to the next level.
+The `SELECT` statement is essential whenever working with SQL. In the next chapter, we are going to learn how to use the `WHERE` clause and take the `SELECT` statements to the next level.
