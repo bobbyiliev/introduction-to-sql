@@ -154,10 +154,79 @@ The output will be the following, associating each user with their post based on
 
 The main thing that you need to keep in mind here are the `INNER JOIN` and `ON` clauses.
 
+With the inner join, the `NULL` values are discarded. For example if you have a user which does not have a post associated with it, when running the above `INNER` join query, the user that has null posts will not be displaied.
+
+To get the null values as well, you would need to use an outer join.
+
 ## Left join
+
+By using the `LEFT OUTER` join, you would get all rows from the first table that you've specified and if there are no associated records with it within the second table, you would get a `NULL` value. 
+
+In our case we have a user called `graisi` which is not associated with a specific post, as you can see from the output from the previous query, the `graisi` user was not present in there. To show that user even though it does not have an assiciated post with it you could use an `LEFT OUTER` join:
+
+```
+SELECT *
+FROM users
+LEFT JOIN posts ON users.id = posts.user_id;
+```
+
+The output will look like this:
+
+```
++----+----------+------+---------+---------------------------------+
+| id | username | id   | user_id | title                           |
++----+----------+------+---------+---------------------------------+
+|  1 | bobby    |    1 |       1 | Hello World!                    |
+|  2 | devdojo  |    2 |       2 | Getting started with SQL        |
+|  3 | tony     |    3 |       3 | SQL is awesome                  |
+|  2 | devdojo  |    4 |       2 | MySQL is up!                    |
+|  1 | bobby    |    5 |       1 | SQL - structured query language |
+|  4 | greisi   | NULL |    NULL | NULL                            |
++----+----------+------+---------+---------------------------------+
+```
 
 ## Right join
 
+The `RIGHT OUTER` join is the exact oposite of the `LEFT OUTER` join, it will display all of the rows from the second table and give you a `NULL` value in case that it does not match with an entry from the first table.
+
+Let's create a post that does not have a matching user id:
+
+```
+INSERT INTO posts
+  ( user_id, title )
+VALUES
+  ('123', 'No user post!');
+```
+
+We are specifing `123` as the user ID, but we don't have such user in our users table.
+
+Now if you were to run the `LEFT` outer join, you would not see the post as it has a null value for the corresponding users table.
+
+But if you were to run a `RIGHT` outer join, you would see the post but not the `greisi` user as it does not have any posts:
+
+```
+SELECT * FROM users RIGHT JOIN posts ON users.id = posts.user_id;
+```
+
+Output:
+
+```
++------+----------+----+---------+---------------------------------+
+| id   | username | id | user_id | title                           |
++------+----------+----+---------+---------------------------------+
+|    1 | bobby    |  1 |       1 | Hello World!                    |
+|    2 | devdojo  |  2 |       2 | Getting started with SQL        |
+|    3 | tony     |  3 |       3 | SQL is awesome                  |
+|    2 | devdojo  |  4 |       2 | MySQL is up!                    |
+|    1 | bobby    |  5 |       1 | SQL - structured query language |
+| NULL | NULL     |  6 |     123 | No user post!                   |
++------+----------+----+---------+---------------------------------+
+```
+
 ## Conclusion
+
+The whole concept of joins might be very confusing in the begining but would make a lot of sensce once you get used to it.
+
+The best way to warp your head around it is to write some queries and play around with each type of `JOIN` and see how the result set changes.
 
 For more information you could take a look at the official documentation [here](https://dev.mysql.com/doc/refman/8.0/en/join.html).

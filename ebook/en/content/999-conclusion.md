@@ -15,3 +15,10 @@ As a next step, try to create a database server, import some demo data and play 
 In case that this eBook inspired you to contribute to some amazing open-source project, make sure to tweet about it and tag [@bobbyiliev_](https://twitter.com) so that we could check it out!
 
 Congrats again on completing this eBook!
+
+## Other eBooks
+
+Some other opensource eBooks that you might find helpful are:
+
+* [Introduction to Git and GitHub](https://github.com/bobbyiliev/introduction-to-git-and-github-ebook)
+* [Introduction to Bash Scripting](https://github.com/bobbyiliev/introduction-to-bash-scripting)
