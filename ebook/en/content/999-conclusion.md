@@ -20,5 +20,5 @@ Congrats again on completing this eBook!
 
 Some other opensource eBooks that you might find helpful are:
 
-* [Introduction to Git and GitHub](https://github.com/bobbyiliev/introduction-to-git-and-github-ebook)
-* [Introduction to Bash Scripting](https://github.com/bobbyiliev/introduction-to-bash-scripting)
+- [Introduction to Git and GitHub](https://github.com/bobbyiliev/introduction-to-git-and-github-ebook)
+- [Introduction to Bash Scripting](https://github.com/bobbyiliev/introduction-to-bash-scripting)
