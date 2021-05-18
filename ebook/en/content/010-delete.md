@@ -14,6 +14,6 @@ The output should indicate that 1 row was affected:
 Query OK, 1 row affected (0.01 sec)
 ```
 
-> Important: Just like the the `UPDATE` statement, if you don't specify a `WHERE` clause, all of the entries from the table will be affected, meaning that all of your users will be deleted. So it is critical to alwasy add a `WHERE` clause when executing a `DELETE` statement.
+> Important: Just like the `UPDATE` statement, if you don't specify a `WHERE` clause, all of the entries from the table will be affected, meaning that all of your users will be deleted. So it is critical to always add a `WHERE` clause when executing a `DELETE` statement.
 
-Similar to the Linux `rm` command, when you use the `DELETE` statement, the data would be gone permanently and the only way to recover your data would be by restoring a backup.
+Similar to the Linux `rm` command, when you use the `DELETE` statement, the data would be gone permanently, and the only way to recover your data would be by restoring a backup.
