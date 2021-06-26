@@ -4,16 +4,16 @@ Before we get started with SQL, let's learn how to create tables and columns.
 
 As an example, we are going to create a `users` table with the following columns:
 
-* `id` - this is going to be the primary ID of the table and would be the unique identifier of each user.
+* `id` - this is going to be the primary key of the table and would be the unique identifier of each user.
 * `username` - this column would hold the username of our users
-* `name` - here, we will store the full name of the users
+* `name` - here, we will store the full name of users
 * `status` - here, we will store the status of a user, which would indicate if a user is active or not.
 
 You need to specify the data type of each column.
 
 In our case it would be like this:
 
-* `id` - Intiger
+* `id` - Integer
 * `username` - Varchar
 * `name` - Varchar
 * `status` - Number
