@@ -38,7 +38,7 @@ If you have been following along all of the user entries in our `users` table cu
 Let's go ahead and update this for all users and set the column value to `404 bio not found` for example:
 
 ```
-UPDATE users SET about='404 bio not found;
+UPDATE users SET about='404 bio not found';
 ```
 
 The output would let you know how many rows have been affected by the query:
