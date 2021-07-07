@@ -17,7 +17,7 @@ sudo apt update -y
 * Then install MySQL:
 
 ```
-sudp apt install mysql-server mysql-client
+sudo apt install mysql-server mysql-client
 ```
 
 We are installing 2 packages, one is the actual MySQL server, and the other is the MySQL client, which would allow us to connect to the MySQL server and run our queries.
