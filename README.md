@@ -91,8 +91,6 @@ Coming soon
 
 ## 💻 Interactive training
 
-**COMING SOON**
-
 You can follow the interactive training online here:
 
 [Interactive SQL training](https://sql.bobby.sh/training.html)
