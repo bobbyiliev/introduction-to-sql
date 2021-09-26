@@ -45,6 +45,12 @@ To download a copy of the ebook use one of the following links:
 
 This book is made possible thanks to these fantastic companies!
 
+### 📊 Materialize
+
+The Streaming Database for Real-time Analytics.
+
+[Materialize](https://materialize.com/) is a reactive database that delivers incremental view updates. We help developers easily build with streaming data using standard SQL.
+
 ### 💙 DigitalOcean
 
 DigitalOcean is a cloud services platform delivering the simplicity developers love and businesses trust to run production applications at scale.
