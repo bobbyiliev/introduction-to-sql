@@ -1,6 +1,6 @@
 # About the book
 
-* **This version was published on May 18 2021**
+* **This version was published on September 28 2021**
 
 This is an open-source introduction to SQL guide that will help you learn the basics of SQL and start using relational databases for your SysOps, DevOps, and Dev projects. No matter if you are a DevOps/SysOps engineer, developer, or just a Linux enthusiast, you will most likely have to use SQL at some point in your career.
 
@@ -17,6 +17,12 @@ For more information, please visit my blog at [https://bobbyiliev.com](https://b
 ## Sponsors
 
 This book is made possible thanks to these fantastic companies!
+
+### Materialize
+
+The Streaming Database for Real-time Analytics.
+
+[Materialize](https://materialize.com/) is a reactive database that delivers incremental view updates. Materialize helps developers easily build with streaming data using standard SQL.
 
 ### DigitalOcean
 

@@ -49,7 +49,7 @@ This book is made possible thanks to these fantastic companies!
 
 The Streaming Database for Real-time Analytics.
 
-[Materialize](https://materialize.com/) is a reactive database that delivers incremental view updates. We help developers easily build with streaming data using standard SQL.
+[Materialize](https://materialize.com/) is a reactive database that delivers incremental view updates. Materialize helps developers easily build with streaming data using standard SQL.
 
 ### 💙 DigitalOcean
 

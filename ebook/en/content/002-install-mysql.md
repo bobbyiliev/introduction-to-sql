@@ -152,3 +152,7 @@ If you prefer using GUI clients, you could take a look a the following ones and 
 * [TablePlus](https://tableplus.com/)
 
 This will allow you to connect to your database via a graphical interface rather than the `mysql` command-line tool.
+
+If you want to have a production ready MySQL database, I would recommend giving DigitalOcean a try:
+
+[Worry-free managed database hosting](https://www.digitalocean.com/products/managed-databases/)
