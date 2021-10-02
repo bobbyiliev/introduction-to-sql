@@ -26,20 +26,20 @@ To download a copy of the ebook use one of the following links:
 
 ## 📘 Chapters
 
-* **About the book**
-* **Databases**
-* **MySQL**
-* **Tables**
-* **Basic Syntax**
-* **SELECT**
-* **WHERE**
-* **ORDER and GROUP BY**
-* **INSERT**
-* **UPDATE**
-* **DELETE**
-* **JOIN**
-* **The MySQL dump command**
-* **Conclusion**
+* [**About the book**](ebook/en/000-introduction.md)
+* [**Databases**](ebook/en/001-databases.md)
+* [**MySQL**](ebook/en/002-install-mysql.md)
+* [**Tables**](ebook/en/003-creating-tables.md)
+* [**Basic Syntax**](ebook/en/004-basic-syntax.md)
+* [**SELECT**](ebook/en/005-select.md)
+* [**WHERE**](ebook/en/006-where.md)
+* [**ORDER and GROUP BY**](ebook/en/007-order-and-group-by.md)
+* [**INSERT**](ebook/en/008-insert.md)
+* [**UPDATE**](ebook/en/009-update.md)
+* [**DELETE**](ebook/en/010-delete.md)
+* [**JOIN**](ebook/en/011-join.md)
+* [**The MySQL dump command**](ebook/en/100-mysqldump.md)
+* [**Conclusion**](ebook/en/999-conclusion.md)
 
 ## 🌟 Sponsors
 
