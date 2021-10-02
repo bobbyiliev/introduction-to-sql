@@ -26,20 +26,20 @@ To download a copy of the ebook use one of the following links:
 
 ## 📘 Chapters
 
-* **About the book**
-* **Databases**
-* **MySQL**
-* **Tables**
-* **Basic Syntax**
-* **SELECT**
-* **WHERE**
-* **ORDER and GROUP BY**
-* **INSERT**
-* **UPDATE**
-* **DELETE**
-* **JOIN**
-* **The MySQL dump command**
-* **Conclusion**
+* <a href="https://github.com/bobbyiliev/introduction-to-sql/blob/main/ebook/en/content/000-introduction.md">**About the book**</a>
+* <a href="https://github.com/bobbyiliev/introduction-to-sql/blob/main/ebook/en/content/001-databases.md">**Databases**</a>
+* <a href="https://github.com/bobbyiliev/introduction-to-sql/blob/main/ebook/en/content/002-install-mysql.md">**MySQL**</a>
+* <a href="https://github.com/bobbyiliev/introduction-to-sql/blob/main/ebook/en/content/003-creating-tables.md">**Tables**</a>
+* <a href="https://github.com/bobbyiliev/introduction-to-sql/blob/main/ebook/en/content/004-basic-syntax.md">**Basic Syntax**</a>
+* <a href="https://github.com/bobbyiliev/introduction-to-sql/blob/main/ebook/en/content/005-select.md">**SELECT**</a>
+* <a href="https://github.com/bobbyiliev/introduction-to-sql/blob/main/ebook/en/content/006-where.md">**WHERE**</a>
+* <a href="https://github.com/bobbyiliev/introduction-to-sql/blob/main/ebook/en/content/007-order-and-group-by.md">**ORDER and GROUP BY**</a>
+* <a href="https://github.com/bobbyiliev/introduction-to-sql/blob/main/ebook/en/content/008-insert.md">**INSERT**</a>
+* <a href="https://github.com/bobbyiliev/introduction-to-sql/blob/main/ebook/en/content/009-update.md">**UPDATE**</a>
+* <a href="https://github.com/bobbyiliev/introduction-to-sql/blob/main/ebook/en/content/010-delete.md">**DELETE**</a>
+* <a href="https://github.com/bobbyiliev/introduction-to-sql/blob/main/ebook/en/content/011-join.md">**JOIN**</a>
+* <a href="https://github.com/bobbyiliev/introduction-to-sql/blob/main/ebook/en/content/100-mysqldump.md">**The MySQL dump command**</a>
+* <a href="https://github.com/bobbyiliev/introduction-to-sql/blob/main/ebook/en/content/999-conclusion.md">**Conclusion**</a>
 
 ## 🌟 Sponsors
 
