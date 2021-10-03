@@ -2,7 +2,7 @@
 
 Now that you know what a database, table, and column are, the next thing that you would need to do is install a database service where you would be running your SQL queries on.
 
-We would be using MySQL as it is free, open-source, and very widely used.
+We will be using MySQL as it is free, open-source, and very widely used.
 
 ## Installing MySQL
 
