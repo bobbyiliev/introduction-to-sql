@@ -26,20 +26,20 @@ To download a copy of the ebook use one of the following links:
 
 ## 📘 Chapters
 
-* [**About the book**](ebook/en/000-introduction.md)
-* [**Databases**](ebook/en/001-databases.md)
-* [**MySQL**](ebook/en/002-install-mysql.md)
-* [**Tables**](ebook/en/003-creating-tables.md)
-* [**Basic Syntax**](ebook/en/004-basic-syntax.md)
-* [**SELECT**](ebook/en/005-select.md)
-* [**WHERE**](ebook/en/006-where.md)
-* [**ORDER and GROUP BY**](ebook/en/007-order-and-group-by.md)
-* [**INSERT**](ebook/en/008-insert.md)
-* [**UPDATE**](ebook/en/009-update.md)
-* [**DELETE**](ebook/en/010-delete.md)
-* [**JOIN**](ebook/en/011-join.md)
-* [**The MySQL dump command**](ebook/en/100-mysqldump.md)
-* [**Conclusion**](ebook/en/999-conclusion.md)
+* [**About the book**](ebook/en/content/000-introduction.md)
+* [**Databases**](ebook/en/content/001-databases.md)
+* [**MySQL**](ebook/en/content/002-install-mysql.md)
+* [**Tables**](ebook/en/content/003-creating-tables.md)
+* [**Basic Syntax**](ebook/en/content/004-basic-syntax.md)
+* [**SELECT**](ebook/en/content/005-select.md)
+* [**WHERE**](ebook/en/content/006-where.md)
+* [**ORDER and GROUP BY**](ebook/en/content/007-order-and-group-by.md)
+* [**INSERT**](ebook/en/content/008-insert.md)
+* [**UPDATE**](ebook/en/content/009-update.md)
+* [**DELETE**](ebook/en/content/010-delete.md)
+* [**JOIN**](ebook/en/content/011-join.md)
+* [**The MySQL dump command**](ebook/en/content/100-mysqldump.md)
+* [**Conclusion**](ebook/en/content/999-conclusion.md)
 
 ## 🌟 Sponsors
 
