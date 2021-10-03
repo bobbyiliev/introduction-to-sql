@@ -72,7 +72,7 @@ Alternatively, if you do not want to 'switch' to the specific database, you woul
 
 ```
 USE demo_db;
-SELECT username FROM demo_db.users;
+SELECT username FROM users;
 ```
 
 * Alternatively, rather than using the `USE` command first, specify the database name followed by the table name separated with a  dot: `db_name.table_name`:
