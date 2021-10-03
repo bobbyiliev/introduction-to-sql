@@ -15,17 +15,35 @@ Creating a pull request is described in
 
 This directory holds all of the translations of the eBook.
 
-### [`ebook/{LANG}`](./ebook/{LANG})
+### `ebook/{LANG}`
+For English:
+[`ebook/en`](./ebook/en)
 
-In the `ebook` directory we have the translations of the eBook in different languages.
+In the `ebook/{LANG}` directory we have the translations of the eBook in particular languages.
 
 If you are adding a new translation, make sure to make a copy of the `./ebook/en` directory and use the language code as the new directory name.
 
-### [`ebook/{LANG}/content`](./ebook/{LANG}/content)
+### `ebook/{LANG}/assets`
+For English:
+[`ebook/en/assets`](./ebook/en/assets)
 
-All the Markdown files for the 'Introduction to SQL' guide are located within the [`content`](./content) directory for the specific language.
+All the HTML files and cover image for the 'Introduction to SQL' guide are located within the [`assets`](./ebook/en/assets) directory.
+
+### `ebook/{LANG}/content`
+For English:
+[`ebook/en/content`](./ebook/en/content)
+
+All the Markdown files for the 'Introduction to SQL' guide are located within the [`content`](./ebook/en/content) directory for the specific language.
 
 For example if you are adding a Bulgarian transaltion copy the `./ebook/en` folder to `./ebook/bg`, translate the `.md` files in the `content` directory and submit a PR.
+
+### `ebook/{LANG}/export`
+For English:
+[`ebook/en/export`](./ebook/en/export)
+
+Pdf verssion of 'Introduction to SQL' guide is located within the [`export`](./ebook/en/export) directory in both theme for the specific language.
+
+For example if you are adding a Bulgarian transaltion then `./ebook/bg/export`, will contain pdf verion of book in both theme present in Bulgarian.
 
 ### PDF Generation
 
