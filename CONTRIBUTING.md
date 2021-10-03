@@ -16,7 +16,7 @@ Creating a pull request is described in
 This directory holds all of the translations of the eBook.
 
 ### `ebook/{LANG}`
-For english language :
+For English:
 [`ebook/en`](./ebook/en)
 
 In the `ebook/{LANG}` directory we have the translations of the eBook in particular languages.
@@ -24,13 +24,13 @@ In the `ebook/{LANG}` directory we have the translations of the eBook in particu
 If you are adding a new translation, make sure to make a copy of the `./ebook/en` directory and use the language code as the new directory name.
 
 ### `ebook/{LANG}/assets`
-For english language :
+For English:
 [`ebook/en/assets`](./ebook/en/assets)
 
 All the HTML files and cover image for the 'Introduction to SQL' guide are located within the [`assets`](./ebook/en/assets) directory.
 
 ### `ebook/{LANG}/content`
-For english language :
+For English:
 [`ebook/en/content`](./ebook/en/content)
 
 All the Markdown files for the 'Introduction to SQL' guide are located within the [`content`](./ebook/en/content) directory for the specific language.
@@ -38,7 +38,7 @@ All the Markdown files for the 'Introduction to SQL' guide are located within th
 For example if you are adding a Bulgarian transaltion copy the `./ebook/en` folder to `./ebook/bg`, translate the `.md` files in the `content` directory and submit a PR.
 
 ### `ebook/{LANG}/export`
-For english language :
+For English:
 [`ebook/en/export`](./ebook/en/export)
 
 Pdf verssion of 'Introduction to SQL' guide is located within the [`export`](./ebook/en/export) directory in both theme for the specific language.
