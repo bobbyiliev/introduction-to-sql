@@ -76,7 +76,7 @@ Query OK, 1 row affected (0.01 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 ```
 
-Now, if you again run the `SELECT id,username,about FROM users` query, you would see that the user with `id` '2' now has an updated `about` column data:
+Now, if you again run the `SELECT id, username, about FROM users` query, you would see that the user with `id` of 2 now has an updated `about` column data:
 
 ```
 +----+----------+-------------------+

@@ -5,7 +5,7 @@ In this chapter, we will go over the basic SQL syntax.
 SQL statements are basically the 'commands' that you run against a specific database. Through the SQL statements, you are telling MySQL what you want it to do, for example, if you wanted to get the `username` of all of your users stored in the `users` table, you would run the following SQL statement:
 
 ```
-SELECT username FROM users ;
+SELECT username FROM users;
 ```
 
 Rundown of the statement:
@@ -13,7 +13,7 @@ Rundown of the statement:
 * `SELECT`: First, we specify the `SELECT` keyword, which indicates that we want to select some data from the database. Other popular keywords are: `INSERT`, `UPDATE` and `DELETE`.
 * `username`: Then we specify which column we want to select
 * `users`: After that, we specify the table that we want to select the data from.
-* The `;` is required. Every SQL statement needs to end with a semicolumn.
+* The `;` is required. Every SQL statement needs to end with a semicolon.
 
 If you run the above statement, you will get no results as the new `users` table that we've just created is empty.
 
