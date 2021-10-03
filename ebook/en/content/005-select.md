@@ -82,7 +82,7 @@ As you can see, we get a list of the 3 users that we've just created, including 
 
 ## Formatting
 
-As we mentioned in the previous chapters, each SQL statement needs to end with a semi column: `;`. Alternatively, rather than using a semi column, you could use the `\G` characters which would format the output in a list rather than a table.
+As we mentioned in the previous chapters, each SQL statement needs to end with a  semi-colon: `;`. Alternatively, rather than using a  semi-colon, you could use the `\G` characters which would format the output in a list rather than a table.
 
 The syntax is absolutely the same but you just change the `;` with `\G`:
 
@@ -196,7 +196,7 @@ SELECT MAX(id) FROM users;
 
 In our case, this would be `3` as we have only 3 users, and the highest value of the `id` column is 3.
 
-* `AVG`: as the name suggest, it would sum up all of the values of a specific column and return the average value. As we have 3 users with ids 1, 2, and 3, which is 6 divided by 3 users is 2. 
+* `AVG`: as the name suggests, it would sum up all of the values of a specific column and return the average value. As we have 3 users with ids 1, 2, and 3, the average would be 6 divided by 3 users which is 2. 
 
 ```
 SELECT AVG(id) FROM users;
@@ -248,7 +248,7 @@ Output:
 
 As you can see, each name is present multiple times in the list. We have 2 times `bobby`, 2 times `devdjo` and 2 times `tony`.
 
-If we wanted to only show the unique `usernames`, we could add the `DISTINCT` keyword to our select statement:
+If we wanted to show only the unique `usernames`, we could add the `DISTINCT` keyword to our select statement:
 
 ```
 SELECT DISTINCT username FROM users;
