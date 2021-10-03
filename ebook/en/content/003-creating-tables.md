@@ -126,6 +126,28 @@ Output:
 +-------------------+
 ```
 
+### Create a new table from Exsisting table
+
+You can create a new table from Exsisting table by using the `CREATE TABLE AS` statement.
+
+Let's test that by creating a new table from table `users` which we created earlier.
+
+```
+CREATE TABLE users2 AS
+(
+SELECT * FROM users
+);
+
+```
+
+The output that you would get would be:
+```
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+```
+
+>Note: When creating a table in this way, the new table will be populated with the records from the existing table (based on the SELECT Statement)
+
 ## Dropping tables
 
 You can drop or delete tables by using the `DROP TABLE` statement.
