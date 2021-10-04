@@ -2,11 +2,15 @@
 
 Now that you know what a database, table, and column are, the next thing that you would need to do is install a database service where you would be running your SQL queries on.
 
-We would be using MySQL as it is free, open-source, and very widely used.
+We will be using MySQL as it is free, open-source, and very widely used.
 
 ## Installing MySQL
 
-As we are going to use **Ubuntu**, in order to install MySQL run the following commands:
+Depending on your operating system, in order to install MySQL run the following commands.
+
+### Install MySQL on Ubuntu
+
+To install MySQL on a Linux or Ubuntu machine run the following commands:
 
 * First update your `apt` repository:
 
