@@ -256,3 +256,26 @@ ALTER TABLE table_name DROP COLUMN column_name;
 You can use the `ALTER TABLE` statement to also change the data type of a specific column. For example, you could change the `about` column from `TEXT` to `LONGTEXT` type, which could hold longer strings.
 
 > Note: Important thing to keep in mind is that if a specific table already holds a particular type of data value like an integer, you can't alter it to varchar, for example. Only if the column does not contain any values, then you could make the change.
+
+
+## Truncate table
+TRUNCATE TABLE command is used to delete data from an existing table, but not the table itself.
+> Syntax of Truncate table-
+  TRUNCATE TABLE table_name;
+  
+ Example-
+ Consider a Sellers table having the following records-
+ +----+----------+-----+-----------+----------+
+| ID | NAME     |Items| CITY      | SALARY   |
++----+----------+-----+-----------+----------+
+|  1 | Shivam   |  34 | Ahmedabad |  2000.00 |
+|  2 | Ajay     |  22 | Delhi     |  4400.00 |
+|  3 | kaushik  |  28 | Kota      |  2000.00 |
+|  4 | Chaitali |  25 | Mumbai    |  6600.00 |
+|  5 | Hardik   |  26 | Bhopal    |  8100.00 |
+|  6 | Maria    |  23 | MP        |  4200.00 |
+|  7 | Muffy    |  29 | Indore    |  9000.00 |
++----+----------+-----+-----------+----------+
+
+Following is the example of a Truncate command- 
+SQL > TRUNCATE TABLE Sellers;
