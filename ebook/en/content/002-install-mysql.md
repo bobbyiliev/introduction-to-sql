@@ -6,7 +6,9 @@ We will be using MySQL as it is free, open-source, and very widely used.
 
 ## Installing MySQL
 
-###Installing on Linux/Ubuntu
+Depending on your operating system, in order to install MySQL run the following commands.
+
+### Install MySQL on Ubuntu
 
 To install MySQL on a Linux or Ubuntu machine run the following commands:
 
