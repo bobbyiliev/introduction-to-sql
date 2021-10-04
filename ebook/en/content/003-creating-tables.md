@@ -148,6 +148,15 @@ Records: 0  Duplicates: 0  Warnings: 0
 
 >Note: When creating a table in this way, the new table will be populated with the records from the existing table (based on the SELECT Statement)
 
+## Rename tables
+
+You can rename a table by using `ALTER TABLE` statement.
+
+Let's change name of user2 table to user3
+```s
+ALTER TABLE user2 RENAME TO user3 
+```
+
 ## Dropping tables
 
 You can drop or delete tables by using the `DROP TABLE` statement.
