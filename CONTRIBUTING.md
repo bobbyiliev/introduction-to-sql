@@ -35,15 +35,15 @@ For English:
 
 All the Markdown files for the 'Introduction to SQL' guide are located within the [`content`](./ebook/en/content) directory for the specific language.
 
-For example if you are adding a Bulgarian transaltion copy the `./ebook/en` folder to `./ebook/bg`, translate the `.md` files in the `content` directory and submit a PR.
+For example if you are adding a Bulgarian translation copy the `./ebook/en` folder to `./ebook/bg`, translate the `.md` files in the `content` directory and submit a PR.
 
 ### `ebook/{LANG}/export`
 For English:
 [`ebook/en/export`](./ebook/en/export)
 
-Pdf verssion of 'Introduction to SQL' guide is located within the [`export`](./ebook/en/export) directory in both theme for the specific language.
+Pdf version of 'Introduction to SQL' guide is located within the [`export`](./ebook/en/export) directory in both theme for the specific language.
 
-For example if you are adding a Bulgarian transaltion then `./ebook/bg/export`, will contain pdf verion of book in both theme present in Bulgarian.
+For example if you are adding a Bulgarian translation then `./ebook/bg/export`, will contain pdf version of book in both theme present in Bulgarian.
 
 ### PDF Generation
 
