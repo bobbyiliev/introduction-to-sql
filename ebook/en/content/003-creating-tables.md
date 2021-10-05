@@ -259,13 +259,21 @@ You can use the `ALTER TABLE` statement to also change the data type of a specif
 
 
 ## Truncate table
-TRUNCATE TABLE command is used to delete data from an existing table, but not the table itself.
-> Syntax of Truncate table-
-  TRUNCATE TABLE table_name;
-  
- Example-
- Consider a Sellers table having the following records-
- +----+----------+-----+-----------+----------+
+
+The `TRUNCATE TABLE` command is used to **delete all of the data** from an existing table, but not the table itself.
+
+* Syntax of Truncate table:
+
+```
+TRUNCATE TABLE table_name;
+```
+
+* Example:
+
+Consider a Sellers table having the following records:
+
+```
++----+----------+-----+-----------+----------+
 | ID | NAME     |Items| CITY      | SALARY   |
 +----+----------+-----+-----------+----------+
 |  1 | Shivam   |  34 | Ahmedabad |  2000.00 |
@@ -276,6 +284,12 @@ TRUNCATE TABLE command is used to delete data from an existing table, but not th
 |  6 | Maria    |  23 | MP        |  4200.00 |
 |  7 | Muffy    |  29 | Indore    |  9000.00 |
 +----+----------+-----+-----------+----------+
+```
 
-Following is the example of a Truncate command- 
-SQL > TRUNCATE TABLE Sellers;
+Following is the example of a Truncate command:
+
+```
+TRUNCATE TABLE Sellers;
+```
+
+After that if you do a `COUNT(*)` on that table you would see that the table is completely empty.
