@@ -85,7 +85,7 @@ The web page was built using [Tails](http://devdojo.com/tails), a new `kick-ass`
 
 ### DigitalOcean App Platform
 
-The will be hosted on the [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform/).
+This will be hosted on the [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform/).
 
 We will utilize the ["Deploy to DigitalOcean" Button](https://www.digitalocean.com/docs/app-platform/how-to/add-deploy-do-button) to deploy to the App Platform:
 
