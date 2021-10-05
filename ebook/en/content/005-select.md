@@ -2,6 +2,8 @@
 
 As we briefly covered in the previous chapter, the `SELECT` statement allows us to retrieve data from a specific database.
 
+It corresponds to the projection operation of Relational Algebra.
+
 You can use `SELECT` to get all of your users or a list of users that match a certain criteria.
 
 Before we dive into the `SELECT` statement let's quickly create a database:
@@ -133,6 +135,46 @@ Output:
 ```
 
 As you can see, we are getting back only the 2 columns that we've specified in the `SELECT` statement.
+
+> **NOTE:**  _SQL names are case insensitive. For example, username ≡ USERNAME ≡ userName._
+
+## SELECT with no FROM Clause
+
+In a SQL statement. an column can be a literal with no from clause.
+
+```
+SELECT 'Sunil' as username;
+```
+
+Output:
+
+```
++----------+
+| username |
++----------+
+| Sunil    |
++----------+
+```
+
+## SELECT with Arithmetic Operations
+
+The select clause can contain arithmetic expressions involving the operation, +, –, *, and /.
+
+```
+SELECT username, active*5 as new_active FROM users;
+```
+
+Output:
+
+```
++----------+------------+
+| username | new_active |
++----------+------------+
+| bobby    |          5 |
+| devdojo  |          0 |
+| tony     |          5 |
++----------+------------+
+```
 
 ## LIMIT
 
