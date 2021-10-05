@@ -6,11 +6,11 @@ We will be using MySQL as it is free, open-source, and very widely used.
 
 ## Installing MySQL
 
-Depending on your operating system, in order to install MySQL run the following commands.
+Depending on your operating system, to install MySQL run the following commands.
 
 ### Install MySQL on Ubuntu
 
-To install MySQL on a Linux or Ubuntu machine run the following commands:
+To install MySQL on a Linux or Ubuntu machine, run the following commands:
 
 * First update your `apt` repository:
 
@@ -24,20 +24,20 @@ sudo apt update -y
 sudo apt install mysql-server mysql-client
 ```
 
-We are installing 2 packages, one is the actual MySQL server, and the other is the MySQL client, which would allow us to connect to the MySQL server and run our queries.
+We are installing two packages, one is the actual MySQL server, and the other is the MySQL client, which would allow us to connect to the MySQL server and run our queries.
 
-In order to check if MySQL is running, run the following command:
+To check if MySQL is running, run the following command:
 
 ```
 sudo systemctl status mysql.service
 ```
-In order to secure your MySQL server, you could run the following command:
+To secure your MySQL server, you could run the following command:
 
 ```
 sudo mysql_secure_installation
 ```
 
-Then follow the prompt and finally choose a secure password and save it in a secure place like a password manager.
+Then follow the prompt and choose a secure password and save it in a secure place like a password manager.
 
 With that, you would have MySQL installed on your Ubuntu server. The above should also work just fine on Debian.
 
@@ -49,7 +49,7 @@ I would recommend installing MySQL using [Homebrew]():
 brew install mysql
 ```
 
-After that start MySQL:
+After that, start MySQL:
 
 ```
 brew services start mysql
@@ -69,7 +69,7 @@ brew services stop mysql
 
 ### Install MySQL on Windows
 
-In order to install MySQL on Windows, I would recommend following the steps from the official documentation here:
+To install MySQL on Windows, I would recommend following the steps from the official documentation here:
 
 [https://dev.mysql.com/doc/refman/8.0/en/windows-installation.html](https://dev.mysql.com/doc/refman/8.0/en/windows-installation.html)
 
@@ -97,9 +97,9 @@ exit;
 
 ## Configuring `.my.cnf`
 
-By configuring the `~/.my.cnf` file in your user's home directory, MySQL would allow you to login without prompting you for a password.
+By configuring the `~/.my.cnf` file in your user's home directory, MySQL would allow you to log in without prompting you for a password.
 
-In order to make that change, what you need to do is first create a `.my.cnf` file in your user's home directory:
+To make that change, what you need to do is first create a `.my.cnf` file in your user's home directory:
 
 ```
 touch ~/.my.cnf
@@ -111,7 +111,7 @@ After that, set secure permissions so that other regular users could not read th
 chmod 600 ~/.my.cnf
 ```
 
-Then using your favorite text editor, open the file:
+Then using your favourite text editor, open the file:
 
 ```
 nano ~/.my.cnf
@@ -157,6 +157,6 @@ If you prefer using GUI clients, you could take a look a the following ones and 
 
 This will allow you to connect to your database via a graphical interface rather than the `mysql` command-line tool.
 
-If you want to have a production ready MySQL database, I would recommend giving DigitalOcean a try:
+If you want to have a production-ready MySQL database, I would recommend giving DigitalOcean a try:
 
 [Worry-free managed database hosting](https://www.digitalocean.com/products/managed-databases/)
