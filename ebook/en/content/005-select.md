@@ -140,7 +140,7 @@ As you can see, we are getting back only the 2 columns that we've specified in t
 
 ## SELECT with no FROM Clause
 
-In a SQL statement. an column can be a literal with no from clause.
+In a SQL statement. a column can be a literal with no `FROM` clause.
 
 ```
 SELECT 'Sunil' as username;
