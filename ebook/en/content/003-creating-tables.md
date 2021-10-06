@@ -126,11 +126,11 @@ Output:
 +-------------------+
 ```
 
-### Create a new table from Exsisting table
+### Creating a new table from an existing table
 
-You can create a new table from Exsisting table by using the `CREATE TABLE AS` statement.
+You can create a new table from an existing table by using the `CREATE TABLE AS` statement.
 
-Let's test that by creating a new table from table `users` which we created earlier.
+Let's test that by creating a new table from the table `users` which we created earlier.
 
 ```
 CREATE TABLE users2 AS
