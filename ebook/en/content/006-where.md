@@ -194,6 +194,29 @@ If you wanted to get the results where the value is not NULL, you just need to c
 SELECT * FROM users WHERE about IS NOT NULL;
 ```
 
+## BETWEEN operator
+
+The `BETWEEN` operator allows to select value with a given range.The values can be numbers, text, or dates.
+BETWEEN operator is inclusive: begin and end values are included.  
+
+For Example if you want to select those user which have id between 3 and 6.
+
+```
+SELECT * FROM users WHERE id BETWEEN 3 AND 6; 
+```
+
+Output:
+
+```
++----+----------+-------+----------+--------+---------------+
+| id | username | about | birthday | active | email         |
++----+----------+-------+----------+--------+---------------+
+|  3 | devdojo  | NULL  | NULL     |      0 | d@devdojo.com |
+|  5 | bobby    | NULL  | NULL     |      1 | b@devdojo.com |
+|  6 | devdojo  | NULL  | NULL     |      0 | d@devdojo.com |
++----+----------+-------+----------+--------+---------------+
+```
+
 ## Conclusion
 
 In this chapter, you've learned how to use the `WHERE` clause with different operators to get different type of results based on the parameters that you provide.
