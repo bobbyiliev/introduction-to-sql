@@ -158,6 +158,32 @@ With the inner join, the `NULL` values are discarded. For example, if you have a
 
 To get the null values as well, you would need to use an outer join.
 
+### Types of Inner Join
+
+1.  **Theta Join ( θ )** :- Theta join combines rows from different tables provided they satisfy the theta condition.
+    The join condition is denoted by symbol `θ`. \
+    Here the comparison operators `(≤, ≥, ˂, ˃, =, ̚ )` come into picture. \
+    **Notation** :- R<sub>1</sub> ⋈<sub>θ</sub> R<sub>2</sub>. \
+    \
+    For example, suppose we want to buy a mobile and a laptop, based on our budget we have thought of buying both such that mobile price should be less than that of laptop. \
+    \
+    `SELECT mobile.model, laptop.model
+    FROM mobile, laptop
+    WHERE mobile.price < laptop.price;`
+
+2.  **Equijoin** :- When Theta join uses only equality (=) comparison operator, it is said to be equijoin. \
+    For example, suppose we want to buy a mobile and a laptop, based on our budget we have thought of buying both of same price. \
+    \
+    `SELECT mobile.model, laptop.model
+    FROM mobile, laptop
+    WHERE mobile.price = laptop.price;`
+    
+3.  **Natural Join ( ⋈ )** :- Natural join does not use any comparison operator. It does not concatenate the way a Cartesian product does. \
+    We can perform a Natural Join only if there is at least one common column that exists between two tables. In addition, the column must have the same name and domain. \
+    \
+    `SELECT * FROM mobile NATURAL JOIN laptop;`
+
+
 ## Left join
 
 By using the `LEFT OUTER` join, you would get all rows from the first table that you've specified, and if there are no associated records with it within the second table, you will get a `NULL` value. 
