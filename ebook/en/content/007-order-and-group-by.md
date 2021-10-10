@@ -85,9 +85,9 @@ As you can see, we've got the same list of users sorted alphabetically but in re
 
 The `GROUP BY` statement allows you to use a function like `COUNT`, `MIN`, `MAX` and etc., with multiple columns.
 
-For example, let's say that we wanted to get all of the count of all users sorted by username.
+For example, let's say that we wanted to get all of the count of all users grouped by username.
 
-In our case, we have 2 users with username bobby, 2 users with username tony, and 2 users with username `devdojo`. This represented in an SQL statement would look like this:
+In our case, we have 2 users with username `bobby`, 2 users with username `tony`, and 2 users with username `devdojo`. This represented in an SQL statement would look like this:
 
 ```
 SELECT COUNT(username), username FROM users GROUP by username;
@@ -108,3 +108,32 @@ The output, in this case, would be:
 The `GROUP BY` statement grouped the usernames that were identical. So `bobby`, `tony` and `devdojo`, and then it ran a `COUNT` on each of them.
 
 The main thing to keep in mind here is that the `GROUP BY` should be added after the `FROM` clause and after the WHERE clause in case that you have one.
+
+## HAVING Clause
+
+The `HAVING` clause allows you to filter out the results on the groups formed by `GROUP BY` clause.
+
+For example, let's say that we wanted to get all usernames which are duplicate, i.e., all the usernames which are present in more than one table record.
+
+In our case, we have 2 users with username `bobby`, 2 users with username `tony`, and 2 users with username `devdojo`. This represented in an SQL statement would look like this:
+
+```
+SELECT COUNT(username), username FROM users GROUP by username HAVING COUNT(username) > 1;
+```
+
+The output, in this case, would be:
+
+```
++-----------------+----------+
+| COUNT(username) | username |
++-----------------+----------+
+|               2 | bobby    |
+|               2 | devdojo  |
+|               2 | tony     |
++-----------------+----------+
+```
+
+The `GROUP BY` clause grouped the usernames that were identical, calculated their counts and then the groups were filtered out using `HAVING` clause.
+
+> **NOTE** :- _The WHERE clause places conditions on the selected columns, whereas the HAVING clause places conditions on groups created by the GROUP BY clause._
+
