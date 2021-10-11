@@ -54,3 +54,25 @@ VALUES
 ```
 
 That way, you will add 5 new entries in your `users` table with a single `INSERT` statement. This is going to be much more efficient.
+
+## Inserting multiple records using another table
+
+In the previous section, we have discussed how we can insert multiple records in a single INSERT query.
+But sometimes there are cases where we need to insert multiple records which are residing in some other table.
+
+In this section, we are going to learn how we can insert multiple records at once using a single INSERT query. 
+
+Consider a table, say `prospect_users`, which stores the information of the people who want to become the users of our service, but they are not yet actual users.
+
+In order to add them to our user database, we have to insert there entries into our `users` table.
+We can achieve the same by writing an `INSERT` query with multiple `VALUES` listed in them (as discussed in previous section).
+
+But there is an easier way where we achieve the same by querying the `prospect_users` table.
+
+
+```
+INSERT INTO users ( username, email, active )
+SELECT username, email, active FROM prospect_users WHERE active = true;
+```
+
+Using the above statement, an entry for each active prospect users will be made in our `users` table.
