@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24893226-576e-4826-b5cd-32f49f94cabd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebook/en/content/003-creating-tables.md" beforeDir="false" afterPath="$PROJECT_DIR$/ebook/en/content/005-creating-tables.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebook/en/content/004-basic-syntax.md" beforeDir="false" afterPath="$PROJECT_DIR$/ebook/en/content/003-basic-syntax.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebook/en/content/005-select.md" beforeDir="false" afterPath="$PROJECT_DIR$/ebook/en/content/006-select.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebook/en/content/006-where.md" beforeDir="false" afterPath="$PROJECT_DIR$/ebook/en/content/007-where.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebook/en/content/007-order-and-group-by.md" beforeDir="false" afterPath="$PROJECT_DIR$/ebook/en/content/008-order-and-group-by.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebook/en/content/008-insert.md" beforeDir="false" afterPath="$PROJECT_DIR$/ebook/en/content/009-insert.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebook/en/content/009-update.md" beforeDir="false" afterPath="$PROJECT_DIR$/ebook/en/content/010-update.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebook/en/content/010-delete.md" beforeDir="false" afterPath="$PROJECT_DIR$/ebook/en/content/011-delete.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebook/en/content/011-join.md" beforeDir="false" afterPath="$PROJECT_DIR$/ebook/en/content/012-join.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebook/en/content/0004-sql-command.md" beforeDir="false" afterPath="$PROJECT_DIR$/ebook/en/content/0004-sql-command.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebook/en/content/sql-commnad.png" beforeDir="false" afterPath="$PROJECT_DIR$/ebook/en/assets/sql-commnad.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
