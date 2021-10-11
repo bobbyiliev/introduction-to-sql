@@ -12,7 +12,7 @@
 
 ## 💡 Introduction to SQL
 
-This is an open-source introduction to SQL guide that will help you learn the basics of SQL and start using relational databases for your SysOps, DevOps, and Dev projects. No matter if you are a DevOps/SysOps engineer, developer, or just a Linux enthusiast, you will most likely have to use SQL at some point in your career.
+This is an open-source introduction to SQL guide that will help you to learn the basics of SQL and start using relational databases for your SysOps, DevOps, and Dev projects. No matter if you are a DevOps/SysOps engineer, developer, or just a Linux enthusiast, you will most likely have to use SQL at some point in your career.
 
 The guide is suitable for anyone working as a developer, system administrator, or a DevOps engineer and wants to learn the basics of SQL.
 
@@ -43,7 +43,7 @@ To download a copy of the ebook use one of the following links:
 
 ## 🌟 Sponsors
 
-This book is made possible thanks to these fantastic companies!
+Thanks to these fantastic companies that made this book possible!
 
 ### 📊 Materialize
 
@@ -61,13 +61,13 @@ Founded in 2012 with offices in New York and Cambridge, MA, DigitalOcean offers 
 
 For more information, please visit [https://www.digitalocean.com](https://www.digitalocean.com) or follow [@digitalocean](https://twitter.com/digitalocean) on Twitter.
 
-If you are new to DigitalOcean, you can get a free $100 credit and spin up your own servers via this referral link here:
+If you are new to DigitalOcean, you can get a free $100 credit and spin up your own servers via this referral link provided below:
 
 [Free $100 Credit For DigitalOcean](https://m.do.co/c/2a9bba940f39)
 
 ### 👩‍💻 DevDojo
 
-The DevDojo is a resource to learn all things web development and web design. Learn on your lunch break or wake up and enjoy a cup of coffee with us to learn something new.
+The DevDojo is a resource to learn all things related to web development and web design. Learn while on your lunch break or wake up and enjoy a cup of coffee with us to learn something new.
 
 Join this developer community, and we can all learn together, build together, and grow together.
 
@@ -109,7 +109,7 @@ For more information on how to use Katacoda make sure to follow the steps from t
 
 ## 👋 About the author
 
-My name is Bobby Iliev, and I have been working as a Linux DevOps Engineer since 2014. I am an avid Linux lover and supporter of the open-source movement philosophy. I am always doing that which I cannot do in order that I may learn how to do it, and I believe in sharing knowledge.
+My name is Bobby Iliev, and I have been working as a Linux DevOps Engineer since 2014. I am an avid Linux lover and supporter of the open-source movement philosophy. I am always keen on doing what I cannot do in order to learn how to do it, and I believe in sharing knowledge.
 
 I think it's essential always to keep professional and surround yourself with good people, work hard, and be nice to everyone. You have to perform at a consistently higher level than others. That's the mark of a true professional.
 
