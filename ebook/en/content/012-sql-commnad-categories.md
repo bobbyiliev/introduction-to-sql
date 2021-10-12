@@ -1,4 +1,4 @@
-##  SQL | DDL, DQL, DML, DCL and TCL Commands
+# SQL | DDL, DQL, DML, DCL and TCL Commands
 Structured Query Language(SQL) as we all know is the database language by the use of which we can perform certain operations on the existing database, and also we can use this language to create a database. SQL uses certain commands like Create, Drop, Insert, etc. to carry out the required tasks.
 1. **DDL** – Data Definition Language
 2. **DQl** – Data Query Language
