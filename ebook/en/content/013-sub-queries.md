@@ -1,6 +1,6 @@
-## SQL Sub Queries
+# SQL Sub Queries
 
-####  A subquery is a SQL query nested inside a larger query.
+###  A subquery is a SQL query nested inside a larger query.
 
 - A subquery may occur in
   - A SELECT clause
