@@ -5,8 +5,8 @@ Before we get started with SQL, let's learn how to create tables and columns.
 As an example, we are going to create a `users` table with the following columns:
 
 * `id` - this is going to be the primary key of the table and would be the unique identifier of each user.
-* `username` - this column would hold the username of our users
-* `name` - here, we will store the full name of users
+* `username` - this column would hold the username of our users.
+* `name` - here, we will store the full name of users.
 * `status` - here, we will store the status of a user, which would indicate if a user is active or not.
 
 You need to specify the data type of each column.
@@ -260,7 +260,7 @@ If you wanted to drop a specific column, the syntax would be:
 ALTER TABLE table_name DROP COLUMN column_name;
 ```
 
-> Note: keep in mind that this is a permanent change, and if you have any critical data in the specific column, it would be deleted instantly.
+> Note: Keep in mind that this is a permanent change, and if you have any critical data in the specific column, it would be deleted instantly.
 
 You can use the `ALTER TABLE` statement to also change the data type of a specific column. For example, you could change the `about` column from `TEXT` to `LONGTEXT` type, which could hold longer strings.
 
@@ -287,7 +287,7 @@ Consider a Sellers table having the following records:
 +----+----------+-----+-----------+----------+
 |  1 | Shivam   |  34 | Ahmedabad |  2000.00 |
 |  2 | Ajay     |  22 | Delhi     |  4400.00 |
-|  3 | kaushik  |  28 | Kota      |  2000.00 |
+|  3 | Kaushik  |  28 | Kota      |  2000.00 |
 |  4 | Chaitali |  25 | Mumbai    |  6600.00 |
 |  5 | Hardik   |  26 | Bhopal    |  8100.00 |
 |  6 | Maria    |  23 | MP        |  4200.00 |

@@ -11,7 +11,7 @@ SELECT username FROM users;
 Rundown of the statement:
 
 * `SELECT`: First, we specify the `SELECT` keyword, which indicates that we want to select some data from the database. Other popular keywords are: `INSERT`, `UPDATE` and `DELETE`.
-* `username`: Then we specify which column we want to select
+* `username`: Then we specify which column we want to select.
 * `users`: After that, we specify the table that we want to select the data from.
 * The `;` is required. Every SQL statement needs to end with a semicolon.
 
@@ -87,8 +87,8 @@ UPDATE users SET username='bobbyiliev' WHERE id=1;
 
 Rundown of the statement:
 
-* `UPDATE users`: first, we specify the `UPDATE` keyword followed by the table that we want to update
-* `username='bobbyiliev'` Then we specify the columns that we want to update and the new value that we want to set.
+* `UPDATE users`: First, we specify the `UPDATE` keyword followed by the table that we want to update.
+* `username='bobbyiliev'`: Then we specify the columns that we want to update and the new value that we want to set.
 * `WHERE id=1`: Finally, by using the `WHERE` clause, we specify which user should be updated. In our case it is the user with ID 1.
 
 > NOTE: If we don't specify a `WHERE` clause, all of the entries inside the `users` table would be updated, and all users would have the `username` set to `bobbyiliev`. You need to be careful when you use the `UPDATE` statement without a `WHERE` clause, as every single row will be updated.
@@ -123,7 +123,7 @@ To do so, you just need to add `--` before the text that you want to comment out
 SELECT * FROM users; -- Get all users
 ```
 
-* Multiple-line comments
+* Multiple-line comments:
 
 Similar to some other programming languages in order to comment multiple lines, you could wrap the text in `/*` `*/` as follows:
 
