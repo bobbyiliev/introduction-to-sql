@@ -197,9 +197,9 @@ SELECT * FROM users WHERE about IS NOT NULL;
 ## BETWEEN operator
 
 The `BETWEEN` operator allows to select value with a given range.The values can be numbers, text, or dates.
-BETWEEN operator is inclusive: begin and end values are included.  
+BETWEEN operator is inclusive i.e., begin and end values are included.  
 
-For Example if you want to select those user which have id between 3 and 6.
+For Example ,if you want to select those user which have id between 3 and 6.
 
 ```
 SELECT * FROM users WHERE id BETWEEN 3 AND 6; 
