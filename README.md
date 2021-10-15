@@ -38,6 +38,9 @@ To download a copy of the ebook use one of the following links:
 * [**UPDATE**](ebook/en/content/009-update.md)
 * [**DELETE**](ebook/en/content/010-delete.md)
 * [**JOIN**](ebook/en/content/011-join.md)
+* [**SQL Command Categories**](ebook/en/content/012-sql-commnad-categories.md)
+* [**Sub Queries**](ebook/en/content/013-sub-queries.md)
+* [**Unions**](ebook/en/content/014-unions.md)
 * [**The MySQL dump command**](ebook/en/content/100-mysqldump.md)
 * [**Conclusion**](ebook/en/content/999-conclusion.md)
 
