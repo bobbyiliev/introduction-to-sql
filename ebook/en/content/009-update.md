@@ -12,15 +12,15 @@ UPDATE users SET username='bobbyiliev' WHERE id=1;
 
 Rundown of the statement:
 
-* `UPDATE users`: first, we specify the `UPDATE` keyword followed by the table that we want to update
-* `username='bobbyiliev'` Then we specify the columns that we want to update and the new value that we want to set.
+* `UPDATE users`: First, we specify the `UPDATE` keyword followed by the table that we want to update.
+* `username='bobbyiliev'`: Then we specify the columns that we want to update and the new value that we want to set.
 * `WHERE id=1`: Finally, by using the `WHERE` clause, we specify which user should be updated. In our case, it is the user with ID 1.
 
 The most important thing that you need to keep in mind is that if you don't specify a `WHERE` clause, all of the entries inside the `users` table would be updated, and all users would have the `username` set to `bobbyiliev`.
 
 > Important: You need to be careful when you use the `UPDATE` statement without a `WHERE` clause as every single row will be updated.
 
-If you have been following along all of the user entries in our `users` table currently have no data in the `about` column:
+If you have been following along all of the user entries in our `users` table, it currently have no data in the `about` column:
 
 ```
 +----+----------+-------+
@@ -35,7 +35,7 @@ If you have been following along all of the user entries in our `users` table cu
 +----+----------+-------+
 ```
 
-Let's go ahead and update this for all users and set the column value to `404 bio not found` for example:
+Let's go ahead and update this for all users and set the column value to `404 bio not found`, For example:
 
 ```
 UPDATE users SET about='404 bio not found';

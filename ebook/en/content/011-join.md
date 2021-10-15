@@ -19,13 +19,13 @@ Before we get started, let's create a new database and 2 tables that we are goin
 CREATE DATABASE demo_joins;
 ```
 
-* Then switch to the new database:
+* Then, switch to the new database:
 
 ```
 USE demo_joins;
 ```
 
-* Then the first table will be called `users` and it will only have 2 columns: `id` and `username`:
+* Then, the first table will be called `users` and it will only have 2 columns: `id` and `username`:
 
 ```
 CREATE TABLE users
@@ -35,7 +35,7 @@ CREATE TABLE users
 );
 ```
 
-* Then let's create a second table called `posts`, and to keep things simple we will have three two columns: `id`, `user_id` and `title`:
+* Then, let's create a second table called `posts`, and to keep things simple we will have three two columns: `id`, `user_id` and `title`:
 
 ```
 CREATE TABLE posts
@@ -134,9 +134,9 @@ ON users.id = posts.user_id;
 
 Rundown of the query:
 
-* `SELECT * FROM users`: this is a standard select that we've covered many times in the previous chapters.
-* `INNER JOIN posts`: then we specify the second table, which table we want to join the result set with
-* `ON users.id = posts.user_id`: finally, we specify the logic on how we want the data in these two tables to be merged together. The `user.id` is the `id` column of the `user` table, which is also the primary ID, and `posts.user_id` is the foreign key in the email address table referring to the ID column in the users table.
+* `SELECT * FROM users`: This is a standard select that we've covered many times in the previous chapters.
+* `INNER JOIN posts`: Then, we specify the second table, which table we want to join the result set with.
+* `ON users.id = posts.user_id`: Finally, we specify the logic on how we want the data in these two tables to be merged together. The `user.id` is the `id` column of the `user` table, which is also the primary ID, and `posts.user_id` is the foreign key in the email address table referring to the ID column in the users table.
 
 The output will be the following, associating each user with their post based on the `user_id` column:
 
