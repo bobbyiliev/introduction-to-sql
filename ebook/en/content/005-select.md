@@ -1,6 +1,6 @@
 # SELECT
 
-As we briefly covered in the previous chapter, the `SELECT` statement allows us to retrieve data from a specific database.
+As we briefly covered in the previous chapter, the `SELECT` statement allows us to retrieve data from single or multiple tables on the database. In this chapter, we will be performing the query on a single table.
 
 It corresponds to the projection operation of Relational Algebra.
 
@@ -288,7 +288,7 @@ Output:
 +----------+
 ```
 
-As you can see, each name is present multiple times in the list. We have 2 times `bobby`, 2 times `devdjo` and 2 times `tony`.
+As you can see, each name is present multiple times in the list. We have `bobby`, `devdjo` and `tony` showing up twice.
 
 If we wanted to show only the unique `usernames`, we could add the `DISTINCT` keyword to our select statement:
 
