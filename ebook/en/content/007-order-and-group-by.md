@@ -37,7 +37,7 @@ As you can see, the result set is sorted by the primary key, which in our case i
 SELECT id,username FROM users ORDER BY username;
 ```
 
-> Note the `ORDER BY` statement followed by the name of the column that we want to order by.
+> Note: The `ORDER BY` statement followed by the name of the column that we want to order by.
 
 The output in this case will be:
 

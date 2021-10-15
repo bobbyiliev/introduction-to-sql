@@ -62,10 +62,10 @@ SELECT * FROM users;
 
 Rundown of the statement:
 
-* `SELECT`: first, we specify the action that we want to execute, in our case, we want to select or get some data from the database.
-* `*`: the star here indicates that we want to get all of the columns associated with the table that we are selecting from.
-* `FROM`: the from statement tells MySQL which table we want to select the data from. You need to keep in mind that you can select from multiple tables, but this is a bit more advanced, and we are going to cover this in the next few chapters
-* `users`: this is the table name that we want to select the data from.
+* `SELECT`: First, we specify the action that we want to execute, in our case, we want to select or get some data from the database.
+* `*`: The star here indicates that we want to get all of the columns associated with the table that we are selecting from.
+* `FROM`: The from statement tells MySQL which table we want to select the data from. You need to keep in mind that you can select from multiple tables, but this is a bit more advanced, and we are going to cover this in the next few chapters.
+* `users`: This is the table name that we want to select the data from.
 
 This will return all of the entries in the `users` table along with all of the columns:
 
@@ -140,7 +140,7 @@ As you can see, we are getting back only the 2 columns that we've specified in t
 
 ## SELECT with no FROM Clause
 
-In a SQL statement. a column can be a literal with no `FROM` clause.
+In a SQL statement, a column can be a literal with no `FROM` clause.
 
 ```
 SELECT 'Sunil' as username;
@@ -158,7 +158,7 @@ Output:
 
 ## SELECT with Arithmetic Operations
 
-The select clause can contain arithmetic expressions involving the operation, +, –, *, and /.
+The select clause can contain arithmetic expressions involving the operation +, –, *, and /.
 
 ```
 SELECT username, active*5 as new_active FROM users;
@@ -222,7 +222,7 @@ Output:
 
 Another useful set of functions similar to `COUNT` that would make your life easier are:
 
-* `MIN`: this would give you the smallest value of a specific column. For example, if you had an online shop and you wanted to get the lowest price, you would use the `MIN` function. In our case, if we wanted to get the lowest user ID, we would run the following:
+* `MIN`: This would give you the smallest value of a specific column. For example, if you had an online shop and you wanted to get the lowest price, you would use the `MIN` function. In our case, if we wanted to get the lowest user ID, we would run the following:
 
 ```
 SELECT MIN(id) FROM users;
@@ -230,7 +230,7 @@ SELECT MIN(id) FROM users;
 
 This would return `1` as the lowest user ID that we have is 1.
 
-* `MAX`: just like `MIN`, but it would return the highest value:
+* `MAX`: Just like `MIN`, but it would return the highest value:
 
 ```
 SELECT MAX(id) FROM users;
@@ -238,13 +238,13 @@ SELECT MAX(id) FROM users;
 
 In our case, this would be `3` as we have only 3 users, and the highest value of the `id` column is 3.
 
-* `AVG`: as the name suggests, it would sum up all of the values of a specific column and return the average value. As we have 3 users with ids 1, 2, and 3, the average would be 6 divided by 3 users which is 2. 
+* `AVG`: As the name suggests, it would sum up all of the values of a specific column and return the average value. As we have 3 users with ids 1, 2, and 3, the average would be 6 divided by 3 users which is 2. 
 
 ```
 SELECT AVG(id) FROM users;
 ```
 
-* `SUM`: this function takes all of the values from the specified column and sums them up:
+* `SUM`: This function takes all of the values from the specified column and sums them up:
 
 ```
 SELECT SUM(id) FROM users;
