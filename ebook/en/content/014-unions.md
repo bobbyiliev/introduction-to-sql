@@ -2,7 +2,7 @@
 
 The SQL UNION clause/operator is used to combine the results of two or more SELECT statements without returning any duplicate rows.
 
-- use this UNION clause, each SELECT statement must have
+- While using this UNION clause, each SELECT statement must have:
 
   - The same number of columns selected
   - The same number of column expressions
@@ -15,7 +15,7 @@ _Example_
 
 Consider the following two tables.
 
-Table 1 − CUSTOMERS Table is as follows.
+Table 1 − CUSTOMERS Table is as follows:
     
     +----+----------+-----+-----------+----------+
     | ID | NAME     | AGE | ADDRESS   | SALARY   |
@@ -29,7 +29,7 @@ Table 1 − CUSTOMERS Table is as follows.
     |  7 | Muffy    |  24 | Indore    | 10000.00 |
     +----+----------+-----+-----------+----------+
 
-Table 2 − ORDERS Table is as follows.
+Table 2 − ORDERS Table is as follows:
 
     +-----+---------------------+-------------+--------+
     |OID  | DATE                | CUSTOMER_ID | AMOUNT |
@@ -40,7 +40,7 @@ Table 2 − ORDERS Table is as follows.
     | 103 | 2008-05-20 00:00:00 |           4 |   2060 |
     +-----+---------------------+-------------+--------+
 
-Now, let us join these two tables in our SELECT statement as follows −
+Now, let us join these two tables in our SELECT statement as follows:
 
 ```sql
 SELECT  ID, NAME, AMOUNT, DATE
@@ -54,7 +54,7 @@ UNION
    ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
    ```
 
-This would produce the following result 
+This would produce the following result:
 
 ### The UNION ALL Clause
 The UNION ALL operator is used to combine the results of two SELECT statements including duplicate rows.
@@ -62,9 +62,9 @@ The UNION ALL operator is used to combine the results of two SELECT statements i
 The same rules that apply to the UNION clause will apply to the UNION ALL operator.
 
 _Example_
-Consider the following two tables,
+Consider the following two tables-
 
-Table 1 − CUSTOMERS Table is as follows.
+Table 1 − CUSTOMERS Table is as follows:
     
     +----+----------+-----+-----------+----------+
     | ID | NAME     | AGE | ADDRESS   | SALARY   |
@@ -77,7 +77,7 @@ Table 1 − CUSTOMERS Table is as follows.
     |  6 | Komal    |  22 | MP        |  4500.00 |
     |  7 | Muffy    |  24 | Indore    | 10000.00 |
 
-Table 2 − ORDERS table is as follows.
+Table 2 − ORDERS table is as follows:
 
     +-----+---------------------+-------------+--------+
     |OID  | DATE                | CUSTOMER_ID | AMOUNT |
@@ -101,7 +101,7 @@ UNION ALL
    ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
 ```
 
-This would produce the following result
+This would produce the following result:
     
     +------+----------+--------+---------------------+
     | ID   | NAME     | AMOUNT | DATE                |
