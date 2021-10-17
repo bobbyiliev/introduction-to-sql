@@ -62,9 +62,9 @@ The UNION ALL operator is used to combine the results of two SELECT statements i
 The same rules that apply to the UNION clause will apply to the UNION ALL operator.
 
 _Example_
-Consider the following two tables-
+Consider the following two tables:
 
-Table 1 − CUSTOMERS Table is as follows:
+* Table 1 − CUSTOMERS Table is as follows:
     
     +----+----------+-----+-----------+----------+
     | ID | NAME     | AGE | ADDRESS   | SALARY   |
@@ -77,7 +77,7 @@ Table 1 − CUSTOMERS Table is as follows:
     |  6 | Komal    |  22 | MP        |  4500.00 |
     |  7 | Muffy    |  24 | Indore    | 10000.00 |
 
-Table 2 − ORDERS table is as follows:
+* Table 2 − ORDERS table is as follows:
 
     +-----+---------------------+-------------+--------+
     |OID  | DATE                | CUSTOMER_ID | AMOUNT |
