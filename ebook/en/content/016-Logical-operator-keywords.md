@@ -5,8 +5,8 @@ Here are the most important Logical Operators summarized in a table.
 Logical Operators can be used for conditions as they show a result in form of a `boolean` (True/False) or Unknown.
 So, e.g. if an exact value is `True` for a value, a Logical Operator can proof that it's True.
 
-| Logical Operator        |      Explanation |   
-| ------------- | :-----------: |
+| Logical Operator | Explanation |
+|------------------|-------------|
 | ALL      | If all comparisons are True: return True |
 | ANY      |   If any comparison is True: return True    |
 | AND |   If both expressions are True: return True   |
