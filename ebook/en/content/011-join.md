@@ -116,11 +116,15 @@ The output will be all of your users and all of the posts side by side:
 +----+----------+----+--------+-----------------+
 ```
 
-As mentioned above, in a real-life scenario, you will highly unlikely run a `CROSS` join for two whole tables. You would most likey use one of the following joins instead combined with a specific condition.
+As mentioned above, in a real-life scenario, you will highly unlikely run a `CROSS` join for two whole tables. If the tables have tens of thousands of rows, an unqualified CROSS JOIN can take minutes to complete.
+
+You would most likely use one of the followinwith a specific condition. 
+
+In mysql, CROSS JOIN and INNER JOIN are equivalent to JOIN. 
 
 ## Inner join
 
-The `INNER` join is used to join two tables, however, unlike the `CROSS` join, it is based on a condition. By using an `INNER` join, you can match the first table to the second one.
+The `INNER` join is used to join two tables, however, unlike the `CROSS` join, by convention it is based on a condition. By using an `INNER` join, you can match the first table to the second one.
 
 As we have a one-to-many relationship, a best practice would be to use a primary key for the posts `id` column and a foreign key for the `user_id`; that way, we can 'link' or relate the users table to the posts table. However, this is beyond the scope of this SQL basics eBook, though I might extend it in the future and add more chapters.
 
@@ -150,6 +154,13 @@ The output will be the following, associating each user with their post based on
 |  2 | devdojo  |  4 |       2 | MySQL is up!    |
 |  1 | bobby    |  5 |       1 | SQL             |
 +----+----------+----+---------+-----------------+
+```
+Note that the INNER JOIN could (in mysql) equivalently be written merely as JOIN, but that can very for other SQL dialects:
+
+```
+SELECT * FROM users
+JOIN posts
+ON users.id = posts.user_id;
 ```
 
 The main things that you need to keep in mind here are the `INNER JOIN` and `ON` clauses.
@@ -249,9 +260,29 @@ Output:
 +------+----------+----+---------+-----------------+
 ```
 
+Joins can also be limited with WHERE conditions. For instance, in the preceding example, if we wanted to join the tables and then restrict to only username `bobby`.
+
+
+```
+SELECT * FROM users 
+RIGHT JOIN posts ON users.id = posts.user_id
+WHERE username = 'bobby';
+```
+
+Output:
+
+```
++------+----------+----+---------+-----------------+
+| id   | username | id | user_id | title           |
++------+----------+----+---------+-----------------+
+|    1 | bobby    |  1 |       1 | Hello World!    |
+|    1 | bobby    |  5 |       1 | SQL             |
++------+----------+----+---------+-----------------+
+```
+
 ## Conclusion
 
-The whole concept of joins might be very confusing in the beginning but would make a lot of sense once you get used to it.
+Joins are fundamental to using SQL with data. The whole concept of joins might be very confusing in the beginning but would make a lot of sense once you get used to it.
 
 The best way to wrap your head around it is to write some queries and play around with each type of `JOIN` and see how the result set changes.
 
