@@ -22,7 +22,7 @@ Unlike where clause which imposes conditions on columns `Having` clause enables 
     
 ## Aggregate Functions Examples
 
-Suppose this is the table given to us
+Suppose this are the table given to us
 
 |Students | table||
 |--------|-----------|--------|
@@ -132,18 +132,20 @@ Above query finds minimum price which is > 10
 | XYZ           |        800 |
 | ABC           |        120 |
 
+### Example 3
+
 ```sql
 SELECT customer_name, AVG(price) as Average_Purchase FROM purchase GROUP BY customer_name HAVING AVG(price) > 550 ORDER BY customer_name DESC;
 ```
 Above query calculates average of price and prints customer name and average price which is greater than 550 with descending order of customer names.
 
-+---------------+------------------+
 | customer_name | Average_Purchase |
-+---------------+------------------+
+|---------------|------------------|
 | XYZ           |         800.0000 |
 | Sanskriti     |        1627.5000 |
 | ABC           |         735.0000 |
 
+### Example 4
 
 ```sql
 SELECT customer_name, SUM(price) as Total_Purchase FROM purchase WHERE customer_name LIKE "S%" GROUP BY customer_name HAVING SUM(price) > 1000;
