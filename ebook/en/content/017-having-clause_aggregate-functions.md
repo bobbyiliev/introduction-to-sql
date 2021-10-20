@@ -1,4 +1,4 @@
-# `HAVING Clause`
+# `HAVING` Clause
 
 Unlike where clause which imposes conditions on columns `Having` clause enables you to specify conditions that filter which group results appear in the results.
 
@@ -111,7 +111,7 @@ SELECT MIN(price) AS Lowest_Purchase, customer_name FROM purchase GROUP BY custo
 ### Example 1
 
 ```sql
-SELECT COUNT(class) as strength, class FROM Students GROUP BY class HAVING COUNT(class) > 2;
+SELECT COUNT(class) AS strength, class FROM Students GROUP BY class HAVING COUNT(class) > 2;
 ```
 
 Above query gives number of students in a class `having` number of students > 2 
@@ -123,7 +123,7 @@ Above query gives number of students in a class `having` number of students > 2
 ### Example 2
 
 ```sql
-SELECT customer_name, MIN(price) as MIN_PURCHASE FROM purchase GROUP BY customer_name HAVING MIN(price) > 10;
+SELECT customer_name, MIN(price) AS MIN_PURCHASE FROM purchase GROUP BY customer_name HAVING MIN(price) > 10;
 ```
 Above query finds `minimum` price which is > 10
 
@@ -135,7 +135,7 @@ Above query finds `minimum` price which is > 10
 ### Example 3
 
 ```sql
-SELECT customer_name, AVG(price) as Average_Purchase FROM purchase GROUP BY customer_name HAVING AVG(price) > 550 ORDER BY customer_name DESC;
+SELECT customer_name, AVG(price) AS Average_Purchase FROM purchase GROUP BY customer_name HAVING AVG(price) > 550 ORDER BY customer_name DESC;
 ```
 Above query calculates `average` of price and prints customer name and average price which is greater than 550 with descending `order` of customer names.
 
@@ -148,7 +148,7 @@ Above query calculates `average` of price and prints customer name and average p
 ### Example 4
 
 ```sql
-SELECT customer_name, SUM(price) as Total_Purchase FROM purchase WHERE customer_name LIKE "S%" GROUP BY customer_name HAVING SUM(price) > 1000;
+SELECT customer_name, SUM(price) AS Total_Purchase FROM purchase WHERE customer_name LIKE "S%" GROUP BY customer_name HAVING SUM(price) > 1000;
 ```
 Calculates `SUM` of price and returns customer name and sum > 1000.
 
