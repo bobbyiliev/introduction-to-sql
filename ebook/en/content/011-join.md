@@ -15,19 +15,19 @@ Before we get started, let's create a new database and 2 tables that we are goin
 
 * We are going to call the database `demo_joins`:
 
-```
+```sql
 CREATE DATABASE demo_joins;
 ```
 
 * Then, switch to the new database:
 
-```
+```sql
 USE demo_joins;
 ```
 
 * Then, the first table will be called `users` and it will only have 2 columns: `id` and `username`:
 
-```
+```sql
 CREATE TABLE users
 (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -37,7 +37,7 @@ CREATE TABLE users
 
 * Then, let's create a second table called `posts`, and to keep things simple we will have three two columns: `id`, `user_id` and `title`:
 
-```
+```sql
 CREATE TABLE posts
 (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -52,7 +52,7 @@ CREATE TABLE posts
 
 * Now, let's add some data into the two tables first by creating a few users:
 
-```
+```sql
 INSERT INTO users
   ( username )
 VALUES
@@ -64,7 +64,7 @@ VALUES
 
 * And finally add some posts:
 
-```
+```sql
 INSERT INTO posts
   ( user_id, title )
 VALUES
@@ -77,13 +77,13 @@ VALUES
 
 Now that we've got our tables and demo data ready let's go ahead and learn how to use joins.
 
-## Cross join
+## CROSS JOIN
 
 The `CROSS` join allows you to basically put the result of two tables next to each other without specifying any `WHERE` conditions. This makes the `CROSS` join the simplest one, but it also not of much use in a real-life scenario.
 
 So if we were to select all of the users and all of the posts side by side, we will use the following query:
 
-```
+```sql
 SELECT * FROM users CROSS JOIN posts;
 ```
 
@@ -122,7 +122,7 @@ You would most likely use one of the followinwith a specific condition.
 
 In mysql, CROSS JOIN and INNER JOIN are equivalent to JOIN. 
 
-## Inner join
+## INNER JOIN
 
 The `INNER` join is used to join two tables, however, unlike the `CROSS` join, by convention it is based on a condition. By using an `INNER` join, you can match the first table to the second one.
 
@@ -130,8 +130,9 @@ As we have a one-to-many relationship, a best practice would be to use a primary
 
 As an example and to make things a bit clearer, let's say that you wanted to get all of your users and the posts associated with each user. The query that we would use will look like this:
 
-```
-SELECT * FROM users
+```sql
+SELECT *
+FROM users
 INNER JOIN posts
 ON users.id = posts.user_id;
 ```
@@ -157,8 +158,9 @@ The output will be the following, associating each user with their post based on
 ```
 Note that the INNER JOIN could (in mysql) equivalently be written merely as JOIN, but that can very for other SQL dialects:
 
-```
-SELECT * FROM users
+```sql
+SELECT *
+FROM users
 JOIN posts
 ON users.id = posts.user_id;
 ```
@@ -169,7 +171,7 @@ With the inner join, the `NULL` values are discarded. For example, if you have a
 
 To get the null values as well, you would need to use an outer join.
 
-### Types of Inner Join
+### Types of INNER JOIN
 
 1.  **Theta Join ( θ )** :- Theta join combines rows from different tables provided they satisfy the theta condition.
     The join condition is denoted by symbol `θ`. \
@@ -195,16 +197,17 @@ To get the null values as well, you would need to use an outer join.
     `SELECT * FROM mobile NATURAL JOIN laptop;`
 
 
-## Left join
+## LEFT JOIN
 
 By using the `LEFT OUTER` join, you would get all rows from the first table that you've specified, and if there are no associated records with it within the second table, you will get a `NULL` value. 
 
 In our case, we have a user called `graisi`, which is not associated with a specific post. As you can see from the output from the previous query, the `graisi` user was not present in there. To show that user even though it does not have an associated post with it, you could use a `LEFT OUTER` join:
 
-```
+```sql
 SELECT *
 FROM users
-LEFT JOIN posts ON users.id = posts.user_id;
+LEFT JOIN posts
+ON users.id = posts.user_id;
 ```
 
 The output will look like this:
@@ -222,13 +225,13 @@ The output will look like this:
 +----+----------+------+---------+-----------------+
 ```
 
-## Right join
+## RIGHT JOIN
 
 The `RIGHT OUTER` join is the exact opposite of the `LEFT OUTER` join. It will display all of the rows from the second table and give you a `NULL` value in case that it does not match with an entry from the first table.
 
 Let's create a post that does not have a matching user id:
 
-```
+```sql
 INSERT INTO posts
   ( user_id, title )
 VALUES
@@ -241,8 +244,11 @@ Now, if you were to run the `LEFT` outer join, you would not see the post as it 
 
 But if you were to run a `RIGHT` outer join, you would see the post but not the `greisi` user as it does not have any posts:
 
-```
-SELECT * FROM users RIGHT JOIN posts ON users.id = posts.user_id;
+```sql
+SELECT *
+FROM users
+RIGHT JOIN posts
+ON users.id = posts.user_id;
 ```
 
 Output:
@@ -263,9 +269,11 @@ Output:
 Joins can also be limited with WHERE conditions. For instance, in the preceding example, if we wanted to join the tables and then restrict to only username `bobby`.
 
 
-```
-SELECT * FROM users 
-RIGHT JOIN posts ON users.id = posts.user_id
+```sql
+SELECT *
+FROM users 
+RIGHT JOIN posts
+ON users.id = posts.user_id
 WHERE username = 'bobby';
 ```
 

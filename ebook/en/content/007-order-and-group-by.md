@@ -12,8 +12,8 @@ The main thing that you need to keep in mind when using `ORDER BY` is that you n
 
 If we were to run the following statement without providing an `ORDER BY` clause:
 
-```
-SELECT id,username FROM users ;
+```sql
+SELECT id, username FROM users;
 ```
 
 We will get the following output:
@@ -33,8 +33,8 @@ We will get the following output:
 
 As you can see, the result set is sorted by the primary key, which in our case is the `id` of each user. If we wanted to sort the output by `username`, we would run the following query:
 
-```
-SELECT id,username FROM users ORDER BY username;
+```sql
+SELECT id, username FROM users ORDER BY username;
 ```
 
 > Note: The `ORDER BY` statement followed by the name of the column that we want to order by.
@@ -60,8 +60,8 @@ The default sorting is ascending and is specified with the `ASC` keyword, and yo
 
 If we use the query above and just add `DESC` at the end as follows:
 
-```
-SELECT id,username FROM users ORDER BY username DESC;
+```sql
+SELECT id, username FROM users ORDER BY username DESC;
 ```
 
 We will see the following output:
@@ -89,8 +89,8 @@ For example, let's say that we wanted to get all of the count of all users group
 
 In our case, we have 2 users with username `bobby`, 2 users with username `tony`, and 2 users with username `devdojo`. This represented in an SQL statement would look like this:
 
-```
-SELECT COUNT(username), username FROM users GROUP by username;
+```sql
+SELECT COUNT(username), username FROM users GROUP BY username;
 ```
 
 The output, in this case, would be:
@@ -117,8 +117,11 @@ For example, let's say that we wanted to get all usernames which are duplicate, 
 
 In our case, we have 2 users with username `bobby`, 2 users with username `tony`, and 2 users with username `devdojo`. This represented in an SQL statement would look like this:
 
-```
-SELECT COUNT(username), username FROM users GROUP by username HAVING COUNT(username) > 1;
+```sql
+SELECT COUNT(username), username
+FROM users
+GROUP BY username
+HAVING COUNT(username) > 1;
 ```
 
 The output, in this case, would be:

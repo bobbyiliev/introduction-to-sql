@@ -34,7 +34,7 @@ ADD Age int;
 ```
 - `TRUNCATE`: This is used to remove all records from a table, including all spaces allocated for the records are removed.
 ```sql
-  TRUNCATE TABLE Persons;
+TRUNCATE TABLE Persons;
 ```
 - `COMMENT`: This is used to add comments to the data dictionary.
 ```sql
@@ -54,6 +54,8 @@ RENAME COLUMN Age TO Year;
 `SELECT`: It is used to retrieve data from the database.
 ```sql
 SELECT * FROM table_name;
+```
+```
 +--------+--------------+------------+--------+---------+
 | emp_id | emp_name     | hire_date  | salary | dept_id |
 +--------+--------------+------------+--------+---------+
@@ -69,14 +71,16 @@ The SQL commands that deals with the manipulation of data present in the databas
 #### List of DML commands:
 - `INSERT `: It is used to insert data into a table.
 ```sql
-INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
-VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+INSERT INTO Customers
+  (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES
+  ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
 ```
 - `UPDATE`: It is used to update existing data within a table.
 
 ```sql
 UPDATE Customers
-SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+SET ContactName='Alfred Schmidt', City='Frankfurt'
 WHERE CustomerID = 1;
 ```
 - `DELETE `: It is used to delete records from a database table.
@@ -92,8 +96,7 @@ UNLOCK TABLES;
 - `CALL`: Call a PL/SQL or JAVA subprogram.
 ```sql
 CREATE PROCEDURE procedure_name
-AS
-sql_statement
+AS sql_statement
 GO;
 ```
 #### Execute a Stored Procedure

@@ -37,9 +37,11 @@ _**Example**_:
 ```sql
 SELECT *
 FROM CUSTOMERS
-WHERE ID IN (SELECT ID
-FROM CUSTOMERS
-WHERE SALARY > 4500);
+WHERE ID IN (
+    SELECT ID
+    FROM CUSTOMERS
+    WHERE SALARY > 4500
+);
 ```
 This would produce the following result.
 
@@ -61,9 +63,12 @@ The subquery can be used in conjunction with the UPDATE statement. Either single
 Assuming, we have CUSTOMERS_BKP table available which is backup of CUSTOMERS table. The following example updates SALARY by 0.25 times in the CUSTOMERS table for all the customers whose AGE is greater than or equal to 27.
 ```sql
 UPDATE CUSTOMERS
-   SET SALARY = SALARY * 0.25
-   WHERE AGE IN (SELECT AGE FROM CUSTOMERS_BKP
-      WHERE AGE >= 27 );  
+SET SALARY = SALARY * 0.25
+WHERE AGE IN (
+    SELECT AGE
+    FROM CUSTOMERS_BKP
+    WHERE AGE >= 27
+);
 ```
 This would impact two rows and finally CUSTOMERS table would have the following records.
 
@@ -88,8 +93,11 @@ The subquery can be used in conjunction with the DELETE statement like with any 
 Assuming, we have a CUSTOMERS_BKP table available which is a backup of the CUSTOMERS table. The following example deletes the records from the CUSTOMERS table for all the customers whose AGE is greater than or equal to 27.
 ```sql
 DELETE FROM CUSTOMERS
-   WHERE AGE IN (SELECT AGE FROM CUSTOMERS_BKP
-      WHERE AGE >= 27 );
+WHERE AGE IN (
+    SELECT AGE
+    FROM CUSTOMERS_BKP
+    WHERE AGE >= 27
+);
 ```
 This would impact two rows and finally the CUSTOMERS table would have the following records.
 

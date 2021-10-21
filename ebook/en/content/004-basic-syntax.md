@@ -4,7 +4,7 @@ In this chapter, we will go over the basic SQL syntax.
 
 SQL statements are basically the 'commands' that you run against a specific database. Through the SQL statements, you are telling MySQL what you want it to do, for example, if you wanted to get the `username` of all of your users stored in the `users` table, you would run the following SQL statement:
 
-```
+```sql
 SELECT username FROM users;
 ```
 
@@ -27,8 +27,9 @@ To add data to your database, you would use the `INSERT` statement.
 
 Let's use the table that we created in the last chapter and insert 1 user into our `users` table:
 
-```
-INSERT INTO users(username, email, active) VALUES('bobby', 'bobby@bobbyiliev.com', true);
+```sql
+INSERT INTO users(username, email, active)
+VALUES ('bobby', 'bobby@bobbyiliev.com', true);
 ```
 
 Rundown of the insert statement:
@@ -43,7 +44,7 @@ Once we've inserted that user, let's go ahead and retrieve the information.
 
 To retrieve information from your database, you could use the `SELECT` statement:
 
-```
+```sql
 SELECT * FROM users;
 ```
 
@@ -61,7 +62,7 @@ As we specify `*` right after the `SELECT` keyword, this means that we want to g
 
 If we wanted to the only the `username` and the `email` columns instead, we would change the statement to:
 
-```
+```sql
 SELECT username,email FROM users;
 ```
 
@@ -81,7 +82,7 @@ In order to modify data in your database, you could use the `UPDATE` statement.
 
 The syntax would look like this:
 
-```
+```sql
 UPDATE users SET username='bobbyiliev' WHERE id=1;
 ```
 
@@ -101,7 +102,7 @@ As the name suggests, the `DELETE` statement would remove data from your databas
 
 The syntax is as follows:
 
-```
+```sql
 DELETE FROM users WHERE id=1;
 ```
 
@@ -119,7 +120,7 @@ There are two types of comments:
 
 To do so, you just need to add `--` before the text that you want to comment out:
 
-```
+```sql
 SELECT * FROM users; -- Get all users
 ```
 
@@ -127,7 +128,7 @@ SELECT * FROM users; -- Get all users
 
 Similar to some other programming languages in order to comment multiple lines, you could wrap the text in `/*` `*/` as follows:
 
-```
+```sql
 /*
 Get all of the users
 from your database

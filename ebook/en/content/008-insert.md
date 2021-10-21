@@ -4,8 +4,11 @@ To add data to your database, you would use the `INSERT` statement. You can inse
 
 The syntax is the following:
 
-```
-INSERT INTO table_name(column_name_1,column_name_2,column_name_n) VALUES('value_1', 'value_2', 'value_3');
+```sql
+INSERT INTO table_name
+  (column_name_1,column_name_2,column_name_n)
+VALUES
+  ('value_1', 'value_2', 'value_3');
 ```
 
 You would start with the `INSERT INTO` statement, followed by the table that you want to insert the data into. Then you would specify the list of the columns that you want to insert the data into. Finally, with the `VALUES` statement, you specify the data that you want to insert.
@@ -16,8 +19,11 @@ In the above example the `value_1` would go into `column_name_1`, the `value_2` 
 
 Let's use the table that we created in the last chapter and insert 1 user into our `users` table:
 
-```
-INSERT INTO users(username, email, active) VALUES('greisi', 'g@devdojo.com', true);
+```sql
+INSERT INTO users
+  (username, email, active)
+VALUES
+  ('greisi', 'g@devdojo.com', true);
 ```
 
 Rundown of the insert statement:
@@ -32,19 +38,19 @@ We've briefly covered this in one of the previous chapters, but in some cases, y
 
 Let's say that we wanted to create 5 new users, rather than running 5 different queries like this:
 
-```
-INSERT INTO users(username, email, active) VALUES('user1', 'user1@devdojo.com', true);
-INSERT INTO users(username, email, active) VALUES('user1', 'user2@devdojo.com', true);
-INSERT INTO users(username, email, active) VALUES('user1', 'user3@devdojo.com', true);
-INSERT INTO users(username, email, active) VALUES('user1', 'user4@devdojo.com', true);
-INSERT INTO users(username, email, active) VALUES('user1', 'user5@devdojo.com', true);
+```sql
+INSERT INTO users (username, email, active) VALUES ('user1', 'user1@devdojo.com', true);
+INSERT INTO users (username, email, active) VALUES ('user1', 'user2@devdojo.com', true);
+INSERT INTO users (username, email, active) VALUES ('user1', 'user3@devdojo.com', true);
+INSERT INTO users (username, email, active) VALUES ('user1', 'user4@devdojo.com', true);
+INSERT INTO users (username, email, active) VALUES ('user1', 'user5@devdojo.com', true);
 ```
 
 What you could do is to combine this into one `INSERT` statement by providing a list of the values that you want to insert as follows:
 
-```
+```sql
 INSERT INTO users
-  ( username, email, active )
+  (username, email, active)
 VALUES
   ('user1', 'user1@devdojo.com', true),
   ('user2', 'user2@devdojo.com', true),
@@ -70,9 +76,11 @@ We can achieve the same by writing an `INSERT` query with multiple `VALUES` list
 But there is an easier way where we achieve the same by querying the `prospect_users` table.
 
 
-```
-INSERT INTO users ( username, email, active )
-SELECT username, email, active FROM prospect_users WHERE active = true;
+```sql
+INSERT INTO users (username, email, active)
+SELECT username, email, active
+FROM prospect_users
+WHERE active=true;
 ```
 
 Using the above statement, an entry for each active prospect users will be made in our `users` table.

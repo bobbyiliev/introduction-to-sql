@@ -15,10 +15,10 @@ _Example_
 
 Consider the following two tables.
 
-Table 1 − CUSTOMERS Table is as follows:
+Table 1 − customers table is as follows:
     
     +----+----------+-----+-----------+----------+
-    | ID | NAME     | AGE | ADDRESS   | SALARY   |
+    | id | name     | age | address   | salary   |
     +----+----------+-----+-----------+----------+
     |  1 | Ramesh   |  32 | Ahmedabad |  2000.00 |
     |  2 | Khilan   |  25 | Delhi     |  1500.00 |
@@ -29,10 +29,10 @@ Table 1 − CUSTOMERS Table is as follows:
     |  7 | Muffy    |  24 | Indore    | 10000.00 |
     +----+----------+-----+-----------+----------+
 
-Table 2 − ORDERS Table is as follows:
+Table 2 − orders table is as follows:
 
     +-----+---------------------+-------------+--------+
-    |OID  | DATE                | CUSTOMER_ID | AMOUNT |
+    | oid | date                | customer_id | amount |
     +-----+---------------------+-------------+--------+
     | 102 | 2009-10-08 00:00:00 |           3 |   3000 |
     | 100 | 2009-10-08 00:00:00 |           3 |   1500 |
@@ -43,16 +43,16 @@ Table 2 − ORDERS Table is as follows:
 Now, let us join these two tables in our SELECT statement as follows:
 
 ```sql
-SELECT  ID, NAME, AMOUNT, DATE
-   FROM CUSTOMERS
-   LEFT JOIN ORDERS
-   ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID
+SELECT id, name, amount, date
+   FROM customer
+   LEFT JOIN orders
+   ON customers.id = orders.customer_id
 UNION
-   SELECT  ID, NAME, AMOUNT, DATE
-   FROM CUSTOMERS
-   RIGHT JOIN ORDERS
-   ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
-   ```
+   SELECT id, name, amount, date
+   FROM customer
+   RIGHT JOIN orders
+   ON customers.id = orders.customer_id
+```
 
 This would produce the following result:
 
@@ -61,13 +61,13 @@ The UNION ALL operator is used to combine the results of two SELECT statements i
 
 The same rules that apply to the UNION clause will apply to the UNION ALL operator.
 
-_Example_
+_Example_ - 
 Consider the following two tables:
 
-* Table 1 − CUSTOMERS Table is as follows:
-    
+* Table 1 − customers table is as follows:
+ 
       +----+----------+-----+-----------+----------+
-      | ID | NAME     | AGE | ADDRESS   | SALARY   |
+      | id | name     | age | address   | salary   |
       +----+----------+-----+-----------+----------+
       |  1 | Ramesh   |  32 | Ahmedabad |  2000.00 |
       |  2 | Khilan   |  25 | Delhi     |  1500.00 |
@@ -76,11 +76,12 @@ Consider the following two tables:
       |  5 | Hardik   |  27 | Bhopal    |  8500.00 |
       |  6 | Komal    |  22 | MP        |  4500.00 |
       |  7 | Muffy    |  24 | Indore    | 10000.00 |
+      +----+----------+-----+-----------+----------+
 
-* Table 2 − ORDERS table is as follows:
+* Table 2 − orders table is as follows:
 
       +-----+---------------------+-------------+--------+
-      |OID  | DATE                | CUSTOMER_ID | AMOUNT |
+      | oid | date                | customer_id | amount |
       +-----+---------------------+-------------+--------+
       | 102 | 2009-10-08 00:00:00 |           3 |   3000 |
       | 100 | 2009-10-08 00:00:00 |           3 |   1500 |
@@ -90,21 +91,21 @@ Consider the following two tables:
 
 Now, let us join these two tables in our SELECT statement as follows :
 ```sql
-SELECT  ID, NAME, AMOUNT, DATE
-   FROM CUSTOMERS
-   LEFT JOIN ORDERS
-   ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID
+SELECT id, name, amount, date
+   FROM customers
+   LEFT JOIN orders
+   ON customers.id = order.customer_id
 UNION ALL
-   SELECT  ID, NAME, AMOUNT, DATE
-   FROM CUSTOMERS
-   RIGHT JOIN ORDERS
-   ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
+   SELECT id, name, amount, date
+   FROM customers
+   RIGHT JOIN orders
+   ON customers.id = orders.customer_id;
 ```
 
 This would produce the following result:
     
     +------+----------+--------+---------------------+
-    | ID   | NAME     | AMOUNT | DATE                |
+    | id   | name     | amount | date                |
     +------+----------+--------+---------------------+
     |    1 | Ramesh   |   NULL | NULL                |
     |    2 | Khilan   |   1560 | 2009-11-20 00:00:00 |

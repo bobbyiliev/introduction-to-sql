@@ -8,19 +8,19 @@ You can use `SELECT` to get all of your users or a list of users that match a ce
 
 Before we dive into the `SELECT` statement let's quickly create a database:
 
-```
+```sql
 CREATE DATABASE sql_demo;
 ```
 
 Switch to that database:
 
-```
+```sql
 USE sql_demo;
 ```
 
 Create a new users table:
 
-```
+```sql
 CREATE TABLE users
 (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -34,7 +34,7 @@ CREATE TABLE users
 
 Insert some data that we could work with:
 
-```
+```sql
 INSERT INTO users
   ( username, email, active )
 VALUES
@@ -56,7 +56,7 @@ We are going to learn more about the `INSERT` statement in the following chapter
 
 Now that we've got some data in the `users` table, let's go ahead and retrieve all of the entries from that table:
 
-```
+```sql
 SELECT * FROM users;
 ```
 
@@ -88,7 +88,7 @@ As we mentioned in the previous chapters, each SQL statement needs to end with a
 
 The syntax is absolutely the same but you just change the `;` with `\G`:
 
-```
+```sql
 SELECT * FROM users \G
 ```
 
@@ -118,7 +118,7 @@ This is very handy whenever your table consists of a large number of columns and
 
 You could limit this to a specific set of columns. Let's say that you only needed the `username` and the `active` columns. In this case, you would change the `*` symbol with the columns that you want to select divided by a comma:
 
-```
+```sql
 SELECT username,active FROM users;
 ```
 
@@ -142,7 +142,7 @@ As you can see, we are getting back only the 2 columns that we've specified in t
 
 In a SQL statement, a column can be a literal with no `FROM` clause.
 
-```
+```sql
 SELECT 'Sunil' as username;
 ```
 
@@ -160,7 +160,7 @@ Output:
 
 The select clause can contain arithmetic expressions involving the operation +, –, *, and /.
 
-```
+```sql
 SELECT username, active*5 as new_active FROM users;
 ```
 
@@ -182,7 +182,7 @@ The `LIMIT` clause is very handy in case that you want to limit the number of re
 
 This can be achieved by adding the `LIMIT` clause at the end of your statement, followed by the number of entries that you want to get. For example, let's say that we wanted to get only 1 entry back. We would run the following query:
 
-```
+```sql
 SELECT * FROM users LIMIT 1;
 ```
 
@@ -204,7 +204,7 @@ In case that you wanted to get only the number of entries in a specific column, 
 
 The syntax is the following:
 
-```
+```sql
 SELECT COUNT(*) FROM users;
 ```
 
@@ -224,7 +224,7 @@ Another useful set of functions similar to `COUNT` that would make your life eas
 
 * `MIN`: This would give you the smallest value of a specific column. For example, if you had an online shop and you wanted to get the lowest price, you would use the `MIN` function. In our case, if we wanted to get the lowest user ID, we would run the following:
 
-```
+```sql
 SELECT MIN(id) FROM users;
 ```
 
@@ -232,7 +232,7 @@ This would return `1` as the lowest user ID that we have is 1.
 
 * `MAX`: Just like `MIN`, but it would return the highest value:
 
-```
+```sql
 SELECT MAX(id) FROM users;
 ```
 
@@ -240,13 +240,13 @@ In our case, this would be `3` as we have only 3 users, and the highest value of
 
 * `AVG`: As the name suggests, it would sum up all of the values of a specific column and return the average value. As we have 3 users with ids 1, 2, and 3, the average would be 6 divided by 3 users which is 2. 
 
-```
+```sql
 SELECT AVG(id) FROM users;
 ```
 
 * `SUM`: This function takes all of the values from the specified column and sums them up:
 
-```
+```sql
 SELECT SUM(id) FROM users;
 ```
 
@@ -256,7 +256,7 @@ In some cases, you might have duplicate entries in a table, and in order to get 
 
 To better demonstrate this, let's run the insert statement one more time so that we could duplicate the existing users and have 6 users in the users table:
 
-```
+```sql
 INSERT INTO users
   ( username, email, active )
 VALUES
@@ -269,7 +269,7 @@ Now, if you run `SELECT COUNT(*) FROM users;` you would get `6` back.
 
 Let's also select all users and show only the `username` column:
 
-```
+```sql
 SELECT username FROM users;
 ```
 
@@ -292,7 +292,7 @@ As you can see, each name is present multiple times in the list. We have `bobby`
 
 If we wanted to show only the unique `usernames`, we could add the `DISTINCT` keyword to our select statement:
 
-```
+```sql
 SELECT DISTINCT username FROM users;
 ```
 

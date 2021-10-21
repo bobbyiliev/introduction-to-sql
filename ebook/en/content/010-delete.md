@@ -4,7 +4,7 @@ As the name suggests, the `DELETE` statement would remove data from your databas
 
 The syntax is as follows:
 
-```
+```sql
 DELETE FROM users WHERE id=5;
 ```
 
@@ -16,7 +16,7 @@ Query OK, 1 row affected (0.01 sec)
 
 > Important: Just like the `UPDATE` statement, if you don't specify a `WHERE` clause, all of the entries from the table will be affected, meaning that all of your users will be deleted. So, it is critical to always add a `WHERE` clause when executing a `DELETE` statement.
 
-```
+```sql
 DELETE FROM users;
 ```
 
