@@ -32,8 +32,8 @@ The Users table will look like this:
 ```
 
 Rundown of the table structure:
-* We have 4 columns: `id`, `username`, `name` and `active`
-* We also have 3 entries/users
+* We have 4 columns: `id`, `username`, `name` and `active`.
+* We also have 3 entries/users.
 * The `id` column is a unique identifier of each user and is auto-incremented.
 
 In the next chapter, we will learn how to install MySQL and create our first database.
