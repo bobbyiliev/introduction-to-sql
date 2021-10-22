@@ -138,7 +138,7 @@ Thursday
 
 ## Formatting Dates and Times
 
-> In MySQL by default date format is "YYYY-MM-DD", ex: "2025-05-12, MySQL allows developers to format it in the way they want. We will discus some of them.
+> In MySQL, the default date format is "YYYY-MM-DD", ex: "2025-05-12", MySQL allows developers to format it the way they want. We will discuss some of them.
 ```sql
 SELECT DATE_FORMAT(NOW(), '%M %D %Y')
    ```
