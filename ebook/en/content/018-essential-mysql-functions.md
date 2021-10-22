@@ -170,7 +170,7 @@ SELECT DATE_ADD(NOW(), INTERVAL 1 DAY) --return tomorrows date and time
 ```sql
 SELECT DATE_ADD(NOW(), INTERVAL -1 YEAR)
    ```
-                or
+or
 ```sql
 SELECT DATE_SUB(NOW(), INTERVAL 1 YEAR)
    ```
