@@ -179,7 +179,7 @@ SELECT DATE_SUB(NOW(), INTERVAL 1 YEAR)
 2020-10-22 14:29:47
 
 ```sql
-SELECT DATEDIFF('2021-09-08 09:00', '2021-07-07 17:00') -- It will return the difference in number of days, times doesn't taken into consideration
+SELECT DATEDIFF('2021-09-08 09:00', '2021-07-07 17:00') -- It will return the difference in number of days, time won't be considered
    ```
 
 63
