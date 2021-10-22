@@ -1,15 +1,15 @@
 # SQL | DDL, DQL, DML, DCL and TCL Commands
-Structured Query Language(SQL) as we all know is the database language by the use of which we can perform certain operations on the existing database, and also we can use this language to create a database. SQL uses certain commands like Create, Drop, Insert, etc. to carry out the required tasks.
+Structured Query Language(SQL), as we all know, is the database language by which we can perform certain operations on the existing database. Also, we can use this language to create a database. SQL uses specific commands like Create, Drop, Insert, etc., to carry out the required tasks.
 1. **DDL** – Data Definition Language
 2. **DQl** – Data Query Language
 3. **DML** – Data Manipulation Language
 4. **DCL** – Data Control Language
 
-#### Though many resources claim there to be another category of SQL clauses TCL – Transaction Control Language. So we will see in detail about TCL as well.
+#### Though many resources claim there to be another category of SQL clauses TCL – Transaction Control Language, so we will see in detail about TCL as well.
 ![img.png](../assets/sql-commnad.png)
 
 ### DDL (Data Definition Language):
-DDL or Data Definition Language actually consists of the SQL commands that can be used to define the database schema. It simply deals with descriptions of the database schema and is used to create and modify the structure of database objects in the database.DDL is a set of SQL commands used to create, modify, and delete database structures but not data. These commands are normally not used by a general user, who should be accessing the database via an application.
+DDL or Data Definition Language consists of the SQL commands used to define the database schema. It simply deals with descriptions of the database schema and is used to create and modify the structure of database objects in the database. These commands usually are not used by a general user, who should be accessing the database via an application.
 
 #### List of DDL commands:
 - `CREATE`: This command is used to create the database or its objects (like table, index, function, views, store procedure, and triggers).
@@ -32,7 +32,7 @@ DROP TABLE table_name;
 ALTER TABLE Persons
 ADD Age int; 
 ```
-- `TRUNCATE`: This is used to remove all records from a table, including all spaces allocated for the records are removed.
+- `TRUNCATE`: This is used to remove all records from a table, including all spaces allocated for the records.
 ```sql
   TRUNCATE TABLE Persons;
 ```
@@ -48,7 +48,7 @@ RENAME COLUMN Age TO Year;
 ```
 
 #### DQL (Data Query Language):
-**DQL** statements are used for performing queries on the data within schema objects. The purpose of the DQL Command is to get some schema relation based on the query passed to it. We can define DQL as follows it is a component of SQL statement that allows getting data from the database and imposing order upon it. It includes the SELECT statement. This command allows getting the data out of the database to perform operations with it. When a SELECT is fired against a table or tables the result is compiled into a further temporary table, which is displayed or perhaps received by the program i.e. a front-end.
+**DQL** statements are used for performing queries on the data within schema objects. The purpose of the DQL Command is to get some schema relation based on the query passed to it. We can define DQL as follows. It is a component of the SQL statement that allows getting data from the database and imposing order upon it. It includes the SELECT statement. This command allows getting the data out of the database to perform operations with it. When a SELECT is fired against a table(s), the result is compiled into a different temporary table, which is displayed or perhaps received by the program, i.e. a front-end.
 
 #### List of DQL:
 `SELECT`: It is used to retrieve data from the database.
@@ -64,7 +64,7 @@ SELECT * FROM table_name;
 |      5 | Martin Blank | 2008-06-24 |   5600 |    NULL |
 +--------+--------------+------------+--------+---------+
 ```
-The SQL commands that deals with the manipulation of data present in the database belong to DML or Data Manipulation Language and this includes most of the SQL statements. It is the component of the SQL statement that controls access to data and to the database. Basically, DCL statements are grouped with DML statements.
+The SQL commands that deal with the manipulation of data present in the database belong to DML or Data Manipulation Language, including most of the SQL statements. It is the component of the SQL statement that controls access to data and the database. DCL statements are grouped with DML statements.
 
 #### List of DML commands:
 - `INSERT `: It is used to insert data into a table.
@@ -103,13 +103,13 @@ EXEC procedure_name;
 - `EXPLAIN PLAN`: It describes the access path to data.
 
 #### DCL (Data Control Language):
-DCL includes commands such as GRANT and REVOKE which mainly deal with the rights, permissions, and other controls of the database system.
+DCL includes commands such as GRANT and REVOKE, which mainly deal with the database system's rights, permissions, and other controls.
 
 ##### List of  DCL commands:
 - `GRANT`: This command gives users access privileges to the database.
 - `REVOKE`: This command withdraws the user’s access privileges given by using the GRANT command.
 
-Though many resources claim there to be another category of SQL clauses TCL – Transaction Control Language. So we will see in detail about TCL as well. TCL commands deal with the transaction within the database.
+Though many resources claim there to be another category of SQL clauses TCL – Transaction Control Language, we will see in detail about TCL. TCL commands deal with the transaction within the database.
 
 ##### List of TCL commands:
 - `COMMIT`: Commits a Transaction.

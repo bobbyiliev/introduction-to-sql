@@ -2,7 +2,7 @@
 
 The `JOIN` clause allows you to combine the data from 2 or more tables into one result set.
 
-As we will be selecting from multiple columns, we would need to include the list of the columns that we want to select data from after the `FROM` clause separated by a comma.
+As we will be selecting from multiple columns, we need to include the list of the columns we want to choose data from after the `FROM` clause is separated by a comma.
 
 In this chapter, we will go over the following `JOIN` types:
 
@@ -11,7 +11,7 @@ In this chapter, we will go over the following `JOIN` types:
 * `LEFT` Join
 * `RIGHT` Join
 
-Before we get started, let's create a new database and 2 tables that we are going to work with:
+Before we get started, let's create a new database and two tables that we are going to work with:
 
 * We are going to call the database `demo_joins`:
 
@@ -25,7 +25,7 @@ CREATE DATABASE demo_joins;
 USE demo_joins;
 ```
 
-* Then, the first table will be called `users` and it will only have 2 columns: `id` and `username`:
+* Then, the first table will be called `users`, and it will only have two columns: `id` and `username`:
 
 ```
 CREATE TABLE users
@@ -35,7 +35,7 @@ CREATE TABLE users
 );
 ```
 
-* Then, let's create a second table called `posts`, and to keep things simple we will have three two columns: `id`, `user_id` and `title`:
+* Then, let's create a second table called `posts`, and to keep things simple, we will have three two columns: `id`, `user_id` and `title`:
 
 ```
 CREATE TABLE posts
@@ -46,7 +46,7 @@ CREATE TABLE posts
 );
 ```
 
-> The `user_id` column would be used to reference the ID of the user that the post belongs to. It is going to be a one to many relation, e.g. one user could have many post:
+> The `user_id` column would be used to reference the user's ID that the post belongs to. It is going to be a one to many relations, e.g. one user could have many posts:
 
 ![One to many relation](https://imgur.com/ipIjCaL.png)
 
@@ -75,13 +75,13 @@ VALUES
   ('1', 'SQL - structured query language');
 ```
 
-Now that we've got our tables and demo data ready let's go ahead and learn how to use joins.
+Now that we've got our tables and demo data ready, let's go ahead and learn how to use joins.
 
 ## Cross join
 
-The `CROSS` join allows you to basically put the result of two tables next to each other without specifying any `WHERE` conditions. This makes the `CROSS` join the simplest one, but it also not of much use in a real-life scenario.
+The `CROSS` join allows you to put the result of two tables next to each other without specifying any `WHERE` conditions. This makes the `CROSS` join the simplest one, but it is also not of much use in a real-life scenario.
 
-So if we were to select all of the users and all of the posts side by side, we will use the following query:
+So if we were to select all of the users and all of the posts side by side, we would use the following query:
 
 ```
 SELECT * FROM users CROSS JOIN posts;
@@ -116,15 +116,15 @@ The output will be all of your users and all of the posts side by side:
 +----+----------+----+--------+-----------------+
 ```
 
-As mentioned above, in a real-life scenario, you will highly unlikely run a `CROSS` join for two whole tables. If the tables have tens of thousands of rows, an unqualified CROSS JOIN can take minutes to complete.
+As mentioned above, you will highly unlikely run a `CROSS` join for two whole tables in a real-life scenario. If the tables have tens of thousands of rows, an unqualified CROSS JOIN can take minutes to complete.
 
-You would most likely use one of the followinwith a specific condition. 
+You would most likely use one of the following with a specific condition. 
 
-In mysql, CROSS JOIN and INNER JOIN are equivalent to JOIN. 
+In MySQL, CROSS JOIN and INNER JOIN are equivalent to JOIN. 
 
 ## Inner join
 
-The `INNER` join is used to join two tables, however, unlike the `CROSS` join, by convention it is based on a condition. By using an `INNER` join, you can match the first table to the second one.
+The `INNER` join is used to join two tables. However, unlike the `CROSS` join, by convention, it is based on a condition. By using an `INNER` join, you can match the first table to the second one.
 
 As we have a one-to-many relationship, a best practice would be to use a primary key for the posts `id` column and a foreign key for the `user_id`; that way, we can 'link' or relate the users table to the posts table. However, this is beyond the scope of this SQL basics eBook, though I might extend it in the future and add more chapters.
 
@@ -138,9 +138,9 @@ ON users.id = posts.user_id;
 
 Rundown of the query:
 
-* `SELECT * FROM users`: This is a standard select that we've covered many times in the previous chapters.
-* `INNER JOIN posts`: Then, we specify the second table, which table we want to join the result set with.
-* `ON users.id = posts.user_id`: Finally, we specify the logic on how we want the data in these two tables to be merged together. The `user.id` is the `id` column of the `user` table, which is also the primary ID, and `posts.user_id` is the foreign key in the email address table referring to the ID column in the users table.
+* `SELECT * FROM users`: This is a standard select we've covered many times in the previous chapters.
+* `INNER JOIN posts`: Then, we specify the second table and which table we want to join the result set.
+* `ON users.id = posts.user_id`: Finally, we specify how we want the data in these two tables to be merged. The `user.id` is the `id` column of the `user` table, which is also the primary ID, and `posts.user_id` is the foreign key in the email address table referring to the ID column in the users table.
 
 The output will be the following, associating each user with their post based on the `user_id` column:
 
@@ -155,7 +155,7 @@ The output will be the following, associating each user with their post based on
 |  1 | bobby    |  5 |       1 | SQL             |
 +----+----------+----+---------+-----------------+
 ```
-Note that the INNER JOIN could (in mysql) equivalently be written merely as JOIN, but that can very for other SQL dialects:
+Note that the INNER JOIN could (in MySQL) equivalently be written merely as JOIN, but that can vary for other SQL dialects:
 
 ```
 SELECT * FROM users
@@ -165,14 +165,14 @@ ON users.id = posts.user_id;
 
 The main things that you need to keep in mind here are the `INNER JOIN` and `ON` clauses.
 
-With the inner join, the `NULL` values are discarded. For example, if you have a user who does not have a post associated with it, when running the above `INNER` join query, the user that has NULL posts will not be displayed.
+With the inner join, the `NULL` values are discarded. For example, if you have a user who does not have a post associated with it, the user with NULL posts will not be displayed when running the above `INNER` join query.
 
 To get the null values as well, you would need to use an outer join.
 
 ### Types of Inner Join
 
 1.  **Theta Join ( θ )** :- Theta join combines rows from different tables provided they satisfy the theta condition.
-    The join condition is denoted by symbol `θ`. \
+    The join condition is denoted by the symbol `θ`. \
     Here the comparison operators `(≤, ≥, ˂, ˃, =, ̚ )` come into picture. \
     **Notation** :- R<sub>1</sub> ⋈<sub>θ</sub> R<sub>2</sub>. \
     \
@@ -183,23 +183,23 @@ To get the null values as well, you would need to use an outer join.
     WHERE mobile.price < laptop.price;`
 
 2.  **Equijoin** :- When Theta join uses only equality (=) comparison operator, it is said to be equijoin. \
-    For example, suppose we want to buy a mobile and a laptop, based on our budget we have thought of buying both of same price. \
+    For example, suppose we want to buy a mobile and a laptop, based on our budget we have thought of buying both of the same prices. \
     \
     `SELECT mobile.model, laptop.model
     FROM mobile, laptop
     WHERE mobile.price = laptop.price;`
     
 3.  **Natural Join ( ⋈ )** :- Natural join does not use any comparison operator. It does not concatenate the way a Cartesian product does. \
-    We can perform a Natural Join only if there is at least one common column that exists between two tables. In addition, the column must have the same name and domain. \
+    We can perform a Natural Join only if at least one standard column exists between two tables. In addition, the column must have the same name and domain. \
     \
     `SELECT * FROM mobile NATURAL JOIN laptop;`
 
 
 ## Left join
 
-By using the `LEFT OUTER` join, you would get all rows from the first table that you've specified, and if there are no associated records with it within the second table, you will get a `NULL` value. 
+Using the `LEFT OUTER` join, you would get all rows from the first table that you've specified, and if there are no associated records within the second table, you will get a `NULL` value. 
 
-In our case, we have a user called `graisi`, which is not associated with a specific post. As you can see from the output from the previous query, the `graisi` user was not present in there. To show that user even though it does not have an associated post with it, you could use a `LEFT OUTER` join:
+In our case, we have a user called `graisi`, which is not associated with a specific post. As you can see from the output from the previous query, the `graisi` user was not present there. To show that user, even though it does not have an associated post with it, you could use a `LEFT OUTER` join:
 
 ```
 SELECT *
@@ -235,7 +235,7 @@ VALUES
   ('123', 'No user post!');
 ```
 
-We are specifying `123` as the user ID, but we don't have such a user in our `users` table.
+We specify `123` as the user ID, but we don't have such a user in our `users` table.
 
 Now, if you were to run the `LEFT` outer join, you would not see the post as it has a null value for the corresponding `users` table.
 
@@ -282,8 +282,8 @@ Output:
 
 ## Conclusion
 
-Joins are fundamental to using SQL with data. The whole concept of joins might be very confusing in the beginning but would make a lot of sense once you get used to it.
+Joins are fundamental to using SQL with data. The whole concept of joins might be very confusing initially but would make a lot of sense once you get used to it.
 
-The best way to wrap your head around it is to write some queries and play around with each type of `JOIN` and see how the result set changes.
+The best way to wrap your head around it is to write some queries, play around with each type of `JOIN`, and see how the result set changes.
 
 For more information, you could take a look at the official documentation [here](https://dev.mysql.com/doc/refman/8.0/en/join.html).
