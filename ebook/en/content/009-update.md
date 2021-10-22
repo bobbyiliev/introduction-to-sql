@@ -6,7 +6,7 @@ You can use the `UPDATE` statement to update multiple columns in a single table.
 
 The syntax would look like this:
 
-```
+```sql
 UPDATE users SET username='bobbyiliev' WHERE id=1;
 ```
 
@@ -37,7 +37,7 @@ If you have been following along all of the user entries in our `users` table, i
 
 Let's go ahead and update this for all users and set the column value to `404 bio not found`, For example:
 
-```
+```sql
 UPDATE users SET about='404 bio not found';
 ```
 
@@ -65,7 +65,7 @@ Now, if you were to run a select for all `users`, you would get the following re
 
 Let's now say that we wanted to update the `about` column for the user with an id of 2. In this case, we need to specify a `WHERE` clause followed by the ID of the user that we want to update as follows:
 
-```
+```sql
 UPDATE users SET about='Hello World :)' WHERE id=2;
 ```
 

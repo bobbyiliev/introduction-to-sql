@@ -85,7 +85,7 @@ mysql -u root -p
 
 After that, switch to the `demo` database that we created in the previous chapter:
 
-```
+```sql
 USE demo;
 ```
 

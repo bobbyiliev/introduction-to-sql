@@ -30,7 +30,7 @@ If you have root access to the server, you could use the `--all-databases` flag 
 
 Let's say that you would like to export each database into a separate .sql file. You could do that with the following script:
 
-```
+```bash
 #!/bin/bash
 
 ##
