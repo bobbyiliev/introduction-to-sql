@@ -101,7 +101,6 @@ SELECT CONCAT('first', 'last')
    ```
 firstlast
 
-
 ## DATE Functions
 ```sql
 SELECT NOW()
@@ -137,3 +136,27 @@ SELECT HOUR(NOW())
 SELECT DAYTIME(NOW())
    ```
 Thursday
+
+## Formatting Dates and Times
+
+> In MySQL by default date format is "YYYY-MM-DD", ex: "2025-05-12, MySQL allows developers to format it in the way they want. We will discus some of them.
+```sql
+SELECT DATE_FORMAT(NOW(), '%M %D %Y')
+   ```
+October 22nd 2021
+
+```sql
+SELECT DATE_FORMAT(NOW(), '%m %d %y')
+   ```
+10 22 21 
+
+```sql
+SELECT DATE_FORMAT(NOW(), '%m %D %y')
+   ```
+10 22nd 21 
+
+```sql
+SELECT TIME_FORMAT(NOW(), '%H %i %p')
+   ```
+14:11 PM
+
