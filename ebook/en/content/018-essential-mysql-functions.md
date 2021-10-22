@@ -160,3 +160,34 @@ SELECT TIME_FORMAT(NOW(), '%H %i %p')
    ```
 14:11 PM
 
+## Calculating Dates and Times
+
+```sql
+SELECT DATE_ADD(NOW(), INTERVAL 1 DAY)
+   ```
+> return tomorrows date and time
+2021-10-23 14:26:17
+
+```sql
+SELECT DATE_ADD(NOW(), INTERVAL -1 YEAR)
+   ```
+                                     OR
+```sql
+SELECT DATE_SUB(NOW(), INTERVAL 1 YEAR)
+   ```
+> Both the queries will return the same output
+
+2020-10-22 14:29:47
+
+```sql
+SELECT DATEDIFF('2021-09-08 09:00', '2021-07-07 17:00')
+   ```
+> It will return the difference in number of days, times doesn't taken into consideration
+
+63
+
+```sql
+SELECT TIME_TO_SEC('09:00') - TIME_TO_SEC('09:02')
+   ```
+-120
+
