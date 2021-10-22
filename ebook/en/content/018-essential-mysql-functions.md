@@ -166,12 +166,13 @@ SELECT TIME_FORMAT(NOW(), '%H %i %p')
 SELECT DATE_ADD(NOW(), INTERVAL 1 DAY)
    ```
 > return tomorrows date and time
+
 2021-10-23 14:26:17
 
 ```sql
 SELECT DATE_ADD(NOW(), INTERVAL -1 YEAR)
    ```
-                                     OR
+                                                                         OR
 ```sql
 SELECT DATE_SUB(NOW(), INTERVAL 1 YEAR)
    ```
