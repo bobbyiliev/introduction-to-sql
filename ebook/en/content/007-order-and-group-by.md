@@ -12,8 +12,8 @@ The main thing that you need to keep in mind when using `ORDER BY` is to specify
 
 If we were to run the following statement without providing an `ORDER BY` clause:
 
-```
-SELECT id, username FROM users ;
+```sql
+SELECT id, username FROM users;
 ```
 
 We will get the following output:
@@ -33,7 +33,7 @@ We will get the following output:
 
 As you can see, the result set is sorted by the primary key, which in our case is the `id` of each user. If we wanted to sort the output by `username`, we would run the following query:
 
-```
+```sql
 SELECT id, username FROM users ORDER BY username;
 ```
 
@@ -60,7 +60,8 @@ The default sorting is ascending and is specified with the `ASC` keyword, and yo
 
 If we use the query above and add `DESC` at the end as follows:
 
-```
+
+```sql
 SELECT id, username FROM users ORDER BY username DESC;
 ```
 
@@ -89,8 +90,8 @@ For example, let's say that we wanted to get all of the counts of all users grou
 
 In our case, we have two users with username `bobby`, two users with username `tony`, and two users with username `devdojo`. This represented in an SQL statement would look like this:
 
-```
-SELECT COUNT(username), username FROM users GROUP by username;
+```sql
+SELECT COUNT(username), username FROM users GROUP BY username;
 ```
 
 The output, in this case, would be:
@@ -117,8 +118,11 @@ For example, let's say that we wanted to get all usernames that are duplicates, 
 
 In our case, we have two users with username `bobby`, two users with username `tony`, and two users with username `devdojo`. This represented in an SQL statement would look like this:
 
-```
-SELECT COUNT(username), username FROM users GROUP by username HAVING COUNT(username) > 1;
+```sql
+SELECT COUNT(username), username
+FROM users
+GROUP BY username
+HAVING COUNT(username) > 1;
 ```
 
 The output, in this case, would be:

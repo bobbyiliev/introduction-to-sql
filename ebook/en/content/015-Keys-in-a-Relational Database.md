@@ -11,9 +11,9 @@ For example, the Customer ID attribute of the relation Customer is unique for al
 
 Customer Name attribute of Customer cannot be considered as Super Key because many customers for the organization can have same name. However when combined with Customer ID it becomes a Super Key {CustomerID, CustomerName}. It means that Super Key can have additional attributes.  Consider any key K which is identified as a super key. Any superset of key K is also a super key. For example the possible Super Keys for Customer Relation are
 
-- [CustomerID, CustomerName, Customer Address]
-- [CustomerID, CustomerName, Customer Contact Number]
-- [CustomerID, Customer Contact Number]
+- [ CustomerID, CustomerName, Customer Address ]
+- [ CustomerID, CustomerName, Customer Contact Number ]
+- [ CustomerID, Customer Contact Number ]
 
 ### *Candidate Keys*
 

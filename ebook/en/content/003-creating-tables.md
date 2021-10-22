@@ -50,7 +50,7 @@ mysql -u root -p
 
 * Then create a database called `demo_db`:
 
-```
+```sql
 CREATE DATABASE demo_db;
 ```
 
@@ -60,7 +60,7 @@ You can consider this database as the container where we would create all of the
 
 Once you've created the database, you need to switch to that database:
 
-```
+```sql
 USE demo_db;
 ```
 
@@ -70,14 +70,14 @@ Alternatively, if you do not want to 'switch' to the specific database, you woul
 
 * Switch to the `demo_db` first and then run a select statement:
 
-```
+```sql
 USE demo_db;
 SELECT username FROM users;
 ```
 
 * Alternatively, rather than using the `USE` command first, specify the database name followed by the table name separated with a  dot: `db_name.table_name`:
 
-```
+```sql
 SELECT username FROM demo_db.users;
 ```
 
@@ -97,7 +97,7 @@ Let's say that we wanted to create a `users` table with the following columns:
 
 The query that we would need to run to create that table would be:
 
-```
+```sql
 CREATE TABLE users
 (
     id INT,
@@ -112,7 +112,7 @@ CREATE TABLE users
 
 To list the available tables, you could run the following command:
 
-```
+```sql
 SHOW TABLES;
 ```
 
@@ -132,10 +132,10 @@ You can create a new table from an existing table by using the `CREATE TABLE AS`
 
 Let's test that by creating a new table from the table `users` which we created earlier.
 
-```
+```sql
 CREATE TABLE users2 AS
 (
-SELECT * FROM users
+    SELECT * FROM users
 );
 
 ```
@@ -153,7 +153,7 @@ Records: 0  Duplicates: 0  Warnings: 0
 You can rename a table by using `ALTER TABLE` statement.
 
 Let's change name of user2 table to user3
-```s
+```sql
 ALTER TABLE user2 RENAME TO user3 
 ```
 
@@ -163,7 +163,7 @@ You can drop or delete tables by using the `DROP TABLE` statement.
 
 Let's test that and drop the table that we've just created:
 
-```
+```sql
 DROP TABLE users;
 ```
 
@@ -185,7 +185,7 @@ By default, each column in your table can hold NULL values. In case that you don
 
 For example, let's say that we want the `username` column to be a required one, we would need to alter the table create statement and include `NOT NULL` right next to the `username` column like this:
 
-```
+```sql
 CREATE TABLE users
 (
     id INT,
@@ -208,7 +208,7 @@ This can be achieved with a primary key and `AUTO_INCREMENT`. The primary key co
 
 If we were to alter the table creation statement, it would look like this:
 
-```
+```sql
 CREATE TABLE users
 (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -229,13 +229,13 @@ Let's say that we wanted to add an `email` column with type varchar to our `user
 
 The syntax would be:
 
-```
+```sql
 ALTER TABLE users ADD email VARCHAR(255);
 ```
 
 After that, if you were to describe the table, you would see the new column:
 
-```
+```sql
 DESCRIBE users;
 ```
 
@@ -256,7 +256,7 @@ Output:
 
 If you wanted to drop a specific column, the syntax would be:
 
-```
+```sql
 ALTER TABLE table_name DROP COLUMN column_name;
 ```
 
@@ -273,7 +273,7 @@ The `TRUNCATE TABLE` command is used to **delete all of the data** from an exist
 
 * Syntax of Truncate table:
 
-```
+```sql
 TRUNCATE TABLE table_name;
 ```
 
@@ -297,7 +297,7 @@ Consider a Sellers table having the following records:
 
 Following is the example of a Truncate command:
 
-```
+```sql
 TRUNCATE TABLE Sellers;
 ```
 

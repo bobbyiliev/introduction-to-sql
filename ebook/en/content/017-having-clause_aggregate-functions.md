@@ -4,12 +4,14 @@ Unlike where clause which imposes conditions on columns `Having` clause enables 
 
 ## Syntax
 
-#### `SELECT` column_name(s)
-#### `FROM` table_name
-#### `WHERE` condition
-#### `GROUP BY` column_name(s)
-#### `HAVING` condition
-#### `ORDER BY` column_name(s);
+```sql
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+HAVING condition
+ORDER BY column_name(s);
+```
 
 ## Description
 
@@ -51,7 +53,9 @@ Suppose this are the table given to us
   Calculates `average` of the given column of values
 
 ```sql
-SELECT AVG(price) AS Avg_Purchase, customer_name FROM purchase GROUP BY customer_name;
+SELECT AVG(price) AS Avg_Purchase, customer_name
+FROM purchase
+GROUP BY customer_name;
 ```
 
 | Avg_Purchase | customer_name |
@@ -63,7 +67,9 @@ SELECT AVG(price) AS Avg_Purchase, customer_name FROM purchase GROUP BY customer
    Calculates `sum` of values of given column.
 
 ```sql
-SELECT SUM(price) AS Total_Bill, customer_name FROM purchase GROUP BY customer_name;
+SELECT SUM(price) AS Total_Bill, customer_name
+FROM purchase
+GROUP BY customer_name;
 ```
 
 | Total_Bill | customer_name |
@@ -75,7 +81,9 @@ SELECT SUM(price) AS Total_Bill, customer_name FROM purchase GROUP BY customer_n
   Gives `count` of entries/ values in given column.
 
 ```sql
-SELECT COUNT(item) AS Total_Items, customer_name FROM purchase GROUP BY customer_name;
+SELECT COUNT(item) AS Total_Items, customer_name
+FROM purchase
+GROUP BY customer_name;
 ```
 
 | Total_Items | customer_name |
@@ -87,7 +95,9 @@ SELECT COUNT(item) AS Total_Items, customer_name FROM purchase GROUP BY customer
   Return `maximum` value from the number of values in the column.
 
 ```sql
-SELECT MAX(price) AS Highest_Purchase, customer_name FROM purchase GROUP BY customer_name;
+SELECT MAX(price) AS Highest_Purchase, customer_name
+FROM purchase
+GROUP BY customer_name;
 ```
 
 | Highest_Purchase | customer_name |
@@ -99,7 +109,9 @@ SELECT MAX(price) AS Highest_Purchase, customer_name FROM purchase GROUP BY cust
    Return `minimum` value from the number of values in the column.
 
 ```sql
-SELECT MIN(price) AS Lowest_Purchase, customer_name FROM purchase GROUP BY customer_name;
+SELECT MIN(price) AS Lowest_Purchase, customer_name
+FROM purchase
+GROUP BY customer_name;
 ```
 | Lowest_Purchase | customer_name |
 |-----------------|---------------|
@@ -111,7 +123,10 @@ SELECT MIN(price) AS Lowest_Purchase, customer_name FROM purchase GROUP BY custo
 ### Example 1
 
 ```sql
-SELECT COUNT(class) AS strength, class FROM Students GROUP BY class HAVING COUNT(class) > 2;
+SELECT COUNT(class) AS strength, class
+FROM Students
+GROUP BY class
+HAVING COUNT(class) > 2;
 ```
 
 Above query gives number of students in a class `having` number of students > 2 
@@ -123,7 +138,10 @@ Above query gives number of students in a class `having` number of students > 2
 ### Example 2
 
 ```sql
-SELECT customer_name, MIN(price) AS MIN_PURCHASE FROM purchase GROUP BY customer_name HAVING MIN(price) > 10;
+SELECT customer_name, MIN(price) AS MIN_PURCHASE
+FROM purchase
+GROUP BY customer_name
+HAVING MIN(price) > 10;
 ```
 Above query finds `minimum` price which is > 10
 
@@ -135,7 +153,11 @@ Above query finds `minimum` price which is > 10
 ### Example 3
 
 ```sql
-SELECT customer_name, AVG(price) AS Average_Purchase FROM purchase GROUP BY customer_name HAVING AVG(price) > 550 ORDER BY customer_name DESC;
+SELECT customer_name, AVG(price) AS Average_Purchase
+FROM purchase
+GROUP BY customer_name
+HAVING AVG(price) > 550
+ORDER BY customer_name DESC;
 ```
 Above query calculates `average` of price and prints customer name and average price which is greater than 550 with descending `order` of customer names.
 
@@ -148,7 +170,12 @@ Above query calculates `average` of price and prints customer name and average p
 ### Example 4
 
 ```sql
-SELECT customer_name, SUM(price) AS Total_Purchase FROM purchase WHERE customer_name LIKE "S%" GROUP BY customer_name HAVING SUM(price) > 1000;
+SELECT customer_name, SUM(price) AS Total_Purchase
+FROM purchase
+WHERE customer_name
+LIKE "S%"
+GROUP BY customer_name
+HAVING SUM(price) > 1000;
 ```
 Calculates `SUM` of price and returns customer name and sum > 1000.
 
