@@ -86,10 +86,9 @@ SELECT SUBSTRING('Kindergarten', 3, 5)
 nderg
 
 ```sql
-SELECT LOCATE('n','Kindergarten')
+SELECT LOCATE('n','Kindergarten') -- LOCATE returns the  first occurrence of a character or a sequence of character, if the character is not present then it returns 0
    ```
 3
-> NOTE:LOCATE returns the first occurence of a character or a sequence of characters, if the character if not present then mysql will return 0
 
 ```sql
 SELECT REPLACE('Kindergarten', 'garten', 'garden')
@@ -163,16 +162,15 @@ SELECT TIME_FORMAT(NOW(), '%H %i %p')
 ## Calculating Dates and Times
 
 ```sql
-SELECT DATE_ADD(NOW(), INTERVAL 1 DAY)
+SELECT DATE_ADD(NOW(), INTERVAL 1 DAY) --return tomorrows date and time
    ```
-> return tomorrows date and time
 
 2021-10-23 14:26:17
 
 ```sql
 SELECT DATE_ADD(NOW(), INTERVAL -1 YEAR)
    ```
-                  or
+                or
 ```sql
 SELECT DATE_SUB(NOW(), INTERVAL 1 YEAR)
    ```
@@ -181,9 +179,8 @@ SELECT DATE_SUB(NOW(), INTERVAL 1 YEAR)
 2020-10-22 14:29:47
 
 ```sql
-SELECT DATEDIFF('2021-09-08 09:00', '2021-07-07 17:00')
+SELECT DATEDIFF('2021-09-08 09:00', '2021-07-07 17:00') -- It will return the difference in number of days, times doesn't taken into consideration
    ```
-> It will return the difference in number of days, times doesn't taken into consideration
 
 63
 
