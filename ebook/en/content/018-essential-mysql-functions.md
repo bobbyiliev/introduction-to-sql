@@ -86,7 +86,7 @@ SELECT SUBSTRING('Kindergarten', 3, 5)
 nderg
 
 ```sql
-SELECT LOCATE('n','Kindergarten') -- LOCATE returns the  first occurrence of a character or a sequence of character, if the character is not present then it returns 0
+SELECT LOCATE('n','Kindergarten') -- LOCATE returns the first occurrence of a character or character string, if found, otherwise it returns 0
    ```
 3
 
