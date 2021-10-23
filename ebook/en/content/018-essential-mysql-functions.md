@@ -86,10 +86,9 @@ SELECT SUBSTRING('Kindergarten', 3, 5)
 nderg
 
 ```sql
-SELECT LOCATE('n','Kindergarten')
+SELECT LOCATE('n','Kindergarten') -- LOCATE returns the first occurrence of a character or character string, if found, otherwise it returns 0
    ```
 3
-> NOTE:LOCATE returns the first occurence of a character or a sequence of characters, if the character if not present then mysql will return 0
 
 ```sql
 SELECT REPLACE('Kindergarten', 'garten', 'garden')
@@ -100,7 +99,6 @@ Kindergarden
 SELECT CONCAT('first', 'last')
    ```
 firstlast
-
 
 ## DATE Functions
 ```sql
@@ -137,3 +135,57 @@ SELECT HOUR(NOW())
 SELECT DAYTIME(NOW())
    ```
 Thursday
+
+## Formatting Dates and Times
+
+> In MySQL, the default date format is "YYYY-MM-DD", ex: "2025-05-12", MySQL allows developers to format it the way they want. We will discuss some of them.
+```sql
+SELECT DATE_FORMAT(NOW(), '%M %D %Y')
+   ```
+October 22nd 2021
+
+```sql
+SELECT DATE_FORMAT(NOW(), '%m %d %y')
+   ```
+10 22 21 
+
+```sql
+SELECT DATE_FORMAT(NOW(), '%m %D %y')
+   ```
+10 22nd 21 
+
+```sql
+SELECT TIME_FORMAT(NOW(), '%H %i %p')
+   ```
+14:11 PM
+
+## Calculating Dates and Times
+
+```sql
+SELECT DATE_ADD(NOW(), INTERVAL 1 DAY) --return tomorrows date and time
+   ```
+
+2021-10-23 14:26:17
+
+```sql
+SELECT DATE_ADD(NOW(), INTERVAL -1 YEAR)
+   ```
+or
+```sql
+SELECT DATE_SUB(NOW(), INTERVAL 1 YEAR)
+   ```
+> Both the queries will return the same output
+
+2020-10-22 14:29:47
+
+```sql
+SELECT DATEDIFF('2021-09-08 09:00', '2021-07-07 17:00') -- It will return the difference in number of days, time won't be considered
+   ```
+
+63
+
+```sql
+SELECT TIME_TO_SEC('09:00') - TIME_TO_SEC('09:02')
+   ```
+-120
+
