@@ -18,7 +18,6 @@ The main use of `COMMIT` command is to `make the transaction permanent`. If ther
 ```sql
 COMMIT;
 ```
-### `COMMIT` Examples
 
 ## `ROLLBACK`
 
@@ -29,8 +28,6 @@ Using this command, the database can be `restored to the last committed state`. 
 ROLLBACK TO savepoint-name;
 ```
 
-### `ROLLBACK` Examples
-
 ## `SAVEPOINT`
 
 The main use of the Savepoint command is to save a transaction temporarily. This way users can rollback to the point whenever it is needed.
@@ -40,7 +37,116 @@ The main use of the Savepoint command is to save a transaction temporarily. This
 SAVEPOINT savepoint-name;
 ```
 
-### `SAVEPOINT` Examples
+## Examples
+
+#### This is purchase table that we are going to use through this tutorial
+
+| item         | price | customer_name |
+|--------------|-------|---------------|
+| Pen          |    10 | Sanskriti     |
+| Bag          |  1000 | Sanskriti     |
+| Vegetables   |   500 | Sanskriti     |
+| Shoes        |  5000 | Sanskriti     |
+| Water Bottle |   800 | XYZ           |
+| Mouse        |   120 | ABC           |
+| Sun Glasses  |  1350 | ABC           |
+
+```sql
+UPDATE purchase SET price = 20 WHERE item = "Pen";
+```
+##### O/P :  Query OK, 1 row affected (3.02 sec) (Update the price of Pen set it from 10 to 20)
+
+```sql
+SELECT * FROM purchase;
+```
+##### O/P
+| item         | price | customer_name |
+|--------------|-------|---------------|
+| Pen          |    20 | Sanskriti     |
+| Bag          |  1000 | Sanskriti     |
+| Vegetables   |   500 | Sanskriti     |
+| Shoes        |  5000 | Sanskriti     |
+| Water Bottle |   800 | XYZ           |
+| Mouse        |   120 | ABC           |
+| Sun Glasses  |  1350 | ABC           |
+
+```sql
+START TRANSACTION;
+```
+##### Start transaction
+
+```sql
+COMMIT;
+```
+##### Saved/ Confirmed the transactions till this point 
+
+```sql
+ROLLBACK;
+```
+##### Lets consider we tried to rollback above transaction
+
+```sql
+SELECT * FROM purchase;
+```
+#### O/P:
+| item         | price | customer_name |
+|--------------|-------|---------------|
+| Pen          |    20 | Sanskriti     |
+| Bag          |  1000 | Sanskriti     |
+| Vegetables   |   500 | Sanskriti     |
+| Shoes        |  5000 | Sanskriti     |
+| Water Bottle |   800 | XYZ           |
+| Mouse        |   120 | ABC           |
+| Sun Glasses  |  1350 | ABC           |
+##### As we have committed the transactions the `rollback` will not affect anything
+
+```sql 
+SAVEPOINT  sv_update;
+```
+##### Create the `savepoint` the transactions above this will not be rollbacked
+
+```sql 
+UPDATE purchase SET price = 30 WHERE item = "Pen";
+```
+#### O/P : Query OK, 1 row affected (0.57 sec)
+#### Rows matched: 1  Changed: 1  Warnings: 0
+
+```sql 
+SELECT * FROM purchase;
+```
+
+| item         | price | customer_name |
+|--------------|-------|---------------|
+| Pen          |    30 | Sanskriti     |
+| Bag          |  1000 | Sanskriti     |
+| Vegetables   |   500 | Sanskriti     |
+| Shoes        |  5000 | Sanskriti     |
+| Water Bottle |   800 | XYZ           |
+| Mouse        |   120 | ABC           |
+| Sun Glasses  |  1350 | ABC           |
+##### price of pen is changed to 30 using the `update` command
+
+```sql
+ROLLBACK to sv_update;
+```
+##### Now if we `rollback` to the `savepoint` price should be 20 after `rollback` lets see
+
+```sql 
+SELECT * FROM purchase;
+```
+
+| item         | price | customer_name |
+|--------------|-------|---------------|
+| Pen          |    20 | Sanskriti     |
+| Bag          |  1000 | Sanskriti     |
+| Vegetables   |   500 | Sanskriti     |
+| Shoes        |  5000 | Sanskriti     |
+| Water Bottle |   800 | XYZ           |
+| Mouse        |   120 | ABC           |
+| Sun Glasses  |  1350 | ABC           |
+| Torch        |   850 | ABC           |
+##### As expected we can see `update` query is rollbacked to sv_update.
+
 
 
 ## Conclusion
