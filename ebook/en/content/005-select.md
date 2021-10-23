@@ -82,6 +82,50 @@ This will return all of the entries in the `users` table along with all of the c
 
 As you can see, we get a list of the 3 users that we've just created, including all of the columns in that table. In some cases, the table might have a lot of columns, and you might not want to see all of them. For example, we have the `about` and `birthday` columns that are all `NULL` at the moment. So let's see how we could limit that and get only a list of specific columns.
 
+## Pattern matching
+SQL pattern matching let's you to search for patterns if you don't know the exact word or phrase you are looking for. To do this, we use so-called wildcard characters to match a pattern together with LIKE and ILIKE operators.
+
+Two of the most common wildcard characters are `_` and `%`.
+
+`_` matches any single character and `%` matches an arbitrary number of characters.
+
+Let's see an example how you would look for a `username` ending with `y`:
+
+```sql
+SELECT * FROM users WHERE username LIKE '%y';
+```
+
+Output:
+```
++----+----------+-------+----------+--------+---------------+
+| id | username | about | birthday | active | email         |
++----+----------+-------+----------+--------+---------------+
+|  1 | bobby    | NULL  | NULL     |      1 | b@devdojo.com |
+|  3 | tony     | NULL  | NULL     |      1 | t@devdojo.com |
++----+----------+-------+----------+--------+---------------+
+```
+As you can see above, we used `%` to match any number of characters preceding the character `y`.
+
+If we know the exact number of characters we want to match, we can use `_`. Each `_` represents a single character.
+
+So, if we want to look up an username that has `e` as its second character, we would do something like this:
+
+```sql
+SELECT * FROM users WHERE username LIKE '_e%';
+```
+
+Output: 
+```
++----+----------+-------+----------+--------+---------------+
+| id | username | about | birthday | active | email         |
++----+----------+-------+----------+--------+---------------+
+|  2 | devdojo  | NULL  | NULL     |      0 | d@devdojo.com |
++----+----------+-------+----------+--------+---------------+
+```
+
+Please, keep in mind that `LIKE` operator is case sensitive, meaning it won't mach capital letters with lowercase letters and vice versa. If you wish to ignore capitalization, use `ILIKE` operator instead.
+
+
 ## Formatting
 
 As we mentioned in the previous chapters, each SQL statement needs to end with a  semi-colon: `;`. Alternatively, rather than using a  semi-colon, you could use the `\G` characters which would format the output in a list rather than a table.
