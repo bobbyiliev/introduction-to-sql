@@ -13,8 +13,6 @@ DCL commands are used to grant and take back authority from any database user.
 GRANT privilege_name ON objectname TO user;
 ```
 
-### `GRANT` Examples
-
 ## `REVOKE`
 `REVOKE` remove a privilege from a user. REVOKE helps the owner to cancel previously granted permissions.
 
@@ -24,7 +22,7 @@ GRANT privilege_name ON objectname TO user;
 REVOKE privilege_name ON objectname FROM user;
 ```
 
-### `REVOKE` Examples
+### `DCL` Examples
 
 ## Conclusion
 
