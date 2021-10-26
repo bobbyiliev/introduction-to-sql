@@ -26,7 +26,8 @@ REVOKE privilege_name ON objectname FROM user;
 ```sql
 SELECT * FROM purchase;
 ```
-
+Output:
+```
 | item         | price | customer_name |
 |--------------|-------|---------------|
 | Pen          |    20 | Sanskriti     |
@@ -37,36 +38,50 @@ SELECT * FROM purchase;
 | Mouse        |   120 | ABC           |
 | Sun Glasses  |  1350 | ABC           |
 | Torch        |   850 | ABC           |
+```
 
-- ### Lets start with `GRANT` command
+- Lets start with `GRANT` command:
 
 ```sql
   GRANT INSERT ON purchase TO 'Sanskriti'@'localhost'; 
 ```
+Output:
+```
 #### O/P Query OK, 0 rows affected (0.31 sec)
-#### Description In above command we have granted user Sanskriti priviledge to `Insert` into purchase table
+```
 
-- ### Now if I login as Sanskriti 
-### And try to run `Select` statement as given below what should happen?
+Description In above command we have granted user Sanskriti priviledge to `Insert` into purchase table.
+
+- Now if I login as Sanskriti and try to run `Select` statement as given below what should happen?
+
 ```sql 
 SELECT * FROM purchase;
 ```
+
+Output:
+```
 #### O/P ERROR 1142 (42000): SELECT command denied to user 'Sanskriti'@'localhost' for table 'purchase'
+```
+Yup as expected it gives error because we have granted insert operation to Sanskriti.
 
-#### Yup as expected it gives error because we have granted insert operation to Sanskriti
-
-- ### So lets try inserting data to purchase table
+- So lets try inserting data to purchase table:
 ```sql  
 INSERT INTO purchase values("Laptop", 100000, "Sanskriti");
 ```
-#### O/P Query OK, 1 row affected (0.34 sec)
-#### Yeah it works
 
-- ### Now I am checking the purchase table from my original account
+Output:
+```
+#### O/P Query OK, 1 row affected (0.34 sec)
+```
+Yes! It works!
+
+- Now I am checking the purchase table from my original account:
 ```sql
 SELECT * FROM purchase;
 ```
 
+Output:
+```
 | item         | price  | customer_name |
 |-------------|--------|---------------|
 | Pen          |     20 | Sanskriti     |
@@ -78,22 +93,33 @@ SELECT * FROM purchase;
 | Sun Glasses  |   1350 | ABC           |
 | Torch        |    850 | ABC           |
 | Laptop       | 100000 | Sanskriti     |
-#### And yes the row is inserted 
+```
 
-- ### Now lets try `Revoke` command
+As you can see, the row is inserted.
+
+- Now lets try `Revoke` command:
+
 ```sql 
 REVOKE INSERT ON purchase FROM 'Sanskriti'@'localhost';
 ```
-#### O/P Query OK, 0 rows affected (0.35 sec)
-#### Now we have revoked the insert priviledge from Sanskriti
 
-- ### If Sanskriti runs insert statement it should give error
+Output:
+```
+#### O/P Query OK, 0 rows affected (0.35 sec)
+```
+
+Now we have revoked the insert priviledge from Sanskriti.
+
+- If Sanskriti runs insert statement it should give error:
+
 ```sql 
 INSERT INTO purchase values("Laptop", 100000, "Sanskriti");
 ```
-#### O/P ERROR 1142 (42000): INSERT command denied to user 'Sanskriti'@'localhost' for table 'purchase'
-#### And yes it gives
 
+Output:
+```
+#### O/P ERROR 1142 (42000): INSERT command denied to user 'Sanskriti'@'localhost' for table 'purchase'
+```
 
 ## Conclusion
 
