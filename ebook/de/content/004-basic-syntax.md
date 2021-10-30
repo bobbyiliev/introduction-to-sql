@@ -129,8 +129,8 @@ SELECT * FROM users; -- Gib mir alle Benutzer
 
 So wie in diversen anderen Programmiersprachen sind mehrzeilige Kommentare durch das Umschließen von `/*` und `*/` möglich:
 
-```sql
-/*
+
+/*sql 
  Gib mir alle Benutzer
  aus der Datenbank.
 */
