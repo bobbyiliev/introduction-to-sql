@@ -15,7 +15,7 @@ SELECT column_name FROM table_name WHERE column=some_value;
 If we take the example `users` table from the last chapter, let's say that we wanted to get only the active users. The SQL statement would look like this:
 
 ```sql
-SELECT DISTINCT username, email, activem FROM users WHERE active=true;
+SELECT DISTINCT username, email, active FROM users WHERE active=true;
 ```
 
 Output:
