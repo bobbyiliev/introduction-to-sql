@@ -52,11 +52,10 @@ The output would look like this:
 | username | email         | active |
 +----------+---------------+--------+
 | bobby    | b@devdojo.com |      1 |
-| bobby    | b@devdojo.com |      1 |
 +----------+---------------+--------+
 ```
 
-We are getting 2 entries back as we have 2 users in our database with the username `bobby`.
+We are getting 1 entry back as we have 1 user in our database with the username `bobby`.
 
 ## Operators
 
