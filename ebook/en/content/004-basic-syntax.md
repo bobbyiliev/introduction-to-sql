@@ -60,7 +60,7 @@ Output:
 
 We specify `*` right after the `SELECT` keyword, this means that we want to get all of the columns from the `users` table.
 
-If we wanted to the only the `username` and the `email` columns instead, we would change the statement to:
+If we wanted to retrieve only the `username` and the `email` columns instead, we would change the statement to:
 
 ```sql
 SELECT username, email FROM users;
