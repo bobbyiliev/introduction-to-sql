@@ -288,6 +288,29 @@ Output:
 +------+----------+----+---------+-----------------+
 ```
 
+In case of Left or Right Joins, conditions can be applyed to left or right side of the join. This time the condition has to be put in the join itself. For instance, in the preceding example, if we wanted to join the tables and then restrict to only username `bobby` but keep the post without usernames.
+
+
+```sql
+SELECT *
+FROM users 
+RIGHT JOIN posts
+ON users.id = posts.user_id
+  and username = 'bobby';
+```
+
+Output:
+
+```
++------+----------+----+---------+-----------------+
+| id   | username | id | user_id | title           |
++------+----------+----+---------+-----------------+
+|    1 | bobby    |  1 |       1 | Hello World!    |
+|    1 | bobby    |  5 |       1 | SQL             |
+| NULL | NULL     |  6 |     123 | No user post!   |
++------+----------+----+---------+-----------------+
+```
+
 ## Conclusion
 
 Joins are fundamental to using SQL with data. The whole concept of joins might be very confusing initially but would make a lot of sense once you get used to it.
