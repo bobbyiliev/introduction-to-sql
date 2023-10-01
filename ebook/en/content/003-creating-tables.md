@@ -219,6 +219,24 @@ CREATE TABLE users
 );
 ```
 
+## Creating index
+
+When dealing with tables, it is almost mandatory to have a PRIMARY KEY. In the example above, the key is the `id` column. But if you want to search, let's say by date of birth, the query will slow down as the user count increases. In this case, adding an INDEX on the `birthday` column will speedup the query.
+
+```SQL
+CREATE INDEX users_idx ON users(birthday);
+```
+
+> **_HINT_** If you have a query on multiple fields, then you can create one index with all the fields.
+> For example you could index the `birthday` and `active` fields.
+>
+> In this case, keep in mind that field order is important. In our case, creating the index as: 
+> `CREATE INDEX users_idx ON users(active, birthday);` 
+> would not be as efficient as creating it this way: 
+> `CREATE INDEX users_idx ON users(birthday, active);` 
+> because there is only two possible values for `active` and many for the `birthday`. So `birthday` should be the first
+> in the index to quickly reduce the number of lines manipulated by the server.
+
 ## Updating tables
 
 In the above example, we created a new table and then dropped it as it was empty. However, in a real-life scenario, this would really be the case.
