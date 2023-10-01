@@ -288,27 +288,72 @@ Output:
 +------+----------+----+---------+-----------------+
 ```
 
-In case of Left or Right Joins, conditions can be applyed to left or right side of the join. This time the condition has to be put in the join itself. For instance, in the preceding example, if we wanted to join the tables and then restrict to only username `bobby` but keep the post without usernames.
-
+There is a difference between applying the condition in the WHERE clause and in the JOIN clause. For instance, considering this query, only POSTS with title containing the word SQL are returned along with their users data.
 
 ```sql
-SELECT *
-FROM users 
-RIGHT JOIN posts
-ON users.id = posts.user_id
-  and username = 'bobby';
+SELECT users.*, posts.*
+FROM users
+LEFT JOIN posts 
+ON posts.user_id = users.id
+where posts.title like '%SQL%'
 ```
 
 Output:
 
 ```
-+------+----------+----+---------+-----------------+
-| id   | username | id | user_id | title           |
-+------+----------+----+---------+-----------------+
-|    1 | bobby    |  1 |       1 | Hello World!    |
-|    1 | bobby    |  5 |       1 | SQL             |
-| NULL | NULL     |  6 |     123 | No user post!   |
-+------+----------+----+---------+-----------------+
++--+--------+--+-------+-------------------------------+
+|id|username|id|user_id|title                          |
++--+--------+--+-------+-------------------------------+
+|2 |devdojo |2 |2      |Getting started with SQL       |
+|3 |tony    |3 |3      |SQL is awesome                 |
+|2 |devdojo |4 |2      |MySQL is up!                   |
+|1 |bobby   |5 |1      |SQL - structured query language|
++--+--------+--+-------+-------------------------------+
+```
+
+But if you apply the condition in the JOIN, all users are returned but only posts with title containing the SQL word are returned. 
+
+```sql
+SELECT users.*, posts.*
+FROM users
+LEFT JOIN posts 
+ON posts.user_id = users.id
+   AND posts.title like '%SQL%'
+```
+
+Output:
+
+```
++--+--------+----+-------+-------------------------------+
+|id|username|id  |user_id|title                          |
++--+--------+----+-------+-------------------------------+
+|1 |bobby   |5   |1      |SQL - structured query language|
+|2 |devdojo |4   |2      |MySQL is up!                   |
+|2 |devdojo |2   |2      |Getting started with SQL       |
+|3 |tony    |3   |3      |SQL is awesome                 |
+|4 |greisi  |null|null   |null                           |
++--+--------+----+-------+-------------------------------+
+```
+
+
+## RIGHT and LEFT Join equivalence
+
+RIGHT and LEFT join are equivalent and LEFT JOIN can be rewritten in RIGHT JOIN by just permuting tables. For example, this LEFT JOIN:
+
+```sql
+SELECT users.*, posts.*
+FROM posts
+LEFT JOIN users 
+ON posts.user_id = users.id;
+```
+
+is equivalent to this one:
+
+```sql
+SELECT users.*, posts.*
+FROM users
+RIGHT JOIN posts 
+ON posts.user_id = users.id;
 ```
 
 ## Conclusion
