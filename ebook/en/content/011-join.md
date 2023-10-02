@@ -288,6 +288,79 @@ Output:
 +------+----------+----+---------+-----------------+
 ```
 
+## The Impact of Conditions in JOIN vs. WHERE Clauses
+
+The placement of conditions within a SQL query, specifically in the `JOIN` vs. the `WHERE` clause, can yield different results.
+
+Take a look at the following example, which retrieves `POSTS` containing the word "SQL" along with their associated user data:
+
+```sql
+SELECT users.*, posts.*
+FROM users
+LEFT JOIN posts
+ON posts.user_id = users.id
+WHERE posts.title LIKE '%SQL%';
+```
+
+Output:
+
+```sql
++--+--------+--+-------+-------------------------------+
+|id|username|id|user_id|title                          |
++--+--------+--+-------+-------------------------------+
+|2 |devdojo |2 |2      |Getting started with SQL       |
+|3 |tony    |3 |3      |SQL is awesome                 |
+|2 |devdojo |4 |2      |MySQL is up!                   |
+|1 |bobby   |5 |1      |SQL - structured query language|
++--+--------+--+-------+-------------------------------+
+```
+
+However, by shifting the condition to the `JOIN` clause, all users are displayed, but only posts with titles containing "SQL" are included:
+
+```sql
+SELECT users.*, posts.*
+FROM users
+LEFT JOIN posts 
+ON posts.user_id = users.id
+   AND posts.title LIKE '%SQL%';
+```
+
+Output:
+
+```sql
++--+--------+----+-------+-------------------------------+
+|id|username|id  |user_id|title                          |
++--+--------+----+-------+-------------------------------+
+|1 |bobby   |5   |1      |SQL - structured query language|
+|2 |devdojo |4   |2      |MySQL is up!                   |
+|2 |devdojo |2   |2      |Getting started with SQL       |
+|3 |tony    |3   |3      |SQL is awesome                 |
+|4 |greisi  |null|null   |null                           |
++--+--------+----+-------+-------------------------------+
+```
+
+## Equivalence of RIGHT and LEFT JOINs
+
+The `RIGHT JOIN` and `LEFT JOIN` operations in SQL are fundamentally equivalent. They can be interchanged by simply swapping the tables involved. Here's an illustration:
+
+The following `LEFT JOIN`:
+
+```sql
+SELECT users.*, posts.*
+FROM posts
+LEFT JOIN users 
+ON posts.user_id = users.id;
+```
+
+Can be equivalently written using `RIGHT JOIN` as:
+
+```sql
+SELECT users.*, posts.*
+FROM users
+RIGHT JOIN posts 
+ON posts.user_id = users.id;
+```
+
 ## Conclusion
 
 Joins are fundamental to using SQL with data. The whole concept of joins might be very confusing initially but would make a lot of sense once you get used to it.
