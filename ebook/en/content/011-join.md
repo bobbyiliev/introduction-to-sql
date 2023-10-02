@@ -288,19 +288,23 @@ Output:
 +------+----------+----+---------+-----------------+
 ```
 
-There is a difference between applying the condition in the WHERE clause and in the JOIN clause. For instance, considering this query, only POSTS with title containing the word SQL are returned along with their users data.
+## The Impact of Conditions in JOIN vs. WHERE Clauses
+
+The placement of conditions within a SQL query, specifically in the `JOIN` vs. the `WHERE` clause, can yield different results.
+
+Take a look at the following example, which retrieves `POSTS` containing the word "SQL" along with their associated user data:
 
 ```sql
 SELECT users.*, posts.*
 FROM users
-LEFT JOIN posts 
+LEFT JOIN posts
 ON posts.user_id = users.id
-where posts.title like '%SQL%'
+WHERE posts.title LIKE '%SQL%';
 ```
 
 Output:
 
-```
+```sql
 +--+--------+--+-------+-------------------------------+
 |id|username|id|user_id|title                          |
 +--+--------+--+-------+-------------------------------+
@@ -311,19 +315,19 @@ Output:
 +--+--------+--+-------+-------------------------------+
 ```
 
-But if you apply the condition in the JOIN, all users are returned but only posts with title containing the SQL word are returned. 
+However, by shifting the condition to the `JOIN` clause, all users are displayed, but only posts with titles containing "SQL" are included:
 
 ```sql
 SELECT users.*, posts.*
 FROM users
 LEFT JOIN posts 
 ON posts.user_id = users.id
-   AND posts.title like '%SQL%'
+   AND posts.title LIKE '%SQL%';
 ```
 
 Output:
 
-```
+```sql
 +--+--------+----+-------+-------------------------------+
 |id|username|id  |user_id|title                          |
 +--+--------+----+-------+-------------------------------+
@@ -335,10 +339,11 @@ Output:
 +--+--------+----+-------+-------------------------------+
 ```
 
+## Equivalence of RIGHT and LEFT JOINs
 
-## RIGHT and LEFT Join equivalence
+The `RIGHT JOIN` and `LEFT JOIN` operations in SQL are fundamentally equivalent. They can be interchanged by simply swapping the tables involved. Here's an illustration:
 
-RIGHT and LEFT join are equivalent and LEFT JOIN can be rewritten in RIGHT JOIN by just permuting tables. For example, this LEFT JOIN:
+The following `LEFT JOIN`:
 
 ```sql
 SELECT users.*, posts.*
@@ -347,7 +352,7 @@ LEFT JOIN users
 ON posts.user_id = users.id;
 ```
 
-is equivalent to this one:
+Can be equivalently written using `RIGHT JOIN` as:
 
 ```sql
 SELECT users.*, posts.*
