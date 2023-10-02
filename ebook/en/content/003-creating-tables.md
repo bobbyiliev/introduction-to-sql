@@ -219,6 +219,32 @@ CREATE TABLE users
 );
 ```
 
+## Index Optimization for Database Queries
+
+In database management, establishing a PRIMARY KEY for tables is fundamental. Using our previous example, the `id` column serves as this primary key. However, as the volume of data grows, searching by attributes other than the primary key, like the `date of birth`, can become increasingly slow. To optimize such queries, you can introduce an INDEX on specific columns.
+
+Consider the `birthday` column. To enhance the speed of queries focused on this column, an INDEX can be pivotal:
+
+```sql
+CREATE INDEX birthday_idx ON users(birthday);
+```
+
+> **_Tip:_** For queries spanning multiple fields, you have the option to create a composite index incorporating all the relevant fields. Let's say, for example, you want to index both the `birthday` and `active` columns.
+
+The order in which you list the fields in a composite index matters. For instance, given that the `active` column might have limited unique values (e.g., true or false) compared to the `birthday` column, the sequence of fields in the index can influence efficiency. Designing the index like this:
+
+```sql
+CREATE INDEX users_multi_idx ON users(active, birthday);
+```
+
+May not be as efficient as:
+
+```sql
+CREATE INDEX users_multi_idx ON users(birthday, active);
+```
+
+Placing `birthday` first in the index ensures a quicker reduction in potential matches, optimizing the server's data manipulation process.
+
 ## Updating tables
 
 In the above example, we created a new table and then dropped it as it was empty. However, in a real-life scenario, this would really be the case.
