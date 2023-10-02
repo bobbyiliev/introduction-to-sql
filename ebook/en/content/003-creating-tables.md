@@ -219,23 +219,31 @@ CREATE TABLE users
 );
 ```
 
-## Creating index
+## Index Optimization for Database Queries
 
-When dealing with tables, it is almost mandatory to have a PRIMARY KEY. In the example above, the key is the `id` column. But if you want to search, let's say by date of birth, the query will slow down as the user count increases. In this case, adding an INDEX on the `birthday` column will speedup the query.
+In database management, establishing a PRIMARY KEY for tables is fundamental. Using our previous example, the `id` column serves as this primary key. However, as the volume of data grows, searching by attributes other than the primary key, like the `date of birth`, can become increasingly slow. To optimize such queries, you can introduce an INDEX on specific columns.
 
-```SQL
-CREATE INDEX users_idx ON users(birthday);
+Consider the `birthday` column. To enhance the speed of queries focused on this column, an INDEX can be pivotal:
+
+```sql
+CREATE INDEX birthday_idx ON users(birthday);
 ```
 
-> **_HINT_** If you have a query on multiple fields, then you can create one index with all the fields.
-> For example you could index the `birthday` and `active` fields.
->
-> In this case, keep in mind that field order is important. In our case, creating the index as: 
-> `CREATE INDEX users_idx ON users(active, birthday);` 
-> would not be as efficient as creating it this way: 
-> `CREATE INDEX users_idx ON users(birthday, active);` 
-> because there is only two possible values for `active` and many for the `birthday`. So `birthday` should be the first
-> in the index to quickly reduce the number of lines manipulated by the server.
+> **_Tip:_** For queries spanning multiple fields, you have the option to create a composite index incorporating all the relevant fields. Let's say, for example, you want to index both the `birthday` and `active` columns.
+
+The order in which you list the fields in a composite index matters. For instance, given that the `active` column might have limited unique values (e.g., true or false) compared to the `birthday` column, the sequence of fields in the index can influence efficiency. Designing the index like this:
+
+```sql
+CREATE INDEX users_multi_idx ON users(active, birthday);
+```
+
+May not be as efficient as:
+
+```sql
+CREATE INDEX users_multi_idx ON users(birthday, active);
+```
+
+Placing `birthday` first in the index ensures a quicker reduction in potential matches, optimizing the server's data manipulation process.
 
 ## Updating tables
 
