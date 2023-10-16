@@ -26,3 +26,16 @@ Query OK, x row(s) affected (0.047 sec)
 ```
 
 Similar to the Linux `rm` command, when you use the `DELETE` statement, the data would be gone permanently, and the only way to recover your data would be by restoring a backup.
+
+## Delete from another table
+
+As we saw in the two precedents sections you can `INSERT` or `UPDPATE` tables rows based on other table data. You can do the same for the `DELETE`.
+
+For example, if you want to delete the records from the `users` table if the corresponding prospect has been disabled, you could do it this way:
+
+```sql
+delete users
+from users, prospect_users
+where users.username = prospect_users.username
+and NOT prospect_users.active
+```
