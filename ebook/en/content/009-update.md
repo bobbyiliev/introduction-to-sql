@@ -90,3 +90,17 @@ Now, if you again run the `SELECT id, username, about FROM users` query, you wou
 |  7 | tony     | 404 bio not found |
 +----+----------+-------------------+
 ```
+
+## Updating records using another table
+
+As we've seen in the previous section, you can insert multiple rows in your table using another table. You can use the same principle for the update command.
+
+To do that you simply have to list all needed table in the `update` section, then you have to explain which action you want to perform on the table, and then you need to link the table together.
+
+For example, if you want to update the `about` field in the `users` table using the content of the `about` field in the `prospect_users` table, you would do something like this:
+
+```sql
+update users, prospect_users
+set users.about = prospect_users.about
+where prospect_users.username = users.username;
+```
