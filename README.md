@@ -14,7 +14,7 @@
 
 This is an open-source introduction to SQL guide that will help you to learn the basics of SQL and start using relational databases for your SysOps, DevOps, and Dev projects. No matter if you are a DevOps/SysOps engineer, developer, or just a Linux enthusiast, you will most likely have to use SQL at some point in your career.
 
-The guide is suitable for anyone working as a developer, system administrator, or a DevOps engineer and wants to learn the basics of SQL.
+The guide is suitable for anyone working as a developer, system administrator, or a DevOps engineer who wants to learn the basics of SQL.
 
 ## 🚀 Download
 
@@ -58,7 +58,7 @@ The Streaming Database for Real-time Analytics.
 
 DigitalOcean is a cloud services platform delivering the simplicity developers love and businesses trust to run production applications at scale.
 
-It provides highly available, secure, and scalable compute, storage, and networking solutions that help developers build great software faster.
+It provides highly available, secure, and scalable computing, storage, and networking solutions that help developers build great software faster.
 
 Founded in 2012 with offices in New York and Cambridge, MA, DigitalOcean offers transparent and affordable pricing, an elegant user interface, and one of the largest libraries of open source resources available.
 
@@ -118,7 +118,7 @@ I think it's essential always to keep professional and surround yourself with go
 
 For more information, please visit my blog at [https://bobbyiliev.com](https://bobbyiliev.com), follow me on Twitter [@bobbyiliev_](https://twitter.com/bobbyiliev_) and [YouTube](https://www.youtube.com/channel/UCQWmdHTeAO0UvaNqve9udRw).
 
-In case that you want to support me you can Buy Me a Coffee here:
+In case  you want to support me you can Buy Me a Coffee here:
 
 <a href="https://www.buymeacoffee.com/bobbyiliev" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
