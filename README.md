@@ -150,6 +150,12 @@ If you ever need to create a graphic, poster, invitation, logo, presentation –
 - [Introduction to Bash Scripting](https://github.com/bobbyiliev/introduction-to-bash-scripting)
 - [Laravel tips and tricks](https://github.com/bobbyiliev/laravel-tips-and-tricks-ebook)
 
+## 📖 Other Resources
+
+- [SQL Tutorials](https://www.w3schools.com/sql/)
+- [SQL Interview Questions](https://boldcoder.blogspot.com/2024/08/fresher-sql-interview-questions.html)
+
+
 ## 🤲 Contributing
 
 If you are contributing 🍿 please read the [contributing file](CONTRIBUTING.md) before submitting your pull requests.
