@@ -1,8 +1,8 @@
 # Grundlegende Syntax
 
-In diesem Kapitel werden die grundlegende Syntax von SQL behandeln.
+In diesem Kapitel wird die grundlegende Syntax von SQL behandeln.
 
-SQL-Statements kann man als 'commands' sehen, die gegen eine bestimmte Datenbank gefeuert werden. Durch SQL-Statements teilst du MySQL mit, was man erreichen möchte. Beispielsweise, wenn man alle Benutzernamen `username` aus der `users`-Tabelle den erfahren möchte, würde man folgendes ausführen:
+SQL-Statements kann man als 'commands' sehen, die gegen eine bestimmte Datenbank gefeuert werden. Durch SQL-Statements teilst du MySQL mit, was du erreichen möchtest. Um beispielsweise alle Benutzernamen `username` aus der `users`-Tabelle zu erhalten, würdest du folgendes schreiben:
 
 ```sql
 SELECT username FROM users;
@@ -11,17 +11,16 @@ SELECT username FROM users;
 Schauen wir uns das Statement mal genauer an:
 
 * `SELECT`: Als erstes begegnen wir dem `SELECT`-Schlüsselwort, welches aussagt, dass wir Daten aus der Datenbank auslesen bzw. auswählen wollen. Andere typische Schlüsselwörter sind: `INSERT`, `UPDATE` oder auch `DELETE`.
-* `username`: Nun geben wir an, was wir selektieren wollen. In diesem Fall die Tabellenspalte `username`.
+* `username`: Nun geben wir an, welche Spalte wir auswählen wollen.
 * `FROM users`: Schließlich geben wir mit dem `FROM`-Schlüsselwort die Tabelle an, aus der wir Daten lesen wollen.
 * Das Semikolon `;` am Ende wird als Best Practice angesehen. 
-Standard-SQL-Syntax erfordert es, aber einige "Database Management Systeme' (DBMS)" sind dabei tolerant, aber man sollte es nicht darauf anlegen.
+Standard-SQL-Syntax erfordert es, einige "Database Management Systeme' (DBMS)" sind dabei tolerant, aber man sollte es nicht darauf anlegen.
 
-Wenn dieses Statement ausgeführt werden wir keinerlei Ergebnisse aus der `users`-Tabelle bekommen, da diese gerade erst angelegt wurde und noch leer ist.
+Wenn dieses Statement ausführen, werden wir kein Ergebniss aus der `users`-Tabelle erhalten, da diese gerade erst angelegt wurde und noch leer ist.
 
-> Ebenso "Good Practice" ist es SQL-Schlüsselworte großgeschrieben zu verwenden, aber auch das ist nicht Pflicht.
+> Ebenso "Good Practice" ist es, SQL-Schlüsselworte groß zu schreiben, allerdings würde es auch so funktionieren.
 
-Fahren wird fort und behandeln die nächste, grundlegende Operation.
-
+Schauen wir uns als nächstes die grundlegenden Operatoren an:
 ## INSERT
 
 Zum Hinzufügen von Daten in deine Datenbank wird das `INSERT`-Statement benutzt.
@@ -33,17 +32,15 @@ INSERT INTO users (username, email, active)
 VALUES ('bobby', 'bobby@bobbyiliev.com', true);
 ```
 
-Schauen wir in das Insert-Statement mal im Detail an:
+Schauen wir uns das Insert-Statement mal im Detail an:
 
-* `INSERT INTO`: Zunächst benutzen wir `INSERT INTO users`, wodurch MySQL weiß, dass Daten in eine Tabelle geschrieben werden sollen.
-* `users (username, email, active)`: Nun spezifizieren wir den Tabellennamen `users` und schließlich die Tabellenspalten, welche beschrieben werden sollen.
-* `VALUES`: Jetzt geben wir die Daten selbst an, welche eingespeichert werden sollen. Die Reihenfolge der Eigenschaften deckt sich dabei mit der Reihenfolge in `users (...)`.
+* `INSERT INTO`: Zunächst schreiben wir: `INSERT INTO users`, wodurch wir MySQL sagen, dass wir Daten in die Tabelle einfügen wollen.
+* `users (username, email, active)`: nun geben wir den Tabellennamen `users`   und schließlich die Tabellenspalten, welche beschrieben werden sollen, an.
+* `VALUES`: Jetzt geben wir die eigentlichen Daten an, welche eingespeichert werden sollen. Die Reihenfolge der Eigenschaften deckt sich dabei mit der Reihenfolge in `users (...)`.
 
 ## SELECT
 
-Nachdem einspeichern, würden wir die Daten gerne aus der Datenbank auslesen.
-
-Dafür können wir wieder wieder das `SELECT`-Statement verwenden:
+Um die Daten nach dem Einspeichern wieder auszulesen, können wir wieder auf das `SELECT`-Statement zurückgreifen:
 
 ```sql
 SELECT * FROM users;
@@ -59,7 +56,7 @@ Output:
 +----+----------+-------+----------+--------+---------------+
 ```
 
-Durch die Verwendung der Wildcard `*` direkt nach dem `SELECT`-Schlüsselwort, sagen wir dass wir alle Spalten aus der `users`-Tabelle haben wollen.
+Durch die Verwendung der Wildcard `*` direkt nach dem `SELECT`-Schlüsselwort sagen wir, dass wir alle Spalten aus der `users`-Tabelle haben wollen.
 
 Wenn wir beispielsweise nur den Benutznamen `username`- und die `email`-Spalten haben wollen, passen wir das Statement wie folgt an:
 
@@ -67,7 +64,7 @@ Wenn wir beispielsweise nur den Benutznamen `username`- und die `email`-Spalten 
 SELECT username, email FROM users;
 ```
 
-Somit erhalten wir alle Benutzer, wobei momentan nun mal nur einen haben:
+Somit erhalten wir alle Benutzer, aktuell haben wir jedoch nur einen erstellt:
 
 ```
 +----------+----------------------+
@@ -79,9 +76,9 @@ Somit erhalten wir alle Benutzer, wobei momentan nun mal nur einen haben:
 
 ## UPDATE
 
-Um Daten in der Datenbank zu verändern benutzt man das `UPDATE`-Statement.
+Um Daten in der Datenbank zu verändern, benutzt man das `UPDATE`-Statement.
 
-Die Syntax lautet wie folgt:
+Die Syntax sieht wie folgt aus:
 
 ```sql
 UPDATE users SET username='bobbyiliev' WHERE id=1;
@@ -89,58 +86,57 @@ UPDATE users SET username='bobbyiliev' WHERE id=1;
 
 Das Statement im Detail:
 
-* `UPDATE users`: Zunächst beginnen wir mit dem `UPDATE`-Schlüsselwort um einzuleiten, dass wir schließlich die `users`-Tabellendaten verändern wollen.
-* `SET username='bobbyiliev'`: Dann geben wir die Spalten an, die wir updaten wollen mit der Zuweisung des Wertes der geschrieben werden soll.
-* `WHERE id=1`: Zum Abschluss wird die `WHERE`-Klausel verwendet um die Benutzer zu spezifizieren, auf die das Update ausgeführt werden soll. In diesem Fall wollen wir den Benutzer mit der ID 1.
+* `UPDATE users`: Zunächst beginnen wir mit dem `UPDATE`-Schlüsselwort, gefolgt von der Tabelle, die wir bearbeiten wollen.
+* `SET username='bobbyiliev'`: Dann geben wir die Spalten an, die wir bearbeiten wollen, sowie den neuen Wert.
+* `WHERE id=1`: Zum Abschluss wird die `WHERE`-Bedingung verwendet um einen spezifischen Nutzer auszuwählen, hier der Nutzer mit der ID 1.
 
-> Achtung: Ohne eine `WHERE`-Klausel würden die Änderungen auf alle Einträge ausgeführt werden und alle hätten den `username` auf `bobbyiliev` geändert. Es gilt also Vorsicht bei der Benutzung des `UPDATE`-Statements ohne `WHERE`-Klausel, ansonsten werden immer alle Datensätze betroffen.
-
+> Achtung: Ohne eine `WHERE`-Bedingung würden die Änderungen auf alle Einträge ausgeführt werden, und alle Nutzernamen `username` würden auf `bobbyiliev` geändert werden. Es gilt also Vorsicht bei der Benutzung des `UPDATE`-Statements ohne `WHERE`-Bedingung, denn so betrifft die Änderung alle Einträge der Tabelle.
 In den kommenden Kapiteln werden wir auf `WHERE` noch detaillierter eingehen.
 
 ## DELETE
 
-Wie sicherlich schon erahnbar wird `DELETE` benutzt um Daten aus der Datenbank zu tilgen.
+Wie aus dem Namen bereits hervorgeht, kann `DELETE` verwendet werden, um Daten aus der Datenbank zu löschen.
 
-Die Syntax lautet wie folgt:
+Die Syntax sieht wie folgt aus:
 
 ```sql
 DELETE FROM users WHERE id=1;
 ```
 
-Genau wie beim `UPDATE`-Statement werden alle Datensätze betroffen, wenn keine `WHERE`-Klausel verwendet wird. Ergo würden alle Datensätze aus der entsprechenden Tabelle gelöscht werden.
+Genau wie das `UPDATE`-Statement betrifft `DELETE` alle Einträge, wenn keine `WHERE`-Bedingung festgelegt wird. Ergo würden alle Datensätze aus der entsprechenden Tabelle gelöscht werden.
 
 ## Kommentare
 
-Falls größere SQL-Skripte geschrieben werden können Kommentare nützlich sein, wenn man nach längerer Zeit wieder auf den Code schaut und die einstigen Gedankengänge nachvollziehen möchte.
+Für größere SQL-Skripte können Kommentare Sinn ergeben, damit du dir nicht merken musst, was jede Zeile macht, wenn du das Skript nach längerer Zeit wieder anschaust.
 
-Das geht natürlich wie in anderen Programmiersprachen ebenso in SQL.
+Wie in allen Programmiersprachen, können Kommentare in SQL verwendet werden.
 
 Es gibt 2 Arten von Kommentaren:
 
 * Einzeilige Kommentare:
 
-Dafür muss man lediglich `--` vor den Text setzen und die Zeile ist auskommentiert:
+Dafür muss man lediglich `--` vor den Text setzen, den man auskommentieren will:
 
 ```sql
-SELECT * FROM users; -- Gib mir alle Benutzer
+SELECT * FROM users; -- Erhalte alle Benutzer
 ```
 
 * Mehrzeilige Kommentare:
 
-So wie in diversen anderen Programmiersprachen sind mehrzeilige Kommentare durch das Umschließen von `/*` und `*/` möglich:
+So wie in diversen anderen Programmiersprachen, sind mehrzeilige Kommentare durch das Umschließen des Kommentars durch `/*` und `*/` möglich:
 
 ```sql
 /*
- Gib mir alle Benutzer
- aus der Datenbank.
+ Erhalte alle Nutzer
+ aus der Datenbank
 */
 SELECT * FROM users;
 ```
 
-Du könntest das in einer `.sql`-Datei nutzen und es später komplett oder auch nur einzelne Zeilen direkt ausführen.
+Du könntest das in einer `.sql`-Datei nutzen und später aussführen, oder die Zeilen zum Test direkt ausführen
 
 ## Fazit
 
-Das waren ein paar der häufigsten und grundlegendsten SQL-Statements.
+Das waren einige der häufigsten und grundlegendsten SQL-Statements.
 
-In den folgenden Kapiteln werden wir jedes dieser Statments nochmal im Detail durch.
+In den folgenden Kapiteln werden wir jedes dieser Statments nochmal im Detail durchgehen.
