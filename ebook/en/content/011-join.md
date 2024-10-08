@@ -35,7 +35,7 @@ CREATE TABLE users
 );
 ```
 
-* Then, let's create a second table called `posts`, and to keep things simple, we will have three two columns: `id`, `user_id` and `title`:
+* Then, let's create second table called `posts`, and to keep things simple, we will have three two columns: `id`, `user_id` and `title`:
 
 ```sql
 CREATE TABLE posts
