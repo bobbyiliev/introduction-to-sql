@@ -130,7 +130,6 @@ If you ever need to create a graphic, poster, invitation, logo, presentation –
 - [Ibis](https://github.com/themsaid/ibis/)
 - [Canva](https://www.canva.com/)
 - [Tails](http://devdojo.com/tails)
-- [Katacoda](https://www.katacoda.com/)
 
 ## 📖 Other eBooks
 
