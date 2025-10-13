@@ -189,3 +189,35 @@ SELECT TIME_TO_SEC('09:00') - TIME_TO_SEC('09:02')
    ```
 -120
 
+## NULL Handling Functions
+
+These functions are essential for managing and substituting `NULL` (missing) values, ensuring your queries return clean and predictable data.
+
+### IFNULL()
+
+Returns the first expression if it is not `NULL`. Otherwise, it returns the second expression. This is a quick way to provide a default value for a single column.
+
+```sql
+SELECT IFNULL(bonus, 0) FROM employees;
+   ```
+If bonus is NULL, the output is 0. Otherwise, it shows the bonus amount.
+
+### COALESCE()
+
+Returns the first non-NULL value from a list of expressions. It's useful when you have multiple potential sources for a value.
+
+```sql
+SELECT COALESCE(formal_nickname, fan_alias, 'No Nickname') FROM players;
+   ```
+Returns the first available nickname or 'No Nickname' if all are NULL.
+
+```sql
+SELECT COALESCE(NULL, NULL, NULL)
+   ```
+NULL
+
+```sql
+SELECT COALESCE('First Value', 'Second Value', 'Third Value')
+   ```
+First Value
+
