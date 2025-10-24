@@ -223,8 +223,6 @@ Returns the first available nickname or 'No Nickname' if all are NULL.
 
 ```sql
 SELECT COALESCE(NULL, NULL, NULL)
-   ```
-NULL
 
 ```sql
 SELECT COALESCE('First Value', 'Second Value', 'Third Value')
