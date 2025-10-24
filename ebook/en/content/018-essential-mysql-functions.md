@@ -197,6 +197,7 @@ These functions are essential for managing and substituting `NULL` (missing) val
 
 Returns the first expression if it is not `NULL`. Otherwise, it returns the second expression. This is a quick way to provide a default value for a single column.
 
+> Assume the `employees` table has a `bonus` column that may contain NULL values.
 ```sql
 SELECT IFNULL(bonus, 0) FROM employees;
    ```
