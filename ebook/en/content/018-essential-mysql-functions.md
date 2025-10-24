@@ -207,6 +207,15 @@ If bonus is NULL, the output is 0. Otherwise, it shows the bonus amount.
 
 Returns the first non-NULL value from a list of expressions. It's useful when you have multiple potential sources for a value.
 
+Suppose you have a `players` table with columns for different types of nicknames:
+
+| id | formal_nickname | fan_alias |
+|----|----------------|-----------|
+| 1  | NULL           | "Ace"     |
+| 2  | "The Rocket"   | NULL      |
+| 3  | NULL           | NULL      |
+
+The following query returns the first available nickname for each player, or 'No Nickname' if all are NULL:
 ```sql
 SELECT COALESCE(formal_nickname, fan_alias, 'No Nickname') FROM players;
    ```
